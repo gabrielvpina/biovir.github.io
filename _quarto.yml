@@ -1,0 +1,47 @@
+# Configuracao comum aos dois idiomas.
+# O conteudo especifico de cada lingua fica em _quarto-pt.yml e _quarto-en.yml.
+# Use sempre ./build.sh para gerar o site completo em docs/.
+
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - "assets/*.png"
+    - "assets/*.svg"
+    - "members/**/*.png"
+    - "members/**/*.jpeg"
+    - "members/**/*.jpg"
+    - "fonts/*.woff2"
+    - ".nojekyll"
+    - "CNAME"
+    # as paginas em ingles sao geradas pelo perfil "en" (ver build.sh)
+    - "!/en/**"
+
+profile:
+  default: pt
+
+website:
+  title: "BioVirLab"
+  favicon: assets/logo-without-text-virus.png
+  site-url: "https://gabrielvpina.github.io/biovir.github.io/"
+  navbar:
+    logo: assets/logo-horizontal-small.png
+    logo-alt: "BioVirLab"
+    title: false
+    pinned: true
+  page-footer:
+    border: true
+    center: |
+      [Instagram](https://www.instagram.com/biovir.lab/)
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/biovir.scss
+    css: styles/fonts.css
+    include-after-body: js/lang-switch.html
+    toc: false
+    anchor-sections: false
+    smooth-scroll: true
+    link-external-newwindow: true

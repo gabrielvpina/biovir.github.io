@@ -1,0 +1,67 @@
+<script>
+// Seletor de idioma: mantem o visitante na pagina equivalente ao trocar de
+// idioma (ex.: /publicacoes.html <-> /en/publications.html).
+//
+// Para adicionar uma pagina nova, inclua o par [arquivo-pt, arquivo-en] abaixo.
+(function () {
+  var PAIRS = [
+    ["index.html", "index.html"],
+    ["linhas-de-pesquisa.html", "research.html"],
+    ["publicacoes.html", "publications.html"],
+    ["eventos.html", "events.html"],
+    ["membros.html", "members.html"]
+  ];
+
+  function findMenu() {
+    var menus = document.querySelectorAll(".navbar .dropdown-menu");
+    for (var i = 0; i < menus.length; i++) {
+      var txt = menus[i].textContent;
+      if (/english/i.test(txt) && /portugu/i.test(txt)) return menus[i];
+    }
+    return null;
+  }
+
+  function init() {
+    var menu = findMenu();
+    if (!menu) return;
+
+    var pt = null;
+    var en = null;
+    var links = menu.querySelectorAll("a");
+    for (var i = 0; i < links.length; i++) {
+      if (/portugu/i.test(links[i].textContent)) pt = links[i];
+      if (/english/i.test(links[i].textContent)) en = links[i];
+    }
+    if (!pt || !en) return;
+
+    var path = window.location.pathname;
+    var file = path.split("/").pop() || "index.html";
+    var isEn = /(^|\/)en\/[^/]*$/.test(path);
+    var root = isEn
+      ? path.replace(/(^|\/)en\/[^/]*$/, "$1")
+      : path.replace(/[^/]*$/, "");
+
+    for (var j = 0; j < PAIRS.length; j++) {
+      if (PAIRS[j][isEn ? 1 : 0] === file) {
+        pt.setAttribute("href", root + PAIRS[j][0]);
+        en.setAttribute("href", root + "en/" + PAIRS[j][1]);
+        break;
+      }
+    }
+
+    (isEn ? en : pt).setAttribute("aria-current", "true");
+
+    var toggle = menu.parentNode.querySelector(".nav-link");
+    if (toggle) {
+      var label = toggle.querySelector(".menu-text") || toggle;
+      label.textContent = isEn ? "EN" : "PT-BR";
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>

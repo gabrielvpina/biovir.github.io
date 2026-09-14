@@ -1,0 +1,115 @@
+---
+title: "Research"
+pagetitle: "Research — BioVirLab"
+description-meta: "BioVirLab research lines in virus discovery, genomics, antiviral immunity and bioinformatics."
+---
+
+::: {.lead}
+Our investigations are organised into complementary lines, ranging from the
+prospection of novel viruses in sequencing data to the experimental validation
+of virus–host interaction mechanisms.
+:::
+
+<!-- AJUSTAR: revisar titulos, descricoes e palavras-chave de cada linha -->
+
+::: {.research-line}
+::: {.research-index}
+01
+:::
+::: {.research-content}
+### Discovery and characterisation of novel viruses
+
+Prospection of viral genomes in metagenomic and metatranscriptomic data from
+invertebrates, vertebrates, plants and environmental samples, including
+assembly, curation, taxonomic classification and formal description of new viral
+species.
+
+::: {.tag-list}
+- virome
+- metagenomics
+- viral taxonomy
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+02
+:::
+::: {.research-content}
+### Comparative genomics and viral evolution
+
+Phylogenetic and comparative genomic analyses to reconstruct the evolutionary
+history of viral families, investigate recombination events and map distribution
+patterns across hosts.
+
+::: {.tag-list}
+- phylogenetics
+- recombination
+- coevolution
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+03
+:::
+::: {.research-content}
+### Virus–host interaction and antiviral immunity
+
+Study of host antiviral responses, with emphasis on RNA interference pathways
+and other mechanisms controlling viral replication in invertebrates.
+
+::: {.tag-list}
+- RNAi
+- small RNAs
+- innate immunity
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+04
+:::
+::: {.research-content}
+### Bioinformatics and tool development
+
+Construction of reproducible pipelines and open computational tools for the
+detection, annotation and visualisation of viral sequences, focused on usability
+and scalability.
+
+::: {.tag-list}
+- pipelines
+- open source
+- reproducibility
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+05
+:::
+::: {.research-content}
+### Viruses of agricultural and One Health interest
+
+Characterisation of viruses associated with crops, vectors and animals of
+economic and sanitary importance, connecting genomic surveillance with the One
+Health perspective.
+
+::: {.tag-list}
+- plant viruses
+- arboviruses
+- genomic surveillance
+:::
+:::
+:::
+
+## Collaborations
+
+<!-- AJUSTAR: listar instituicoes e grupos parceiros -->
+
+We maintain collaborations with national and international research groups. This
+section will be detailed soon.

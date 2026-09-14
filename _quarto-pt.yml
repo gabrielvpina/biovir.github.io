@@ -1,0 +1,42 @@
+# Perfil pt-BR (padrao): quarto render  /  quarto preview
+project:
+  render:
+    - "/index.qmd"
+    - "/linhas-de-pesquisa.qmd"
+    - "/publicacoes.qmd"
+    - "/eventos.qmd"
+    - "/membros.qmd"
+
+lang: pt-BR
+
+website:
+  description: "Laboratório de Bioinformática e Virologia"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Início"
+      - href: linhas-de-pesquisa.qmd
+        text: "Linhas de Pesquisa"
+      - href: publicacoes.qmd
+        text: "Publicações"
+      - href: eventos.qmd
+        text: "Eventos"
+      - href: membros.qmd
+        text: "Membros"
+    right:
+      - icon: instagram
+        href: https://www.instagram.com/biovir.lab/
+        aria-label: Instagram
+      - text: "PT-BR"
+        icon: translate
+        aria-label: "Idioma / Language"
+        menu:
+          - text: "Português (BR)"
+            href: index.qmd
+          - text: "English"
+            href: en/index.html
+  page-footer:
+    left: |
+      **BioVirLab** — Laboratório de Bioinformática e Virologia
+    right: |
+      Feito com [Quarto](https://quarto.org)

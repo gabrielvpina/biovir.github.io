@@ -1,0 +1,59 @@
+---
+title: "Publications"
+pagetitle: "Publications — BioVirLab"
+description-meta: "Scientific articles published by BioVirLab members."
+---
+
+::: {.lead}
+Scientific articles published by members of the laboratory. Complete and
+up-to-date profiles are also available on Google Scholar and ORCID.
+:::
+
+<!-- AJUSTAR: substituir os itens abaixo pelas publicacoes reais -->
+
+::: {.pub-year}
+2025
+:::
+
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">Publication title to be added.</span>
+    Authors. <span class="pub-venue">Journal</span>, 2025.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+  <li>
+    <span class="pub-title">Publication title to be added.</span>
+    Authors. <span class="pub-venue">Journal</span>, 2025.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+</ul>
+
+::: {.pub-year}
+2024
+:::
+
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">Publication title to be added.</span>
+    Authors. <span class="pub-venue">Journal</span>, 2024.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+</ul>
+
+## Preprints
+
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">Preprint title to be added.</span>
+    Authors. <span class="pub-venue">bioRxiv</span>, 2025.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+</ul>
+
+## Profiles
+
+<!-- AJUSTAR: inserir os links reais -->
+
+- Google Scholar — *link to be added*
+- ORCID — *link to be added*
+- Lattes — *link to be added*

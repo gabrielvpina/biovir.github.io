@@ -1,0 +1,121 @@
+---
+pagetitle: "BioVirLab — Bioinformatics and Virology Laboratory"
+page-layout: full
+description-meta: "A laboratory dedicated to virus discovery and characterisation through bioinformatics, genomics and molecular biology."
+---
+
+::: {.hero}
+::: {.hero-text}
+::: {.eyebrow}
+Bioinformatics · Virology · Genomics
+:::
+
+# Exploring viral diversity through data {.no-anchor}
+
+**BioVirLab** brings together researchers dedicated to the discovery,
+characterisation and evolutionary analysis of viruses, combining
+high-throughput sequencing, bioinformatics and experimental validation. Our work
+ranges from identifying novel viruses in environmental and biological samples to
+studying the mechanisms of virus–host interaction.
+
+::: {.hero-actions}
+[Research](research.qmd){.btn-biovir}
+[Meet the team](members.qmd){.btn-biovir-ghost}
+:::
+:::
+
+::: {.hero-figure}
+![](../assets/logo-vertical-center.svg){fig-alt="BioVirLab logo"}
+:::
+:::
+
+## The laboratory
+
+We work at the interface between computational biology and virology, using
+metagenomic and metatranscriptomic data to reconstruct viral genomes, infer
+phylogenetic relationships and describe the diversity of viruses associated with
+invertebrates, plants, vertebrates and natural environments.
+
+Beyond basic research, the laboratory develops open computational workflows and
+tools for the scientific community, and maintains continuous training activities
+for undergraduate and graduate students.
+
+::: {.card-grid}
+::: {.info-card}
+### Virus discovery
+
+Identification and characterisation of novel viruses from large-scale
+sequencing data, with manual curation and experimental validation.
+:::
+
+::: {.info-card}
+### Genomics and evolution
+
+Genome reconstruction, functional annotation and phylogenetic analyses to
+understand the origin and diversification of viral lineages.
+:::
+
+::: {.info-card}
+### Open tools
+
+Development of reproducible pipelines and software for virome analysis, released
+in public repositories.
+:::
+
+::: {.info-card}
+### Scientific training
+
+Supervision of undergraduate, MSc and PhD students, with an emphasis on critical
+thinking and open science.
+:::
+:::
+
+<!-- AJUSTAR: numeros abaixo sao provisorios -->
+
+::: {.stat-row}
+::: {.stat-item}
+::: {.stat-value}
+29
+:::
+::: {.stat-label}
+Members
+:::
+:::
+
+::: {.stat-item}
+::: {.stat-value}
+5
+:::
+::: {.stat-label}
+Research lines
+:::
+:::
+
+::: {.stat-item}
+::: {.stat-value}
+—
+:::
+::: {.stat-label}
+Publications
+:::
+:::
+
+::: {.stat-item}
+::: {.stat-value}
+—
+:::
+::: {.stat-label}
+Collaborations
+:::
+:::
+:::
+
+## Where we are
+
+<!-- AJUSTAR: confirmar endereco, departamento e contato institucional -->
+
+BioVirLab is based at the **State University of Santa Cruz (UESC)**, in Ilhéus,
+Bahia, Brazil.
+
+For collaborations, questions or research opportunities, reach us through the
+[laboratory's Instagram](https://www.instagram.com/biovir.lab/).

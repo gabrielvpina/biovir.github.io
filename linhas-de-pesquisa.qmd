@@ -1,0 +1,116 @@
+---
+title: "Linhas de Pesquisa"
+pagetitle: "Linhas de Pesquisa — BioVirLab"
+description-meta: "Linhas de pesquisa do BioVirLab em descoberta viral, genômica, imunidade antiviral e bioinformática."
+---
+
+::: {.lead}
+Nossas investigações se organizam em linhas complementares que vão da
+prospecção de novos vírus em dados de sequenciamento até a validação
+experimental de mecanismos de interação vírus–hospedeiro.
+:::
+
+<!-- AJUSTAR: revisar títulos, descrições e palavras-chave de cada linha -->
+
+::: {.research-line}
+::: {.research-index}
+01
+:::
+::: {.research-content}
+### Descoberta e caracterização de novos vírus
+
+Prospecção de genomas virais em dados de metagenômica e metatranscriptômica de
+invertebrados, vertebrados, plantas e amostras ambientais. O trabalho inclui
+montagem, curadoria, classificação taxonômica e descrição formal de novas
+espécies virais.
+
+::: {.tag-list}
+- virome
+- metagenômica
+- taxonomia viral
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+02
+:::
+::: {.research-content}
+### Genômica comparativa e evolução viral
+
+Análises filogenéticas e de genômica comparativa para reconstruir a história
+evolutiva de famílias virais, investigar eventos de recombinação e mapear
+padrões de distribuição em diferentes hospedeiros.
+
+::: {.tag-list}
+- filogenia
+- recombinação
+- coevolução
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+03
+:::
+::: {.research-content}
+### Interação vírus–hospedeiro e imunidade antiviral
+
+Estudo das respostas antivirais do hospedeiro, com ênfase em vias de RNA de
+interferência e outros mecanismos de controle da replicação viral em
+invertebrados.
+
+::: {.tag-list}
+- RNAi
+- small RNAs
+- imunidade inata
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+04
+:::
+::: {.research-content}
+### Bioinformática e desenvolvimento de ferramentas
+
+Construção de pipelines reprodutíveis e ferramentas computacionais abertas para
+detecção, anotação e visualização de sequências virais, com foco em usabilidade
+e escalabilidade.
+
+::: {.tag-list}
+- pipelines
+- software livre
+- reprodutibilidade
+:::
+:::
+:::
+
+::: {.research-line}
+::: {.research-index}
+05
+:::
+::: {.research-content}
+### Vírus de interesse agrícola e em saúde única
+
+Caracterização de vírus associados a culturas agrícolas, vetores e animais de
+importância econômica e sanitária, articulando vigilância genômica e a
+perspectiva de Saúde Única.
+
+::: {.tag-list}
+- fitovírus
+- arbovírus
+- vigilância genômica
+:::
+:::
+:::
+
+## Colaborações
+
+<!-- AJUSTAR: listar instituições e grupos parceiros -->
+
+Mantemos colaborações com grupos de pesquisa nacionais e internacionais. Esta
+seção será detalhada em breve.

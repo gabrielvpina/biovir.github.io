@@ -1,0 +1,19 @@
+---
+title: "Members"
+pagetitle: "Members — BioVirLab"
+description-meta: "The BioVirLab team: principal investigator, researchers, graduate and undergraduate students."
+---
+
+::: {.lead}
+BioVirLab is made up of researchers, graduate and undergraduate students from
+different backgrounds, brought together around virology and computational
+biology.
+:::
+
+{{< include ../_includes/members-en.html >}}
+
+## Alumni
+
+<!-- AJUSTAR: adicione linhas com o grupo "alumni" em _data/members.tsv -->
+
+Coming soon.

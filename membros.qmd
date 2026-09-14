@@ -1,0 +1,20 @@
+---
+title: "Membros"
+pagetitle: "Membros — BioVirLab"
+description-meta: "Equipe do BioVirLab: coordenação, pesquisadores, pós-graduandos e estudantes de graduação."
+---
+
+::: {.lead}
+O BioVirLab é formado por pesquisadores, pós-graduandos e estudantes de
+graduação de diferentes formações, reunidos em torno da virologia e da biologia
+computacional.
+:::
+
+{{< include _includes/members-pt.html >}}
+
+## Ex-integrantes
+
+<!-- AJUSTAR: para listar ex-integrantes, adicione linhas com o grupo "alumni"
+     em _data/members.tsv e rode ./build.sh -->
+
+Em breve.

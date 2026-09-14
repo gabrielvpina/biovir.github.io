@@ -1,0 +1,121 @@
+---
+pagetitle: "BioVirLab — Laboratório de Bioinformática e Virologia"
+page-layout: full
+description-meta: "Laboratório dedicado à descoberta e caracterização de vírus por meio de bioinformática, genômica e biologia molecular."
+---
+
+::: {.hero}
+::: {.hero-text}
+::: {.eyebrow}
+Bioinformática · Virologia · Genômica
+:::
+
+# Investigando a diversidade viral por meio de dados {.no-anchor}
+
+O **BioVirLab** reúne pesquisadores dedicados à descoberta, caracterização e
+análise evolutiva de vírus, combinando sequenciamento de alto rendimento,
+bioinformática e validação experimental. Nosso trabalho abrange desde a
+identificação de novos vírus em amostras ambientais e biológicas até o estudo
+dos mecanismos de interação entre vírus e hospedeiros.
+
+::: {.hero-actions}
+[Linhas de Pesquisa](linhas-de-pesquisa.qmd){.btn-biovir}
+[Conheça a equipe](membros.qmd){.btn-biovir-ghost}
+:::
+:::
+
+::: {.hero-figure}
+![](assets/logo-vertical-center.svg){fig-alt="Logotipo do BioVirLab"}
+:::
+:::
+
+## O laboratório
+
+Atuamos na interface entre biologia computacional e virologia. Utilizamos dados
+de metagenômica e metatranscriptômica para reconstruir genomas virais, inferir
+relações filogenéticas e descrever a diversidade de vírus associados a
+invertebrados, plantas, vertebrados e ambientes naturais.
+
+Além da pesquisa básica, o laboratório desenvolve fluxos de trabalho e
+ferramentas computacionais abertas para a comunidade científica, e mantém
+atividades contínuas de formação de estudantes de graduação e pós-graduação.
+
+::: {.card-grid}
+::: {.info-card}
+### Descoberta viral
+
+Identificação e caracterização de novos vírus a partir de dados de
+sequenciamento em larga escala, com curadoria manual e validação experimental.
+:::
+
+::: {.info-card}
+### Genômica e evolução
+
+Reconstrução de genomas, anotação funcional e análises filogenéticas para
+entender a origem e a diversificação de linhagens virais.
+:::
+
+::: {.info-card}
+### Ferramentas abertas
+
+Desenvolvimento de pipelines e softwares reprodutíveis para análise de viromas,
+disponibilizados em repositórios públicos.
+:::
+
+::: {.info-card}
+### Formação científica
+
+Orientação de estudantes de iniciação científica, mestrado e doutorado, com
+ênfase em pensamento crítico e ciência aberta.
+:::
+:::
+
+<!-- AJUSTAR: números abaixo são provisórios -->
+
+::: {.stat-row}
+::: {.stat-item}
+::: {.stat-value}
+29
+:::
+::: {.stat-label}
+Integrantes
+:::
+:::
+
+::: {.stat-item}
+::: {.stat-value}
+5
+:::
+::: {.stat-label}
+Linhas de pesquisa
+:::
+:::
+
+::: {.stat-item}
+::: {.stat-value}
+—
+:::
+::: {.stat-label}
+Publicações
+:::
+:::
+
+::: {.stat-item}
+::: {.stat-value}
+—
+:::
+::: {.stat-label}
+Colaborações
+:::
+:::
+:::
+
+## Onde estamos
+
+<!-- AJUSTAR: confirmar endereço, departamento e contato institucional -->
+
+O BioVirLab está sediado na **Universidade Estadual de Santa Cruz (UESC)**, em
+Ilhéus, Bahia, Brasil.
+
+Para colaborações, dúvidas ou oportunidades de pesquisa, entre em contato pelo
+[Instagram do laboratório](https://www.instagram.com/biovir.lab/).

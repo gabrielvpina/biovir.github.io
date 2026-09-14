@@ -1,0 +1,40 @@
+# Perfil em ingles: quarto render --profile en
+# O build.sh copia _build-en/en/ para docs/en/.
+project:
+  output-dir: _build-en
+  render:
+    - "/en/*.qmd"
+
+lang: en-US
+
+website:
+  description: "Bioinformatics and Virology Laboratory"
+  navbar:
+    left:
+      - href: en/index.qmd
+        text: "Home"
+      - href: en/research.qmd
+        text: "Research"
+      - href: en/publications.qmd
+        text: "Publications"
+      - href: en/events.qmd
+        text: "Events"
+      - href: en/members.qmd
+        text: "Members"
+    right:
+      - icon: instagram
+        href: https://www.instagram.com/biovir.lab/
+        aria-label: Instagram
+      - text: "EN"
+        icon: translate
+        aria-label: "Idioma / Language"
+        menu:
+          - text: "Português (BR)"
+            href: index.html
+          - text: "English"
+            href: en/index.qmd
+  page-footer:
+    left: |
+      **BioVirLab** — Bioinformatics and Virology Laboratory
+    right: |
+      Built with [Quarto](https://quarto.org)

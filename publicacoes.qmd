@@ -1,0 +1,68 @@
+---
+title: "Publicações"
+pagetitle: "Publicações — BioVirLab"
+description-meta: "Artigos científicos publicados por integrantes do BioVirLab."
+---
+
+::: {.lead}
+Artigos científicos publicados por integrantes do laboratório. Perfis completos
+e atualizados também estão disponíveis no Google Scholar e no ORCID.
+:::
+
+<!-- AJUSTAR: substituir os itens abaixo pelas publicações reais do laboratório.
+     Modelo de item:
+
+     <li>
+       <span class="pub-title">Título do artigo.</span>
+       Sobrenome AB, Sobrenome CD, Sobrenome EF.
+       <span class="pub-venue">Nome do Periódico</span>, 2025.
+       <a class="pub-doi" href="https://doi.org/XX.XXXX/XXXX">doi:XX.XXXX/XXXX</a>
+     </li>
+-->
+
+::: {.pub-year}
+2025
+:::
+
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">Título da publicação a ser inserido.</span>
+    Autores. <span class="pub-venue">Periódico</span>, 2025.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+  <li>
+    <span class="pub-title">Título da publicação a ser inserido.</span>
+    Autores. <span class="pub-venue">Periódico</span>, 2025.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+</ul>
+
+::: {.pub-year}
+2024
+:::
+
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">Título da publicação a ser inserido.</span>
+    Autores. <span class="pub-venue">Periódico</span>, 2024.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+</ul>
+
+## Pré-prints
+
+<ul class="pub-list">
+  <li>
+    <span class="pub-title">Título do pré-print a ser inserido.</span>
+    Autores. <span class="pub-venue">bioRxiv</span>, 2025.
+    <a class="pub-doi" href="#">doi:—</a>
+  </li>
+</ul>
+
+## Perfis
+
+<!-- AJUSTAR: inserir os links reais -->
+
+- Google Scholar — *link a definir*
+- ORCID — *link a definir*
+- Lattes — *link a definir*

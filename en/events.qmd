@@ -1,0 +1,58 @@
+---
+title: "Events"
+pagetitle: "Events — BioVirLab"
+description-meta: "Conferences, courses, seminars and other BioVirLab activities."
+---
+
+::: {.lead}
+Conferences, courses, workshops and seminars involving the laboratory.
+:::
+
+<!-- AJUSTAR: substituir pelos eventos reais -->
+
+## Upcoming
+
+::: {.event-list}
+::: {.event-item}
+::: {.event-date}
+Date to be defined
+:::
+::: {.event-body}
+[Event to be announced]{.event-title}
+
+Venue — short description of the laboratory's participation.
+:::
+:::
+:::
+
+## Past
+
+::: {.event-list}
+::: {.event-item}
+::: {.event-date}
+2025
+:::
+::: {.event-body}
+[Event to be added]{.event-title}
+
+Venue — talk, short course or organisation.
+:::
+:::
+
+::: {.event-item}
+::: {.event-date}
+2024
+:::
+::: {.event-body}
+[Event to be added]{.event-title}
+
+Venue — talk, short course or organisation.
+:::
+:::
+:::
+
+## Internal seminars
+
+The laboratory holds regular meetings for paper discussion and presentation of
+results. Dates and topics are announced on this page and on
+[Instagram](https://www.instagram.com/biovir.lab/).

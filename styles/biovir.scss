@@ -1,0 +1,514 @@
+/*-- scss:defaults --*/
+
+// Paleta derivada da identidade visual do BioVirLab (logo)
+$biovir-navy:       #17233f;
+$biovir-deep:       #304ea1;
+$biovir-blue:       #326db5;
+$biovir-soft:       #7e9ac6;
+$biovir-mist:       #eef2f8;
+$biovir-line:       #d8e0ec;
+$biovir-ink:        #1d2432;
+$biovir-muted:      #5c6779;
+
+$primary:           $biovir-deep;
+$link-color:        $biovir-blue;
+$body-color:        $biovir-ink;
+$body-bg:           #ffffff;
+$border-color:      $biovir-line;
+
+$font-family-sans-serif: "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-monospace:  "JetBrains Mono var", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$headings-font-family:   "Space Grotesk var", "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+$font-size-root:    16px;
+$headings-font-weight: 600;
+$body-line-height:  1.65;
+
+$navbar-bg:         #ffffff;
+$navbar-fg:         $biovir-navy;
+$navbar-hl:         $biovir-blue;
+
+$footer-bg:         $biovir-navy;
+$footer-fg:         #c9d3e4;
+
+$toc-color:         $biovir-muted;
+
+/*-- scss:rules --*/
+
+:root {
+  --biovir-navy: #{$biovir-navy};
+  --biovir-deep: #{$biovir-deep};
+  --biovir-blue: #{$biovir-blue};
+  --biovir-soft: #{$biovir-soft};
+  --biovir-mist: #{$biovir-mist};
+  --biovir-line: #{$biovir-line};
+  --biovir-muted: #{$biovir-muted};
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// ---------------------------------------------------------------- navbar ---
+
+.navbar {
+  border-bottom: 1px solid var(--biovir-line);
+  box-shadow: none;
+  padding-block: 0.35rem;
+}
+
+.navbar .navbar-brand img {
+  max-height: 38px;
+  width: auto;
+}
+
+.navbar-nav .nav-link {
+  font-family: #{$headings-font-family};
+  font-size: 0.93rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--biovir-blue) !important;
+}
+
+// Seletor de idioma (dropdown a direita)
+.navbar .nav-item.dropdown > .nav-link {
+  font-family: #{$font-family-monospace};
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--biovir-line);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+
+.navbar .nav-item.dropdown > .nav-link:hover {
+  border-color: var(--biovir-soft);
+  background: var(--biovir-mist);
+}
+
+.navbar .dropdown-menu {
+  border-color: var(--biovir-line);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+// ------------------------------------------------------------- tipografia ---
+
+main h1,
+main h2,
+main h3 {
+  color: var(--biovir-navy);
+  letter-spacing: -0.015em;
+}
+
+main h2 {
+  margin-top: 2.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--biovir-line);
+  font-size: 1.45rem;
+}
+
+main h3 {
+  margin-top: 1.8rem;
+  font-size: 1.12rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--biovir-muted);
+  max-width: 62ch;
+}
+
+// largura confortavel de leitura para os paragrafos soltos da pagina
+main > p,
+main > section > p,
+main > section > ul,
+main > section > ol {
+  max-width: 78ch;
+}
+
+// Rotulo pequeno em maiuscula (eyebrow)
+.eyebrow {
+  font-family: #{$font-family-monospace};
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--biovir-blue);
+  margin-bottom: 0.6rem;
+}
+
+// --------------------------------------------------------------- capa/hero ---
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  padding: 3.2rem 0 2.6rem;
+  border-bottom: 1px solid var(--biovir-line);
+  margin-bottom: 2.4rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4.2vw, 2.9rem);
+  line-height: 1.12;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 58ch;
+  color: var(--biovir-muted);
+  font-size: 1.05rem;
+}
+
+.hero-figure {
+  justify-self: center;
+}
+
+.hero-figure img {
+  width: min(100%, 300px);
+  height: auto;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.btn-biovir,
+.btn-biovir-ghost {
+  display: inline-block;
+  font-family: #{$headings-font-family};
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.55rem 1.15rem;
+  border-radius: 4px;
+  border: 1px solid var(--biovir-deep);
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-biovir {
+  background: var(--biovir-deep);
+  color: #fff;
+}
+
+.btn-biovir:hover {
+  background: var(--biovir-navy);
+  border-color: var(--biovir-navy);
+  color: #fff;
+}
+
+.btn-biovir-ghost {
+  color: var(--biovir-deep);
+  background: transparent;
+}
+
+.btn-biovir-ghost:hover {
+  background: var(--biovir-mist);
+  color: var(--biovir-navy);
+}
+
+// ------------------------------------------------------------------ cards ---
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.1rem;
+  margin: 1.8rem 0 2.4rem;
+}
+
+.info-card {
+  border: 1px solid var(--biovir-line);
+  border-top: 3px solid var(--biovir-blue);
+  border-radius: 4px;
+  padding: 1.2rem 1.25rem;
+  background: #fff;
+}
+
+.info-card h3 {
+  margin-top: 0;
+  font-size: 1.02rem;
+  margin-bottom: 0.45rem;
+}
+
+.info-card p {
+  margin-bottom: 0;
+  font-size: 0.93rem;
+  color: var(--biovir-muted);
+}
+
+// Numeros / estatisticas
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.4rem 0;
+  border-block: 1px solid var(--biovir-line);
+}
+
+.stat-row .stat-value {
+  font-family: #{$headings-font-family};
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--biovir-deep);
+  line-height: 1.1;
+}
+
+.stat-row .stat-label {
+  font-family: #{$font-family-monospace};
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--biovir-muted);
+}
+
+// ------------------------------------------------------- linhas de pesquisa ---
+
+.research-line {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: 1.2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--biovir-line);
+}
+
+.research-line .research-index {
+  font-family: #{$font-family-monospace};
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--biovir-soft);
+  padding-top: 0.25rem;
+}
+
+.research-line h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.1rem;
+}
+
+.research-line p {
+  margin-bottom: 0.6rem;
+  color: var(--biovir-muted);
+}
+
+.tag-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-list li {
+  font-family: #{$font-family-monospace};
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--biovir-deep);
+  background: var(--biovir-mist);
+  border-radius: 3px;
+  padding: 0.18rem 0.5rem;
+}
+
+// ------------------------------------------------------------ publicacoes ---
+
+.pub-year {
+  font-family: #{$font-family-monospace};
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--biovir-muted);
+  margin: 2.2rem 0 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--biovir-line);
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-list > li {
+  padding: 0.85rem 0 0.85rem 1.1rem;
+  border-left: 2px solid var(--biovir-line);
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.pub-list > li:hover {
+  border-left-color: var(--biovir-blue);
+}
+
+.pub-list .pub-title {
+  font-weight: 600;
+  color: var(--biovir-navy);
+}
+
+.pub-list .pub-venue {
+  color: var(--biovir-muted);
+  font-style: italic;
+}
+
+.pub-list .pub-doi {
+  font-family: #{$font-family-monospace};
+  font-size: 0.78rem;
+}
+
+// ---------------------------------------------------------------- eventos ---
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1.4rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--biovir-line);
+}
+
+.event-date {
+  font-family: #{$font-family-monospace};
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--biovir-blue);
+  text-transform: uppercase;
+  padding-top: 0.2rem;
+}
+
+.event-title {
+  display: block;
+  font-family: #{$headings-font-family};
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--biovir-navy);
+  margin-bottom: 0.35rem;
+}
+
+.event-body p {
+  margin: 0;
+  color: var(--biovir-muted);
+  font-size: 0.94rem;
+}
+
+// ---------------------------------------------------------------- membros ---
+
+.member-group-title {
+  font-size: 1.15rem !important;
+  margin-top: 2.8rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--biovir-line);
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.8rem 1.2rem;
+  margin: 1.8rem 0 2.6rem;
+}
+
+.member-card {
+  margin: 0;
+  text-align: center;
+}
+
+.member-photo {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: var(--biovir-mist);
+  border: 2px solid var(--biovir-line);
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.member-card:hover .member-photo {
+  border-color: var(--biovir-blue);
+  transform: translateY(-2px);
+}
+
+.member-name {
+  font-family: #{$headings-font-family};
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--biovir-navy);
+  margin: 0 0 0.2rem;
+}
+
+.member-role {
+  font-family: #{$font-family-monospace};
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--biovir-muted);
+  margin: 0;
+}
+
+.member-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+// ----------------------------------------------------------------- rodape ---
+
+.nav-footer {
+  border-top: 1px solid var(--biovir-line);
+  font-size: 0.88rem;
+}
+
+.nav-footer a {
+  color: #dbe3f0;
+}
+
+// ------------------------------------------------------------- responsivo ---
+
+@media (max-width: 767px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    padding-top: 2rem;
+  }
+
+  .hero-figure {
+    order: -1;
+  }
+
+  .hero-figure img {
+    width: min(60%, 180px);
+  }
+
+  .event-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .research-line {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .member-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .member-photo {
+    width: 96px;
+    height: 96px;
+  }
+}
