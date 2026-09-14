@@ -167,12 +167,15 @@ main > section > ol {
   font-size: 1.05rem;
 }
 
+// largura 100% da coluna do grid: sem isso o "100%" da imagem passa a ser
+// o proprio tamanho natural do SVG e a logo nao acompanha o espaco disponivel
 .hero-figure {
-  justify-self: center;
+  width: 100%;
+  text-align: center;
 }
 
 .hero-figure img {
-  width: min(100%, 300px);
+  width: min(100%, 400px);
   height: auto;
 }
 
@@ -490,7 +493,7 @@ main > section > ol {
   }
 
   .hero-figure img {
-    width: min(60%, 180px);
+    width: min(80%, 260px);
   }
 
   .event-item {

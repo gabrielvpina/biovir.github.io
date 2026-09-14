@@ -25,7 +25,7 @@ dos mecanismos de interação entre vírus e hospedeiros.
 :::
 
 ::: {.hero-figure}
-![](assets/logo-vertical-center.svg){fig-alt="Logotipo do BioVirLab"}
+![](assets/main-logo.svg){fig-alt="Logotipo do BioVirLab"}
 :::
 :::
 
