@@ -1,5 +1,5 @@
 ---
-pagetitle: "BioVirLab — Bioinformatics and Virology Laboratory"
+pagetitle: "BioVirLab — Virus Bioinformatics Laboratory"
 page-layout: full
 description-meta: "A laboratory dedicated to virus discovery and characterisation through bioinformatics, genomics and molecular biology."
 ---
