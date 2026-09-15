@@ -29,7 +29,7 @@ website:
   favicon: assets/logo-without-text-virus.png
   # precisa ser o dominio real (ver CNAME): o Quarto usa esta URL para
   # decidir o que e' link externo e marcar com target="_blank"
-  site-url: "https://biovirlab.com.br"
+  site-url: "https://www.biovirlab.com.br"
   navbar:
     logo: assets/logo-horizontal-small.png
     logo-alt: "BioVirLab"
