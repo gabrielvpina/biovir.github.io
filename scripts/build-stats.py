@@ -83,7 +83,7 @@ def render(valores, lang):
         texto = "—" if not valor else str(valor)
         rotulo = html.escape(ROTULOS[chave][idx])
         href = html.escape(DESTINOS[chave][idx])
-        itens.append(f'<a class="stat-item" href="{href}">'
+        itens.append(f'<a class="stat-item no-external" href="{href}">'
                      f'<span class="stat-value">{texto}</span>'
                      f'<span class="stat-label">{rotulo}</span></a>')
     return '<div class="stat-row">' + "".join(itens) + "</div>\n"

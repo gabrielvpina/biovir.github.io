@@ -82,6 +82,45 @@ def ler_texto(pasta, lang):
     return ""
 
 
+def ajusta_caminhos(texto, prefixo):
+    """Reescreve caminhos relativos do texto (imagens, links) com o prefixo.
+
+    O texto e' escrito pensando na pasta do evento ("fotos/x.jpg"), que e' o
+    caminho certo para a pagina em portugues. A pagina em ingles e' gerada em
+    en/events/<slug>/, entao esses caminhos precisam do prefixo - sem isso as
+    imagens do corpo do texto quebram so na versao em ingles.
+
+    URLs completas, ancoras e caminhos absolutos ficam como estao.
+    """
+    if not prefixo:
+        return texto
+
+    def externo(alvo):
+        return (alvo.startswith(("http://", "https://", "//", "/", "#", "mailto:", "data:"))
+                or alvo.startswith(prefixo))
+
+    def md(m):
+        alvo = m.group(2).strip()
+        return m.group(0) if externo(alvo) else f"{m.group(1)}({prefixo}{alvo})"
+
+    def attr(m):
+        alvo = m.group(2)
+        return m.group(0) if externo(alvo) else f'{m.group(1)}="{prefixo}{alvo}"'
+
+    texto = re.sub(r"(!\[[^\]]*\])\(([^)\s]+)\)", md, texto)
+    texto = re.sub(r"\b(src|href)=\"([^\"]+)\"", attr, texto)
+    return texto
+
+
+def fotos_citadas(texto):
+    """Nomes de arquivo de fotos/ que ja aparecem no corpo do texto."""
+    achados = set()
+    for alvo in re.findall(r"!\[[^\]]*\]\(([^)\s]+)\)", texto) + \
+                re.findall(r'\bsrc="([^"]+)"', texto):
+        achados.add(pathlib.Path(alvo).name)
+    return achados
+
+
 def legenda(nome):
     """01-abertura-do-evento.jpg -> 'Abertura do evento'"""
     base = re.sub(r"^[\d]+[-_\s]*", "", pathlib.Path(nome).stem)
@@ -151,7 +190,9 @@ def item_lista(ev, lang, prefixo_href):
     data_txt = html.escape(campo(d, "data_texto", lang)) or ev["data"].strftime("%d/%m/%Y")
     local = html.escape(campo(d, "local", lang))
     resumo = html.escape(campo(d, "resumo", lang))
-    href = f"{prefixo_href}{ev['slug']}/"
+    # aponta para o index.html, e nao so para a pasta: aberto direto do disco
+    # (file://) um href de pasta mostra a listagem de arquivos em vez da pagina
+    href = f"{prefixo_href}{ev['slug']}/index.html"
 
     descricao = " — ".join(p for p in (local, resumo) if p)
     capa = ""
@@ -161,8 +202,7 @@ def item_lista(ev, lang, prefixo_href):
                 f'<img src="{src}" alt="" loading="lazy" /></span>')
 
     return (
-        f'<a class="event-item event-link" href="{html.escape(href)}" '
-        f'target="_blank" rel="noopener">'
+        f'<a class="event-item event-link no-external" href="{html.escape(href)}">'
         f'<span class="event-date">{data_txt}</span>'
         f'<span class="event-body">'
         f'<span class="event-title">{titulo}</span>'
@@ -230,7 +270,8 @@ def render_pagina(ev, lang):
            f"     edite eventos/{ev['slug']}/ e rode ./build.sh -->", ""]
 
     body = [
-        '<p class="event-back"><a href="%s">%s</a></p>' % (html.escape(voltar), t["voltar"]),
+        '<p class="event-back"><a class="no-external" href="%s">%s</a></p>'
+        % (html.escape(voltar), t["voltar"]),
         "",
         '::: {.event-meta}',
         f"{html.escape(data_txt)}" + (f" · {html.escape(local)}" if local else ""),
@@ -245,12 +286,14 @@ def render_pagina(ev, lang):
     if resumo:
         body += ["::: {.lead}", resumo, ":::", ""]
     if texto:
-        body += [texto, ""]
+        body += [ajusta_caminhos(texto, img), ""]
     if link:
         body += [f'[{t["site"]}]({link}){{.btn-biovir-ghost target="_blank" rel="noopener"}}', ""]
-    if ev["fotos"]:
+    ja_no_texto = fotos_citadas(texto)
+    galeria = [f for f in ev["fotos"] if f not in ja_no_texto]
+    if galeria:
         body += [f"## {t['galeria']}", "", '<div class="event-gallery">']
-        for nome in ev["fotos"]:
+        for nome in galeria:
             alt = html.escape(legenda(nome) or titulo)
             src = html.escape(f"{img}fotos/{nome}")
             body.append(

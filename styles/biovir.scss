@@ -523,9 +523,14 @@ main > section > ol {
 }
 
 .event-cover {
+  // contain, e nao cover: capas de evento costumam ser cartazes (quase
+  // quadrados ou em pe), e o recorte do cover cortava o titulo do cartaz
+  display: block;
   width: 100%;
-  max-height: 420px;
-  object-fit: cover;
+  max-height: 460px;
+  object-fit: contain;
+  object-position: center;
+  background-color: var(--biovir-mist);
   border-radius: 10px;
   border: 1px solid var(--biovir-line);
   margin-bottom: 1.8rem;

@@ -1,0 +1,26 @@
+# Dados do evento. Uma linha por campo, no formato  chave: valor
+# Pastas cujo nome comeca com "_" sao ignoradas pelo build (como esta).
+
+titulo_pt: III Workshop de Virologia
+titulo_en: III Virology Workshop
+
+# data de inicio, sempre AAAA-MM-DD. Define a ordem da lista e se o evento
+# aparece em "Proximos" (data futura) ou "Realizados" (data passada).
+data: 2026-03-25
+
+# como a data aparece escrita na pagina (livre)
+data_texto_pt: 25–26 mar 2026
+data_texto_en: 25–26 Mar 2026
+
+local_pt: Ilhéus, BA
+local_en: Ilhéus, Brazil
+
+# uma frase curta, aparece na lista de eventos
+resumo_pt: III Workshop de Virologia na UESC organizado pelos laboratórios de Bioinformática de Vírus (BioVirLab) e de Patologia Aplicada e Genética (LAPAGEN) com apoio da Sociedade Brasileira de Virologia (SBV).
+resumo_en: Third Virology Workshop at UESC, organised by the Virus Bioinformatics (BioVirLab) and Applied Pathology and Genetics (LAPAGEN) laboratories, with support from the Brazilian Society of Virology (SBV).
+
+# opcional: imagem de capa dentro desta pasta (deixe vazio se nao houver)
+capa: capa.png
+
+# opcional: site oficial do evento
+link:

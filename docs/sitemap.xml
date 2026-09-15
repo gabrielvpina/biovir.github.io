@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gabrielvpina.github.io/biovir.github.io/membros.html</loc>
-    <lastmod>2026-09-14T19:01:56.660Z</lastmod>
+    <loc>https://www.biovirlab.com/eventos/3_workshop_virologia/index.html</loc>
+    <lastmod>2026-09-15T20:11:01.121Z</lastmod>
   </url>
   <url>
-    <loc>https://gabrielvpina.github.io/biovir.github.io/publicacoes.html</loc>
-    <lastmod>2026-09-15T19:09:15.684Z</lastmod>
+    <loc>https://www.biovirlab.com/eventos.html</loc>
+    <lastmod>2026-09-15T18:47:42.913Z</lastmod>
   </url>
   <url>
-    <loc>https://gabrielvpina.github.io/biovir.github.io/index.html</loc>
-    <lastmod>2026-09-15T19:17:06.420Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gabrielvpina.github.io/biovir.github.io/linhas-de-pesquisa.html</loc>
+    <loc>https://www.biovirlab.com/linhas-de-pesquisa.html</loc>
     <lastmod>2026-09-14T19:01:56.659Z</lastmod>
   </url>
   <url>
-    <loc>https://gabrielvpina.github.io/biovir.github.io/eventos.html</loc>
-    <lastmod>2026-09-15T18:47:42.913Z</lastmod>
+    <loc>https://www.biovirlab.com/index.html</loc>
+    <lastmod>2026-09-15T20:10:34.452Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.biovirlab.com/publicacoes.html</loc>
+    <lastmod>2026-09-15T19:09:15.684Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.biovirlab.com/membros.html</loc>
+    <lastmod>2026-09-14T19:01:56.660Z</lastmod>
   </url>
 </urlset>

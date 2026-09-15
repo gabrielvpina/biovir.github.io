@@ -153,8 +153,8 @@ mão — eles acompanham os dados. Cada um é um link para a página corresponde
 ## Adicionar um evento
 
 Cada evento é uma **pasta** dentro de `eventos/`. Na página de Eventos ele
-aparece como um item da lista e, ao ser clicado, abre em uma nova aba a página
-completa do evento — com texto, capa e galeria de fotos.
+aparece como um item da lista e, ao ser clicado, abre a página completa do
+evento — com texto, capa e galeria de fotos.
 
 ### Passo a passo
 

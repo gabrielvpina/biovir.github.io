@@ -19,8 +19,8 @@ ranges from identifying novel viruses in environmental and biological samples to
 studying the mechanisms of virus–host interaction.
 
 ::: {.hero-actions}
-[Research](research.qmd){.btn-biovir}
-[Meet the team](members.qmd){.btn-biovir-ghost}
+[Research](research.qmd){.btn-biovir .no-external}
+[Meet the team](members.qmd){.btn-biovir-ghost .no-external}
 :::
 :::
 

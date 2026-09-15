@@ -19,8 +19,8 @@ identificação de novos vírus em amostras ambientais e biológicas até o estu
 dos mecanismos de interação entre vírus e hospedeiros.
 
 ::: {.hero-actions}
-[Linhas de Pesquisa](linhas-de-pesquisa.qmd){.btn-biovir}
-[Conheça a equipe](membros.qmd){.btn-biovir-ghost}
+[Linhas de Pesquisa](linhas-de-pesquisa.qmd){.btn-biovir .no-external}
+[Conheça a equipe](membros.qmd){.btn-biovir-ghost .no-external}
 :::
 :::
 

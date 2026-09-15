@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6f9f055dc746a03e340d68e731e368d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0d2ae11a430da1ffba87dcd29394dffa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="no-anchor">Exploring viral diversity through data</h1>
 <p><strong>BioVirLab</strong> brings together researchers dedicated to the discovery, characterisation and evolutionary analysis of viruses, combining high-throughput sequencing, bioinformatics and experimental validation. Our work ranges from identifying novel viruses in environmental and biological samples to studying the mechanisms of virus–host interaction.</p>
 <div class="hero-actions">
-<p><a href="../en/research.html" class="btn-biovir">Research</a> <a href="../en/members.html" class="btn-biovir-ghost">Meet the team</a></p>
+<p><a href="../en/research.html" class="btn-biovir no-external">Research</a> <a href="../en/members.html" class="btn-biovir-ghost no-external">Meet the team</a></p>
 </div>
 </section>
 </div>
@@ -199,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
      _data/members.tsv, linhas-de-pesquisa.qmd e _data/estatisticas.json. -->
 <!-- gerado por scripts/build-stats.py - nao editar a mao -->
 <div class="stat-row">
-<a class="stat-item" href="members.html"><span class="stat-value">29</span><span class="stat-label">Members</span></a><a class="stat-item" href="research.html"><span class="stat-value">5</span><span class="stat-label">Research lines</span></a><a class="stat-item" href="publications.html"><span class="stat-value">48</span><span class="stat-label">Publications</span></a><a class="stat-item" href="publications.html#collaborations"><span class="stat-value">347</span><span class="stat-label">Collaborations</span></a>
+<a class="stat-item no-external" href="members.html"><span class="stat-value">29</span><span class="stat-label">Members</span></a><a class="stat-item no-external" href="research.html"><span class="stat-value">5</span><span class="stat-label">Research lines</span></a><a class="stat-item no-external" href="publications.html"><span class="stat-value">48</span><span class="stat-label">Publications</span></a><a class="stat-item no-external" href="publications.html#collaborations"><span class="stat-value">347</span><span class="stat-label">Collaborations</span></a>
 </div>
 </section>
 <section id="where-we-are" class="level2">
@@ -256,8 +256,8 @@ ul.task-list li input[type="checkbox"] {
     if (evEn || evPt) {
       var base = (evEn || evPt)[1];
       var slug = (evEn || evPt)[2];
-      pt.setAttribute("href", base + "eventos/" + slug + "/");
-      en.setAttribute("href", base + "en/events/" + slug + "/");
+      pt.setAttribute("href", base + "eventos/" + slug + "/index.html");
+      en.setAttribute("href", base + "en/events/" + slug + "/index.html");
       marcar(!!evEn);
       return;
     }
@@ -361,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/gabrielvpina\.github\.io\/biovir\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/www\.biovirlab\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

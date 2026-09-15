@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6f9f055dc746a03e340d68e731e368d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0d2ae11a430da1ffba87dcd29394dffa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -179,9 +179,12 @@ ul.task-list li input[type="checkbox"] {
      em eventos/. Para adicionar um evento, copie eventos/_modelo/ e rode
      ./build.sh — veja as instruções no README.md. -->
 <!-- gerado por scripts/build-eventos.py a partir de eventos/ - nao editar a mao -->
-<p>
-Nenhum evento cadastrado ainda.
-</p>
+<h2 class="event-group-title">
+Realizados
+</h2>
+<div class="event-list">
+<a class="event-item event-link no-external" href="eventos/3_workshop_virologia/index.html"><span class="event-date">25–26 mar 2026</span><span class="event-body"><span class="event-title">III Workshop de Virologia</span><span class="event-desc">Ilhéus, BA — III Workshop de Virologia na UESC organizado pelos laboratórios de Bioinformática de Vírus (BioVirLab) e de Patologia Aplicada e Genética (LAPAGEN) com apoio da Sociedade Brasileira de Virologia (SBV).</span></span><span class="event-thumb"><img src="eventos/3_workshop_virologia/capa.png" alt="" loading="lazy"></span></a>
+</div>
 <section id="seminários-internos" class="level2">
 <h2 data-anchor-id="seminários-internos">Seminários internos</h2>
 <p>O laboratório realiza encontros periódicos para discussão de artigos e apresentação de resultados. Informações sobre datas e temas serão divulgadas nesta página e no <a href="https://www.instagram.com/biovir.lab/">Instagram</a>.</p>
@@ -234,8 +237,8 @@ Nenhum evento cadastrado ainda.
     if (evEn || evPt) {
       var base = (evEn || evPt)[1];
       var slug = (evEn || evPt)[2];
-      pt.setAttribute("href", base + "eventos/" + slug + "/");
-      en.setAttribute("href", base + "en/events/" + slug + "/");
+      pt.setAttribute("href", base + "eventos/" + slug + "/index.html");
+      en.setAttribute("href", base + "en/events/" + slug + "/index.html");
       marcar(!!evEn);
       return;
     }
@@ -339,7 +342,7 @@ Nenhum evento cadastrado ainda.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/gabrielvpina\.github\.io\/biovir\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/www\.biovirlab\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
