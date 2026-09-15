@@ -7,7 +7,7 @@ description-meta: "A laboratory dedicated to virus discovery and characterisatio
 ::: {.hero}
 ::: {.hero-text}
 ::: {.eyebrow}
-Bioinformatics · Virology · Genomics
+Bioinformatics · Virology · Omics
 :::
 
 # Exploring viral diversity through data {.no-anchor}
@@ -80,8 +80,9 @@ thinking and open science.
 
 <!-- AJUSTAR: confirmar endereco, departamento e contato institucional -->
 
-BioVirLab is based at the **State University of Santa Cruz (UESC)**, in Ilhéus,
-Bahia, Brazil.
+BioVirLab is based at the **State University of Santa Cruz (UESC)** and at the
+**Federal University of Southern Bahia (UFSB)**, in the cities of Ilhéus and
+Itabuna — Bahia, Brazil.
 
 For collaborations, questions or research opportunities, reach us through the
 [laboratory's Instagram](https://www.instagram.com/biovir.lab/).

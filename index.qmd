@@ -7,7 +7,7 @@ description-meta: "Laboratório dedicado à descoberta e caracterização de ví
 ::: {.hero}
 ::: {.hero-text}
 ::: {.eyebrow}
-Bioinformática · Virologia · Genômica
+Bioinformática · Virologia · Ômicas
 :::
 
 # Investigando a diversidade viral por meio de dados {.no-anchor}
