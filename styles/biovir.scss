@@ -395,29 +395,6 @@ main > section > ol {
   font-weight: 600;
 }
 
-// lista de colaboradores externos: muitas linhas curtas, em colunas
-.collab-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem 0 2.5rem;
-  columns: 3;
-  column-gap: 2rem;
-  font-size: 0.88rem;
-
-  li {
-    break-inside: avoid;
-    padding: 0.18rem 0;
-    color: var(--biovir-muted);
-  }
-}
-
-@media (max-width: 900px) {
-  .collab-list { columns: 2; }
-}
-
-@media (max-width: 600px) {
-  .collab-list { columns: 1; }
-}
 
 // ---------------------------------------------------------------- eventos ---
 

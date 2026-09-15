@@ -105,8 +105,8 @@ base externa muda.
 - artigos agrupados por ano, com autores, periódico e DOI;
 - pré-prints em seção separada (bioRxiv, medRxiv, Research Square, SSRN,
   Authorea são reconhecidos pelo prefixo do DOI);
-- **Colaborações**: o total de publicações e os nomes de todos os autores que
-  não são integrantes do laboratório.
+- **Colaborações**: o total de publicações e quantos autores externos ao
+  laboratório elas reúnem.
 
 Integrantes aparecem em **negrito**, reconhecidos por cruzamento com
 `_data/members.tsv`. Por isso, manter o TSV em dia melhora a página de

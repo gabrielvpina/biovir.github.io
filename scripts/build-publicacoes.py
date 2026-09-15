@@ -100,7 +100,7 @@ TXT = {
                  "<code>python3 scripts/build-publicacoes.py --atualizar</code>.",
         "resumo": ("As {tot} publicações acima reúnem <strong>{ext} pesquisadores "
                    "externos ao laboratório</strong>, de instituições do Brasil e do "
-                   "exterior. A lista abaixo traz os nomes desses colaboradores."),
+                   "exterior."),
     },
     "en": {
         "preprints": "Preprints",
@@ -110,7 +110,7 @@ TXT = {
                  "<code>python3 scripts/build-publicacoes.py --atualizar</code>.",
         "resumo": ("The {tot} publications above bring together <strong>{ext} "
                    "researchers from outside the laboratory</strong>, at institutions "
-                   "in Brazil and abroad. The list below names those collaborators."),
+                   "in Brazil and abroad."),
     },
 }
 
@@ -366,10 +366,7 @@ def render(pubs, membros, lang):
     out.append(f"## {t['colab']}\n")
     out.append('::: {.lead}')
     out.append(t["resumo"].format(tot=len(pubs), ext=len(externos)))
-    out.append(':::\n')
-    out.append('<ul class="collab-list">')
-    out += [f"  <li>{html.escape(n)}</li>" for n in externos]
-    out.append("</ul>")
+    out.append(':::')
     return "\n".join(out).rstrip() + "\n"
 
 
