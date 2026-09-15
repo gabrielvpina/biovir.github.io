@@ -10,7 +10,7 @@ project:
 lang: en-US
 
 website:
-  description: "Bioinformatics and Virology Laboratory"
+  description: "Virus Bioinformatics Laboratory"
   navbar:
     left:
       - href: en/index.qmd
@@ -37,6 +37,6 @@ website:
             href: en/index.qmd
   page-footer:
     left: |
-      **BioVirLab** — Bioinformatics and Virology Laboratory
+      **BioVirLab** — Virus Bioinformatics Laboratory
     right: |
       Built with [Quarto](https://quarto.org)
