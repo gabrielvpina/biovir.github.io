@@ -367,6 +367,35 @@ main > section > ol {
   font-size: 0.78rem;
 }
 
+.pub-list strong {
+  color: var(--biovir-navy);
+  font-weight: 600;
+}
+
+// lista de colaboradores externos: muitas linhas curtas, em colunas
+.collab-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2.5rem;
+  columns: 3;
+  column-gap: 2rem;
+  font-size: 0.88rem;
+
+  li {
+    break-inside: avoid;
+    padding: 0.18rem 0;
+    color: var(--biovir-muted);
+  }
+}
+
+@media (max-width: 900px) {
+  .collab-list { columns: 2; }
+}
+
+@media (max-width: 600px) {
+  .collab-list { columns: 1; }
+}
+
 // ---------------------------------------------------------------- eventos ---
 
 .event-list {
@@ -401,10 +430,108 @@ main > section > ol {
   margin-bottom: 0.35rem;
 }
 
-.event-body p {
+.event-body p,
+.event-desc {
+  display: block;
   margin: 0;
   color: var(--biovir-muted);
   font-size: 0.94rem;
+}
+
+.event-group-title {
+  font-size: 1.15rem !important;
+  margin-top: 2.8rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--biovir-line);
+}
+
+// item da lista que leva a pagina do evento
+.event-link {
+  grid-template-columns: 9rem minmax(0, 1fr) auto;
+  align-items: start;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--biovir-mist);
+    border-bottom-color: var(--biovir-soft);
+  }
+
+  &:hover .event-title,
+  &:focus-visible .event-title {
+    color: var(--biovir-blue);
+  }
+}
+
+.event-thumb img {
+  width: 104px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--biovir-line);
+  display: block;
+}
+
+// ------------------------------------------------------ pagina do evento ---
+
+.event-back {
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+
+  a {
+    text-decoration: none;
+    color: var(--biovir-muted);
+  }
+
+  a:hover {
+    color: var(--biovir-blue);
+  }
+}
+
+.event-meta {
+  font-family: #{$font-family-monospace};
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--biovir-blue);
+  margin-bottom: 1.2rem;
+}
+
+.event-cover {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--biovir-line);
+  margin-bottom: 1.8rem;
+}
+
+.event-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--biovir-line);
+    display: block;
+  }
+
+  figcaption {
+    margin-top: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--biovir-muted);
+  }
 }
 
 // ---------------------------------------------------------------- membros ---
@@ -496,9 +623,18 @@ main > section > ol {
     width: min(80%, 260px);
   }
 
-  .event-item {
+  .event-item,
+  .event-link {
     grid-template-columns: 1fr;
     gap: 0.4rem;
+  }
+
+  .event-thumb {
+    display: none;
+  }
+
+  .event-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 
   .research-line {

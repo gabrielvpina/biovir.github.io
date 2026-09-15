@@ -1,0 +1,8 @@
+Coloque nesta pasta as fotos do evento (.jpg, .jpeg, .png ou .webp).
+Elas viram uma galeria no fim da pagina, na ordem alfabetica do nome do
+arquivo - por isso vale numerar: 01-abertura.jpg, 02-poster.jpg, etc.
+
+Para dar legenda a uma foto, use o nome do arquivo depois do numero:
+  03-apresentacao-do-lucas.jpg  ->  legenda "apresentacao do lucas"
+
+Se nao quiser galeria, deixe a pasta vazia ou apague-a.

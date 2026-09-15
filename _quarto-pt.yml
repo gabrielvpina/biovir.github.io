@@ -6,6 +6,8 @@ project:
     - "/publicacoes.qmd"
     - "/eventos.qmd"
     - "/membros.qmd"
+    # paginas de evento geradas por scripts/build-eventos.py
+    - "/eventos/*/index.qmd"
 
 lang: pt-BR
 

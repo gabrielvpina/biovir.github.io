@@ -6,63 +6,14 @@ description-meta: "Congressos, cursos, seminários e demais atividades do BioVir
 
 ::: {.lead}
 Congressos, cursos, workshops e seminários com participação do laboratório.
+Clique em um evento para ver a página completa, com texto e fotos.
 :::
 
-<!-- AJUSTAR: substituir pelos eventos reais. Modelo de item:
+<!-- A lista abaixo é gerada por scripts/build-eventos.py a partir das pastas
+     em eventos/. Para adicionar um evento, copie eventos/_modelo/ e rode
+     ./build.sh — veja as instruções no README.md. -->
 
-::: {.event-item}
-::: {.event-date}
-12–15 mai 2025
-:::
-::: {.event-body}
-[Nome do evento]{.event-title}
-
-Cidade, Estado — descrição curta da participação.
-:::
-:::
-
--->
-
-## Próximos
-
-::: {.event-list}
-::: {.event-item}
-::: {.event-date}
-Data a definir
-:::
-::: {.event-body}
-[Evento a ser anunciado]{.event-title}
-
-Local — descrição da participação do laboratório.
-:::
-:::
-:::
-
-## Realizados
-
-::: {.event-list}
-::: {.event-item}
-::: {.event-date}
-2025
-:::
-::: {.event-body}
-[Evento a ser inserido]{.event-title}
-
-Local — apresentação de trabalho, minicurso ou organização.
-:::
-:::
-
-::: {.event-item}
-::: {.event-date}
-2024
-:::
-::: {.event-body}
-[Evento a ser inserido]{.event-title}
-
-Local — apresentação de trabalho, minicurso ou organização.
-:::
-:::
-:::
+{{< include _includes/eventos-pt.html >}}
 
 ## Seminários internos
 

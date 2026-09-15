@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ac308bb7c52ffbc36e474ffbf1f3f01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1c4fab240b966629e84cca37cedc696f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -173,59 +173,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="lead">
-<p>Congressos, cursos, workshops e seminários com participação do laboratório.</p>
+<p>Congressos, cursos, workshops e seminários com participação do laboratório. Clique em um evento para ver a página completa, com texto e fotos.</p>
 </div>
-<!-- AJUSTAR: substituir pelos eventos reais. Modelo de item:
-
-::: {.event-item}
-::: {.event-date}
-12–15 mai 2025
-:::
-::: {.event-body}
-[Nome do evento]{.event-title}
-
-Cidade, Estado — descrição curta da participação.
-:::
-:::
-
--->
-<section id="próximos" class="level2">
-<h2 data-anchor-id="próximos">Próximos</h2>
-<div class="event-list">
-<div class="event-item">
-<div class="event-date">
-<p>Data a definir</p>
-</div>
-<div class="event-body">
-<p><span class="event-title">Evento a ser anunciado</span></p>
-<p>Local — descrição da participação do laboratório.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="realizados" class="level2">
-<h2 data-anchor-id="realizados">Realizados</h2>
-<div class="event-list">
-<div class="event-item">
-<div class="event-date">
-<p>2025</p>
-</div>
-<div class="event-body">
-<p><span class="event-title">Evento a ser inserido</span></p>
-<p>Local — apresentação de trabalho, minicurso ou organização.</p>
-</div>
-</div>
-<div class="event-item">
-<div class="event-date">
-<p>2024</p>
-</div>
-<div class="event-body">
-<p><span class="event-title">Evento a ser inserido</span></p>
-<p>Local — apresentação de trabalho, minicurso ou organização.</p>
-</div>
-</div>
-</div>
-</section>
+<!-- A lista abaixo é gerada por scripts/build-eventos.py a partir das pastas
+     em eventos/. Para adicionar um evento, copie eventos/_modelo/ e rode
+     ./build.sh — veja as instruções no README.md. -->
+<!-- gerado por scripts/build-eventos.py a partir de eventos/ - nao editar a mao -->
+<p>
+Nenhum evento cadastrado ainda.
+</p>
 <section id="seminários-internos" class="level2">
 <h2 data-anchor-id="seminários-internos">Seminários internos</h2>
 <p>O laboratório realiza encontros periódicos para discussão de artigos e apresentação de resultados. Informações sobre datas e temas serão divulgadas nesta página e no <a href="https://www.instagram.com/biovir.lab/">Instagram</a>.</p>
@@ -271,6 +227,19 @@ Cidade, Estado — descrição curta da participação.
     if (!pt || !en) return;
 
     var path = window.location.pathname;
+
+    // paginas de evento: /eventos/<slug>/  <->  /en/events/<slug>/
+    var evEn = path.match(/^(.*?)en\/events\/([^/]+)\/[^/]*$/);
+    var evPt = path.match(/^(.*?)eventos\/([^/]+)\/[^/]*$/);
+    if (evEn || evPt) {
+      var base = (evEn || evPt)[1];
+      var slug = (evEn || evPt)[2];
+      pt.setAttribute("href", base + "eventos/" + slug + "/");
+      en.setAttribute("href", base + "en/events/" + slug + "/");
+      marcar(!!evEn);
+      return;
+    }
+
     var file = path.split("/").pop() || "index.html";
     var isEn = /(^|\/)en\/[^/]*$/.test(path);
     var root = isEn
@@ -285,12 +254,15 @@ Cidade, Estado — descrição curta da participação.
       }
     }
 
-    (isEn ? en : pt).setAttribute("aria-current", "true");
+    marcar(isEn);
 
-    var toggle = menu.parentNode.querySelector(".nav-link");
-    if (toggle) {
-      var label = toggle.querySelector(".menu-text") || toggle;
-      label.textContent = isEn ? "EN" : "PT-BR";
+    function marcar(emIngles) {
+      (emIngles ? en : pt).setAttribute("aria-current", "true");
+      var toggle = menu.parentNode.querySelector(".nav-link");
+      if (toggle) {
+        var label = toggle.querySelector(".menu-text") || toggle;
+        label.textContent = emIngles ? "EN" : "PT-BR";
+      }
     }
   }
 

@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5ac308bb7c52ffbc36e474ffbf1f3f01.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1c4fab240b966629e84cca37cedc696f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -302,6 +302,19 @@ ul.task-list li input[type="checkbox"] {
     if (!pt || !en) return;
 
     var path = window.location.pathname;
+
+    // paginas de evento: /eventos/<slug>/  <->  /en/events/<slug>/
+    var evEn = path.match(/^(.*?)en\/events\/([^/]+)\/[^/]*$/);
+    var evPt = path.match(/^(.*?)eventos\/([^/]+)\/[^/]*$/);
+    if (evEn || evPt) {
+      var base = (evEn || evPt)[1];
+      var slug = (evEn || evPt)[2];
+      pt.setAttribute("href", base + "eventos/" + slug + "/");
+      en.setAttribute("href", base + "en/events/" + slug + "/");
+      marcar(!!evEn);
+      return;
+    }
+
     var file = path.split("/").pop() || "index.html";
     var isEn = /(^|\/)en\/[^/]*$/.test(path);
     var root = isEn
@@ -316,12 +329,15 @@ ul.task-list li input[type="checkbox"] {
       }
     }
 
-    (isEn ? en : pt).setAttribute("aria-current", "true");
+    marcar(isEn);
 
-    var toggle = menu.parentNode.querySelector(".nav-link");
-    if (toggle) {
-      var label = toggle.querySelector(".menu-text") || toggle;
-      label.textContent = isEn ? "EN" : "PT-BR";
+    function marcar(emIngles) {
+      (emIngles ? en : pt).setAttribute("aria-current", "true");
+      var toggle = menu.parentNode.querySelector(".nav-link");
+      if (toggle) {
+        var label = toggle.querySelector(".menu-text") || toggle;
+        label.textContent = emIngles ? "EN" : "PT-BR";
+      }
     }
   }
 

@@ -35,6 +35,19 @@
     if (!pt || !en) return;
 
     var path = window.location.pathname;
+
+    // paginas de evento: /eventos/<slug>/  <->  /en/events/<slug>/
+    var evEn = path.match(/^(.*?)en\/events\/([^/]+)\/[^/]*$/);
+    var evPt = path.match(/^(.*?)eventos\/([^/]+)\/[^/]*$/);
+    if (evEn || evPt) {
+      var base = (evEn || evPt)[1];
+      var slug = (evEn || evPt)[2];
+      pt.setAttribute("href", base + "eventos/" + slug + "/");
+      en.setAttribute("href", base + "en/events/" + slug + "/");
+      marcar(!!evEn);
+      return;
+    }
+
     var file = path.split("/").pop() || "index.html";
     var isEn = /(^|\/)en\/[^/]*$/.test(path);
     var root = isEn
@@ -49,12 +62,15 @@
       }
     }
 
-    (isEn ? en : pt).setAttribute("aria-current", "true");
+    marcar(isEn);
 
-    var toggle = menu.parentNode.querySelector(".nav-link");
-    if (toggle) {
-      var label = toggle.querySelector(".menu-text") || toggle;
-      label.textContent = isEn ? "EN" : "PT-BR";
+    function marcar(emIngles) {
+      (emIngles ? en : pt).setAttribute("aria-current", "true");
+      var toggle = menu.parentNode.querySelector(".nav-link");
+      if (toggle) {
+        var label = toggle.querySelector(".menu-text") || toggle;
+        label.textContent = emIngles ? "EN" : "PT-BR";
+      }
     }
   }
 

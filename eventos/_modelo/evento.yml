@@ -1,0 +1,26 @@
+# Dados do evento. Uma linha por campo, no formato  chave: valor
+# Pastas cujo nome comeca com "_" sao ignoradas pelo build (como esta).
+
+titulo_pt: Nome do evento em portugues
+titulo_en: Event name in English
+
+# data de inicio, sempre AAAA-MM-DD. Define a ordem da lista e se o evento
+# aparece em "Proximos" (data futura) ou "Realizados" (data passada).
+data: 2025-10-15
+
+# como a data aparece escrita na pagina (livre)
+data_texto_pt: 15–17 out 2025
+data_texto_en: 15–17 Oct 2025
+
+local_pt: Ilheus, BA
+local_en: Ilheus, Brazil
+
+# uma frase curta, aparece na lista de eventos
+resumo_pt: Frase curta sobre a participacao do laboratorio.
+resumo_en: Short sentence about the laboratory's participation.
+
+# opcional: imagem de capa dentro desta pasta (deixe vazio se nao houver)
+capa: capa.jpg
+
+# opcional: site oficial do evento
+link:

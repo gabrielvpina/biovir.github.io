@@ -4,6 +4,8 @@ project:
   output-dir: _build-en
   render:
     - "/en/*.qmd"
+    # paginas de evento geradas por scripts/build-eventos.py
+    - "/en/events/*/index.qmd"
 
 lang: en-US
 

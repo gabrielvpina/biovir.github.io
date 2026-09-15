@@ -4,7 +4,7 @@
 #   ./build.sh
 #
 # Etapas:
-#   1. gera as listas de membros a partir de _data/members.tsv
+#   1. gera membros, eventos e publicacoes a partir de _data/ e eventos/
 #   2. renderiza a versao pt-BR na raiz de docs/
 #   3. renderiza a versao em ingles (perfil "en") e copia para docs/en/
 #
@@ -15,6 +15,15 @@ cd "$(dirname "$0")"
 
 echo "==> gerando listas de membros"
 python3 scripts/build-members.py
+
+echo "==> gerando paginas de eventos"
+python3 scripts/build-eventos.py
+
+# le somente o cache _data/publicacoes.json: nao acessa a internet.
+# para buscar publicacoes novas, rode antes:
+#   python3 scripts/build-publicacoes.py --atualizar
+echo "==> gerando lista de publicacoes"
+python3 scripts/build-publicacoes.py
 
 echo "==> renderizando pt-BR -> docs/"
 quarto render

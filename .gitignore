@@ -5,3 +5,4 @@ _build-en/
 
 /.quarto/
 **/*.quarto_ipynb
+__pycache__/
