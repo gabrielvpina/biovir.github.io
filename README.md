@@ -12,13 +12,14 @@ publicada pelo GitHub Pages.
 ./build.sh
 ```
 
-O script faz cinco coisas:
+O script faz seis coisas:
 
 1. gera as listas de membros a partir de `_data/members.tsv`;
 2. gera as páginas de eventos a partir das pastas em `eventos/`;
 3. gera a lista de publicações a partir de `_data/publicacoes.json`;
-4. renderiza a versão **pt-BR** na raiz de `docs/`;
-5. renderiza a versão **en** e copia para `docs/en/`.
+4. gera a faixa de números da página inicial;
+5. renderiza a versão **pt-BR** na raiz de `docs/`;
+6. renderiza a versão **en** e copia para `docs/en/`.
 
 O passo 3 lê apenas o cache local — **o build não acessa a internet**.
 
@@ -50,10 +51,12 @@ _quarto-pt.yml            perfil pt-BR (menu, rodapé, lista de páginas)
 _quarto-en.yml            perfil en
 _data/members.tsv         lista de membros (fonte única das duas línguas)
 _data/publicacoes.json    cache das publicações vindas do OpenAlex
+_data/estatisticas.json   números da faixa da página inicial (gerado)
 eventos/<slug>/           um evento por pasta (texto, capa e fotos)
 scripts/build-members.py  gera _includes/members-*.html a partir do TSV
 scripts/build-eventos.py  gera as páginas de eventos a partir de eventos/
 scripts/build-publicacoes.py  gera _includes/publicacoes-*.html
+scripts/build-stats.py    gera a faixa de números da página inicial
 styles/biovir.scss        tema visual (cores, tipografia, componentes)
 styles/fonts.css          @font-face das fontes locais em fonts/
 js/lang-switch.html       mantém a página ao trocar de idioma
@@ -129,6 +132,23 @@ pontos de ajuste ficam no topo de `scripts/build-publicacoes.py`:
 O script também remove sozinho os pares pré-print + versão publicada quando os
 títulos coincidem. Quando o título muda entre as duas versões, a duplicata
 precisa ir no `EXCLUIR` à mão — há um exemplo comentado lá.
+
+### A faixa de números da página inicial
+
+Os quatro números da home (Integrantes, Linhas de pesquisa, Publicações,
+Colaborações) são gerados por `scripts/build-stats.py` e cada um vem de um
+arquivo do próprio repositório:
+
+| número | origem |
+| --- | --- |
+| Integrantes | linhas de `_data/members.tsv` |
+| Linhas de pesquisa | blocos `.research-line` em `linhas-de-pesquisa.qmd` |
+| Publicações | `_data/estatisticas.json` |
+| Colaborações | `_data/estatisticas.json` |
+
+`_data/estatisticas.json` é escrito por `build-publicacoes.py`, por isso o
+`./build.sh` roda os dois nessa ordem. Nenhum dos números precisa ser editado à
+mão — eles acompanham os dados. Cada um é um link para a página correspondente.
 
 ## Adicionar um evento
 

@@ -12,6 +12,7 @@ _data/publicacoes.json, entao o site continua compilando sem conexao. Rode com
 
 Saidas:
     _data/publicacoes.json         cache dos dados (so muda com --atualizar)
+    _data/estatisticas.json        numeros para a faixa da pagina inicial
     _includes/publicacoes-pt.html  usado por publicacoes.qmd
     _includes/publicacoes-en.html  usado por en/publications.qmd
 
@@ -32,6 +33,7 @@ import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CACHE = ROOT / "_data" / "publicacoes.json"
+ESTATS = ROOT / "_data" / "estatisticas.json"
 MEMBROS = ROOT / "_data" / "members.tsv"
 OUT = ROOT / "_includes"
 
@@ -399,6 +401,13 @@ def main():
     OUT.mkdir(exist_ok=True)
     for lang, arq in (("pt", "publicacoes-pt.html"), ("en", "publicacoes-en.html")):
         (OUT / arq).write_text(banner + render(pubs, membros, lang), encoding="utf-8")
+
+    # numeros usados pela faixa de estatisticas da pagina inicial
+    ESTATS.write_text(json.dumps({
+        "publicacoes": len(pubs),
+        "colaboradores": len(externos),
+        "integrantes_que_assinam": len(internos),
+    }, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     preprints = sum(1 for p in pubs if e_preprint(p["doi"], p["tipo"]))
     print(f"publicacoes: {len(pubs)} ({len(pubs) - preprints} artigos, "

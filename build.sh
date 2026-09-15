@@ -25,6 +25,9 @@ python3 scripts/build-eventos.py
 echo "==> gerando lista de publicacoes"
 python3 scripts/build-publicacoes.py
 
+echo "==> gerando numeros da pagina inicial"
+python3 scripts/build-stats.py
+
 echo "==> renderizando pt-BR -> docs/"
 quarto render
 

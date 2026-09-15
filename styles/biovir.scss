@@ -259,7 +259,29 @@ main > section > ol {
   border-block: 1px solid var(--biovir-line);
 }
 
+// cada numero e um link para a pagina correspondente
+.stat-row .stat-item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  margin: -0.35rem -0.5rem;
+  transition: background-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--biovir-mist);
+  }
+
+  &:hover .stat-value,
+  &:focus-visible .stat-value {
+    color: var(--biovir-blue);
+  }
+}
+
 .stat-row .stat-value {
+  display: block;
   font-family: #{$headings-font-family};
   font-size: 1.9rem;
   font-weight: 600;
@@ -273,6 +295,7 @@ main > section > ol {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--biovir-muted);
+  display: block;
 }
 
 // ------------------------------------------------------- linhas de pesquisa ---

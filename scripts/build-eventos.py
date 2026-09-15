@@ -190,9 +190,11 @@ def render_lista(eventos, lang):
         if not grupo:
             continue
         out.append(f'<h2 class="event-group-title">{rotulo}</h2>')
-        out.append('<div class="event-list">')
-        out.extend(item_lista(e, lang, prefixo) for e in grupo)
-        out.append("</div>")
+        # a lista sai em UMA linha: <a> e' inline, entao em linhas separadas o
+        # Pandoc embrulharia os itens num <p> e quebraria o layout
+        out.append('<div class="event-list">'
+                   + "".join(item_lista(e, lang, prefixo) for e in grupo)
+                   + "</div>")
         out.append("")
     return "\n".join(out).rstrip() + "\n"
 

@@ -70,52 +70,18 @@ Orientação de estudantes de iniciação científica, mestrado e doutorado, com
 :::
 :::
 
-<!-- AJUSTAR: números abaixo são provisórios -->
 
-::: {.stat-row}
-::: {.stat-item}
-::: {.stat-value}
-29
-:::
-::: {.stat-label}
-Integrantes
-:::
-:::
+<!-- Os números abaixo são gerados por scripts/build-stats.py a partir de
+     _data/members.tsv, linhas-de-pesquisa.qmd e _data/estatisticas.json. -->
 
-::: {.stat-item}
-::: {.stat-value}
-5
-:::
-::: {.stat-label}
-Linhas de pesquisa
-:::
-:::
-
-::: {.stat-item}
-::: {.stat-value}
-—
-:::
-::: {.stat-label}
-Publicações
-:::
-:::
-
-::: {.stat-item}
-::: {.stat-value}
-—
-:::
-::: {.stat-label}
-Colaborações
-:::
-:::
-:::
+{{< include _includes/stats-pt.html >}}
 
 ## Onde estamos
 
 <!-- AJUSTAR: confirmar endereço, departamento e contato institucional -->
 
-O BioVirLab está sediado na **Universidade Estadual de Santa Cruz (UESC)**, em
-Ilhéus, Bahia, Brasil.
+O BioVirLab está sediado na **Universidade Estadual de Santa Cruz (UESC)** e na **Universidade Federal do Sul da Bahia (UFSB)**, nas cidades de 
+Ilhéus e Itabuna - Bahia, Brasil.
 
 Para colaborações, dúvidas ou oportunidades de pesquisa, entre em contato pelo
 [Instagram do laboratório](https://www.instagram.com/biovir.lab/).

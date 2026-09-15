@@ -70,45 +70,11 @@ thinking and open science.
 :::
 :::
 
-<!-- AJUSTAR: numeros abaixo sao provisorios -->
 
-::: {.stat-row}
-::: {.stat-item}
-::: {.stat-value}
-29
-:::
-::: {.stat-label}
-Members
-:::
-:::
+<!-- Os números abaixo são gerados por scripts/build-stats.py a partir de
+     _data/members.tsv, linhas-de-pesquisa.qmd e _data/estatisticas.json. -->
 
-::: {.stat-item}
-::: {.stat-value}
-5
-:::
-::: {.stat-label}
-Research lines
-:::
-:::
-
-::: {.stat-item}
-::: {.stat-value}
-—
-:::
-::: {.stat-label}
-Publications
-:::
-:::
-
-::: {.stat-item}
-::: {.stat-value}
-—
-:::
-::: {.stat-label}
-Collaborations
-:::
-:::
-:::
+{{< include ../_includes/stats-en.html >}}
 
 ## Where we are
 
