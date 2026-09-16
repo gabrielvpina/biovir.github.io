@@ -1,30 +1,29 @@
 group	name	photo	role_pt	role_en	link
 professor	Eric Roberto Guimarães Rocha Aguiar	members/professor/eric.png	Coordenador do laboratório	Principal Investigator	
-researcher	Anderson Carvalho Vieira	members/researcher/anderson.png			
-researcher	Paula Luize Camargos Fonseca	members/researcher/paula.png			
-researcher	Sabrina Ferreira de Santana	members/researcher/sabrina.png			
-phd	Amanda Gabrielly Santana Silva	members/phd/amanda.png			
+researcher	Anderson Carvalho Vieira	members/researcher/anderson.png	Pesquisador		
+researcher	Paula Luize Camargos Fonseca	members/researcher/paula.png	Pesquisadora		
+researcher	Sabrina Ferreira de Santana	members/researcher/sabrina.png	Pesquisadora		
+phd	Amanda Gabrielly Santana Silva	members/phd/amanda.png	Doutoranda		
 phd	Brenaráise Freitas Martins dos Santos	members/phd/brenna.png			
 phd	Carlos Henrique de Carvalho Neto	members/phd/carlos.png			
 phd	David Gabriel do Nascimento Souza	members/phd/davidG.png			
 phd	Gabriel Victor Pina Rodrigues	members/phd/gabriel.png			
-phd	Hermanna Vanesca Viana de Oliveira	members/phd/hermana.png			
-phd	Jessica Fernandes Padre	members/phd/gessica.png			
+alumni	Hermanna Vanesca Viana de Oliveira	members/alumni/hermana.png			
+alumni	Jessica Fernandes Padre	members/alumni/jessica.png			
 phd	Joel Augusto Moura Porto	members/phd/joel.png			
 phd	Jonatha dos Santos Silva	members/phd/john.png			
 phd	João Pedro Nunes Santos	members/phd/joao.png			
-phd	Laiana Pinheiro de Lima	members/phd/laiana.png			
 phd	Lara Beatriz C. Moreira de Vasconcelos	members/phd/lara.png			
 phd	Lixsy Celeste Bernardez Orellana	members/phd/celeste.png			
 phd	Lucas Barbosa de Amorim Conceição	members/phd/lucasB.png			
 phd	Lucas Diego Mota Meneses	members/phd/lucasM.png			
 phd	Lucas Yago Melo Ferreira	members/phd/lucasY.png			
-master	Aijalon Brito da Silva Junior	members/master/aijalon.png			
-master	Brunno Santos Mosquito de Souza	members/master/brunno.png			
+alumni	Aijalon Brito da Silva Junior	members/alumni/aijalon.png	Ex-integrante		
+master	Brunno Santos Mosquito de Souza	members/master/brunno.png	Mestrando		
 master	Evelyn dos Santos Silva	members/master/evelyn.png			
 master	Giulia Verpa Narciso Ribeiro	members/master/giulia.png			
 master	Henrique Andrade Rabelo Bomfim	members/master/rick.png			
-master	Joannan Lima Silva	members/master/joanan.png			
+alumni	Joannan Lima Silva	members/alumni/joanan.png			
 master	Leyla Katiuska Martel Solis	members/master/leyla.png			
-master	Tatyana Chagas Moura	members/master/taty.png			
-undergraduate	David Willian Oliveira do Santos	members/undergraduate/davidW.jpeg			
+alumni	Tatyana Chagas Moura	members/alumni/taty.png			
+undergraduate	David Willian Oliveira do Santos	members/undergraduate/davidW.jpeg	Graduando		

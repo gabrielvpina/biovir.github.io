@@ -11,9 +11,3 @@ biology.
 :::
 
 {{< include ../_includes/members-en.html >}}
-
-## Alumni
-
-<!-- AJUSTAR: adicione linhas com o grupo "alumni" em _data/members.tsv -->
-
-Coming soon.

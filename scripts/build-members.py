@@ -25,7 +25,7 @@ GROUPS = [
     ("phd", "Doutorado", "PhD Students"),
     ("master", "Mestrado", "MSc Students"),
     ("undergraduate", "Iniciação Científica", "Undergraduate Students"),
-    ("alumni", "Ex-integrantes", "Alumni"),
+    ("alumni", "Alumni", "Alumni"),
 ]
 
 # rotulo individual padrao (aparece embaixo do nome de cada pessoa)
@@ -36,7 +36,7 @@ ROLES = {
     "phd": ("Doutorando(a)", "PhD Student"),
     "master": ("Mestrando(a)", "MSc Student"),
     "undergraduate": ("Graduando(a)", "Undergraduate Student"),
-    "alumni": ("Ex-integrante", "Alumnus"),
+    "alumni": ("Ex-integrante", "Former member"),
 }
 
 
@@ -50,6 +50,8 @@ def read_members():
             continue
         if row["group"] not in ROLES:
             sys.exit(f"grupo desconhecido em members.tsv: {row['group']!r}")
+        if row.get("photo") and not (ROOT / row["photo"]).exists():
+            print(f"  aviso: foto de {row['name']} nao existe: {row['photo']}")
         members.append(row)
     return members
 

@@ -48,9 +48,11 @@ DESTINOS = {
 
 
 def conta_membros():
+    """Conta so quem esta no laboratorio hoje: alumni ficam de fora."""
     with MEMBROS.open(encoding="utf-8") as fh:
         return sum(1 for linha in csv.DictReader(fh, delimiter="\t")
-                   if (linha.get("name") or "").strip())
+                   if (linha.get("name") or "").strip()
+                   and (linha.get("group") or "").strip() != "alumni")
 
 
 def conta_linhas_de_pesquisa():
