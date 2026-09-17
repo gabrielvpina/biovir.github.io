@@ -396,6 +396,98 @@ main > section > ol {
 }
 
 
+// ------------------------------------------------------- mapa dos campi ---
+// O mapa e' uma imagem estatica gerada por scripts/build-mapa.py. Nao ha
+// biblioteca de mapa nem requisicao a servico externo em tempo de visita.
+
+.mapa-wrap {
+  margin: 1.8rem 0 2.2rem;
+}
+
+.mapa-img {
+  position: relative;
+  display: block;
+  line-height: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--biovir-line);
+    background-color: var(--biovir-mist);
+  }
+
+  &:hover img,
+  &:focus-visible img {
+    border-color: var(--biovir-soft);
+  }
+}
+
+.mapa-credito {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.82);
+  color: var(--biovir-muted);
+  font-family: #{$font-family-monospace};
+  font-size: 0.65rem;
+  line-height: 1.6;
+}
+
+.local-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+
+  li {
+    display: grid;
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    gap: 0.7rem;
+    align-items: start;
+  }
+}
+
+.local-num {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--biovir-deep);
+  color: #fff;
+  font-family: #{$headings-font-family};
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.local-nome {
+  display: block;
+  font-weight: 600;
+  color: var(--biovir-navy);
+  margin-bottom: 0.15rem;
+}
+
+.local-end {
+  display: block;
+  color: var(--biovir-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.local-rota {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-family: #{$font-family-monospace};
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 // ---------------------------------------------------------------- eventos ---
 
 .event-list {

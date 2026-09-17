@@ -12,14 +12,15 @@ publicada pelo GitHub Pages.
 ./build.sh
 ```
 
-O script faz seis coisas:
+O script faz sete coisas:
 
 1. gera as listas de membros a partir de `_data/members.tsv`;
 2. gera as páginas de eventos a partir das pastas em `eventos/`;
 3. gera a lista de publicações a partir de `_data/publicacoes.json`;
-4. gera a faixa de números da página inicial;
-5. renderiza a versão **pt-BR** na raiz de `docs/`;
-6. renderiza a versão **en** e copia para `docs/en/`.
+4. gera o mapa dos campi a partir de `_data/locais.tsv`;
+5. gera a faixa de números da página inicial;
+6. renderiza a versão **pt-BR** na raiz de `docs/`;
+7. renderiza a versão **en** e copia para `docs/en/`.
 
 O passo 3 lê apenas o cache local — **o build não acessa a internet**.
 
@@ -51,11 +52,13 @@ _quarto-pt.yml            perfil pt-BR (menu, rodapé, lista de páginas)
 _quarto-en.yml            perfil en
 _data/members.tsv         lista de membros (fonte única das duas línguas)
 _data/publicacoes.json    cache das publicações vindas do OpenAlex
+_data/locais.tsv          endereços e coordenadas do mapa da página inicial
 _data/estatisticas.json   números da faixa da página inicial (gerado)
 eventos/<slug>/           um evento por pasta (texto, capa e fotos)
 scripts/build-members.py  gera _includes/members-*.html a partir do TSV
 scripts/build-eventos.py  gera as páginas de eventos a partir de eventos/
 scripts/build-publicacoes.py  gera _includes/publicacoes-*.html
+scripts/build-mapa.py     gera o mapa dos campi (Leaflet + OpenStreetMap)
 scripts/build-stats.py    gera a faixa de números da página inicial
 styles/biovir.scss        tema visual (cores, tipografia, componentes)
 styles/fonts.css          @font-face das fontes locais em fonts/
@@ -149,6 +152,56 @@ arquivo do próprio repositório:
 `_data/estatisticas.json` é escrito por `build-publicacoes.py`, por isso o
 `./build.sh` roda os dois nessa ordem. Nenhum dos números precisa ser editado à
 mão — eles acompanham os dados. Cada um é um link para a página correspondente.
+
+## Mudar os pontos do mapa
+
+O mapa da seção "Onde estamos" é uma **imagem estática** guardada no
+repositório (`assets/mapa-campi.jpg`). Quem visita o site não carrega
+biblioteca de mapa nem busca imagens em serviço externo: não há chave de API,
+CDN nem política de uso de terceiros no caminho. Em troca o mapa não tem zoom —
+clicar nele abre a área no OpenStreetMap.
+
+Os pontos saem de `_data/locais.tsv`, um por linha:
+
+| coluna | descrição |
+| --- | --- |
+| `nome` | nome da instituição |
+| `endereco_pt` | endereço completo em português |
+| `endereco_en` | endereço em inglês (vazio = usa o português) |
+| `lat` / `lon` | coordenadas em graus decimais, com **ponto** |
+
+Campos separados por **tabulação**, como em `members.tsv`. Depois de mudar um
+ponto, **redesenhe a imagem** e commite-a junto:
+
+```bash
+python3 scripts/build-mapa.py --gerar
+./build.sh
+```
+
+O `--gerar` é a única etapa que acessa a internet, e precisa do Pillow
+(`python3 -m pip install Pillow`). Sem ele, o `./build.sh` apenas reaproveita a
+imagem já existente — por isso o build continua funcionando offline.
+
+O enquadramento é automático: o script calcula o retângulo que cobre todos os
+pontos, com folga, e desenha os pinos numerados na ordem das linhas do TSV,
+batendo com a numeração da lista de endereços.
+
+**Como achar as coordenadas:** abra [openstreetmap.org](https://www.openstreetmap.org),
+clique com o botão direito no ponto e escolha "Mostrar endereço". A URL passa a
+conter `mlat=` e `mlon=` — são exatamente os valores de `lat` e `lon`.
+
+### Por que imagem e não mapa interativo
+
+A primeira versão usava Leaflet com tiles carregados na hora. Dois provedores
+gratuitos falharam em sequência: `tile.openstreetmap.org` passou a devolver
+**"Access blocked"** (a política deles barra sites publicados e requisições sem
+`Referer`, inclusive ao abrir o HTML direto do disco) e `basemaps.cartocdn.com`
+passou a escrever **"API KEY REQUIRED"** por cima do mapa. Serviços sem chave
+mudam de política sem aviso, e o site quebra sozinho.
+
+A imagem estática elimina essa classe inteira de problema. Se um dia o mapa
+precisar de zoom de verdade, a saída é criar conta em um serviço com camada
+gratuita (MapTiler, Stadia, Mapbox) e usar a chave deles.
 
 ## Adicionar um evento
 

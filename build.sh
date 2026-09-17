@@ -25,6 +25,9 @@ python3 scripts/build-eventos.py
 echo "==> gerando lista de publicacoes"
 python3 scripts/build-publicacoes.py
 
+echo "==> gerando mapa dos campi"
+python3 scripts/build-mapa.py
+
 echo "==> gerando numeros da pagina inicial"
 python3 scripts/build-stats.py
 
