@@ -79,7 +79,7 @@ Edite **apenas** `_data/members.tsv` e rode `./build.sh`. Colunas:
 | `photo` | caminho da foto a partir da raiz do repositório |
 | `role_pt` | cargo em português (vazio = rótulo padrão do grupo) |
 | `role_en` | cargo em inglês (vazio = rótulo padrão do grupo) |
-| `link` | link opcional (Lattes, ORCID…) aplicado ao card |
+| `link` | link opcional (Lattes, ORCID…). Com ele, o card inteiro vira link e o nome sublinha ao passar o mouse. Sem ele, o card fica estático |
 
 Os campos são separados por **tabulação**. As fotos são exibidas em formato
 circular (recorte automático), então imagens quadradas funcionam melhor.

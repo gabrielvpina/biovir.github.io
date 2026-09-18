@@ -777,9 +777,19 @@ main > section > ol {
 }
 
 .member-link {
+  display: block;
   text-decoration: none;
   color: inherit;
 }
+
+// o nome se comporta como link: sublinha e muda de cor ao passar o mouse
+.member-link:hover .member-name,
+.member-link:focus-visible .member-name {
+  color: var(--biovir-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 
 // ----------------------------------------------------------------- rodape ---
 

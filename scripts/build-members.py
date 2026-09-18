@@ -28,6 +28,14 @@ GROUPS = [
     ("alumni", "Alumni", "Alumni"),
 ]
 
+# titulo (tooltip) do link do card, quando a coluna "link" esta preenchida em
+# members.tsv. Serve tambem de contexto para leitores de tela, que sem ele
+# anunciariam apenas o nome.
+LINK = {
+    "pt": "Currículo Lattes de {nome}",
+    "en": "{nome} on Lattes",
+}
+
 # contagem que aparece a direita no bloco azul de cada grupo
 CONTA = {
     "pt": ("1 pessoa", "{n} pessoas"),
@@ -58,6 +66,8 @@ def read_members():
             sys.exit(f"grupo desconhecido em members.tsv: {row['group']!r}")
         if row.get("photo") and not (ROOT / row["photo"]).exists():
             print(f"  aviso: foto de {row['name']} nao existe: {row['photo']}")
+        if row.get("link") and not row["link"].startswith(("http://", "https://")):
+            print(f"  aviso: link de {row['name']} nao parece uma URL: {row['link']}")
         members.append(row)
     return members
 
@@ -77,9 +87,10 @@ def card(member, lang, prefix):
     )
     if member.get("link"):
         link = html.escape(member["link"])
+        titulo = LINK[lang]
         inner = (
-            f'<a class="member-link" href="{link}" target="_blank" rel="noopener">'
-            f"{inner}</a>"
+            f'<a class="member-link" href="{link}" target="_blank" rel="noopener" '
+            f'title="{titulo.format(nome=name)}">{inner}</a>'
         )
     return f'<figure class="member-card">{inner}</figure>'
 
