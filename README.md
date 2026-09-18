@@ -105,8 +105,10 @@ base externa muda.
 
 ### O que a página mostra
 
-- artigos agrupados por ano, com autores, periódico e DOI;
-- pré-prints em seção separada (bioRxiv, medRxiv, Research Square, SSRN,
+- artigos agrupados por ano, cada ano numa **gaveta retrátil** (bloco azul com
+  seta) que abre ao ser clicada — só o ano mais recente começa aberto; para
+  mudar isso, veja `i == 0` na função `render` de `scripts/build-publicacoes.py`;
+- pré-prints na última gaveta (bioRxiv, medRxiv, Research Square, SSRN,
   Authorea são reconhecidos pelo prefixo do DOI);
 - **Colaborações**: o total de publicações e quantos autores externos ao
   laboratório elas reúnem.
@@ -115,6 +117,9 @@ Integrantes aparecem em **negrito**, reconhecidos por cruzamento com
 `_data/members.tsv`. Por isso, manter o TSV em dia melhora a página de
 Publicações também. A comparação tolera abreviações (`J dos Santos Silva`
 casa com `Jonatha dos Santos Silva`) e sufixos (`Junior`, `Neto`, `Filho`).
+
+As gavetas usam `<details>`/`<summary>` nativos do HTML: abrem sem JavaScript,
+funcionam com teclado e, ao imprimir a página, todas aparecem abertas.
 
 Listas longas são cortadas nos 6 primeiros autores com `et al.`, mas
 integrantes que ficariam de fora do corte são acrescentados entre parênteses,

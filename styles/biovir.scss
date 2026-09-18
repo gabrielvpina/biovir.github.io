@@ -347,15 +347,84 @@ main > section > ol {
 
 // ------------------------------------------------------------ publicacoes ---
 
-.pub-year {
-  font-family: #{$font-family-monospace};
-  font-size: 0.8rem;
+// ------------------------------------------------ publicacoes: gavetas ---
+// Cada ano e' um <details>/<summary> nativo: abre e fecha sem JavaScript e
+// ja vem acessivel por teclado.
+
+.pub-gaveta {
+  margin: 0 0 0.6rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pub-gaveta-cab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background-color: var(--biovir-deep);
+  color: #fff;
+  cursor: pointer;
+  list-style: none; // esconde o marcador padrao do navegador
+  user-select: none;
+  transition: background-color 0.15s ease;
+
+  &::-webkit-details-marker {
+    display: none; // Safari
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--biovir-blue);
+  }
+
+  // seta lateral, desenhada em CSS: aponta para a direita quando fechada
+  &::before {
+    content: "";
+    flex: none;
+    width: 0.42rem;
+    height: 0.42rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.18s ease;
+  }
+}
+
+.pub-gaveta[open] > .pub-gaveta-cab::before {
+  transform: rotate(45deg); // aponta para baixo quando aberta
+}
+
+.pub-gaveta-rotulo {
+  flex: 1;
+  font-family: #{$headings-font-family};
+  font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  color: var(--biovir-muted);
-  margin: 2.2rem 0 0.8rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid var(--biovir-line);
+  letter-spacing: 0.01em;
+}
+
+.pub-gaveta-conta {
+  font-family: #{$font-family-monospace};
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.pub-gaveta .pub-list {
+  padding: 0.4rem 0 0.2rem;
+}
+
+// quem imprime a pagina precisa ver tudo, inclusive as gavetas fechadas
+@media print {
+  .pub-gaveta > .pub-list {
+    display: block !important;
+  }
+
+  .pub-gaveta-cab {
+    background-color: transparent;
+    color: var(--biovir-navy);
+  }
 }
 
 .pub-list {

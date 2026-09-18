@@ -94,6 +94,8 @@ VENUES = {
 TXT = {
     "pt": {
         "preprints": "Pré-prints",
+        "conta_uma": "1 publicação",
+        "conta_varias": "{n} publicações",
         "colab": "Colaborações",
         "incl": "inclui",
         "vazio": "Nenhuma publicação no cache. Rode "
@@ -104,6 +106,8 @@ TXT = {
     },
     "en": {
         "preprints": "Preprints",
+        "conta_uma": "1 publication",
+        "conta_varias": "{n} publications",
         "colab": "Collaborations",
         "incl": "incl.",
         "vazio": "No publications cached. Run "
@@ -350,18 +354,31 @@ def render(pubs, membros, lang):
     preprints = [p for p in pubs if e_preprint(p["doi"], p["tipo"])]
     externos, _ = separa_autores(pubs, membros)
 
+    def gaveta(rotulo, itens, aberta):
+        """Uma gaveta <details> com o titulo em bloco azul e a lista dentro."""
+        conta = (t["conta_uma"] if len(itens) == 1
+                 else t["conta_varias"].format(n=len(itens)))
+        return "\n".join([
+            f'<details class="pub-gaveta"{" open" if aberta else ""}>',
+            '<summary class="pub-gaveta-cab">'
+            f'<span class="pub-gaveta-rotulo">{html.escape(str(rotulo))}</span>'
+            f'<span class="pub-gaveta-conta">{html.escape(conta)}</span>'
+            '</summary>',
+            '<ul class="pub-list">',
+            *[item(p, membros, lang) for p in itens],
+            "</ul>",
+            "</details>\n",
+        ])
+
     out = []
-    for ano in sorted({p["ano"] for p in artigos}, reverse=True):
-        out.append(f'::: {{.pub-year}}\n{ano}\n:::\n')
-        out.append('<ul class="pub-list">')
-        out += [item(p, membros, lang) for p in artigos if p["ano"] == ano]
-        out.append("</ul>\n")
+    # so o ano mais recente comeca aberto: a pagina abre mostrando conteudo,
+    # sem despejar as 48 publicacoes de uma vez
+    anos = sorted({p["ano"] for p in artigos}, reverse=True)
+    for i, ano in enumerate(anos):
+        out.append(gaveta(ano, [p for p in artigos if p["ano"] == ano], i == 0))
 
     if preprints:
-        out.append(f"## {t['preprints']}\n")
-        out.append('<ul class="pub-list">')
-        out += [item(p, membros, lang) for p in preprints]
-        out.append("</ul>\n")
+        out.append(gaveta(t["preprints"], preprints, False))
 
     out.append(f"## {t['colab']}\n")
     out.append('::: {.lead}')
