@@ -40,12 +40,28 @@ IMAGEM = ROOT / "assets" / "mapa-campi.jpg"
 LARGURA, ALTURA = 2270, 760
 
 # Folga em volta dos pontos, como fracao da distancia entre eles.
-FOLGA = 0.30
+FOLGA = 0.12
 
-# Servico que devolve o recorte do mapa ja pronto, sem chave de API.
-# Para trocar de provedor, mude esta funcao e a atribuicao em TXT.
-EXPORT = ("https://server.arcgisonline.com/ArcGIS/rest/services/"
-          "World_Street_Map/MapServer/export")
+# Pontos que devem caber no enquadramento mas NAO recebem pino: servem so para
+# abrir o mapa o bastante para mostrar as cidades de referencia.
+ENQUADRAR = [
+    (-14.7926, -39.0454),   # centro de Ilheus
+    (-14.7932, -39.2750),   # centro de Itabuna
+]
+
+# Estilo do mapa: o "Light Gray Canvas" do Esri e' cinza, sem as cores do mapa
+# de ruas. Vem em duas camadas - o fundo e os rotulos - que sao sobrepostas.
+EXPORT = "https://server.arcgisonline.com/ArcGIS/rest/services/{servico}/MapServer/export"
+CAMADA_FUNDO = "Canvas/World_Light_Gray_Base"
+CAMADA_ROTULOS = "Canvas/World_Light_Gray_Reference"
+
+# 192 em vez dos 96 padrao: a imagem sai em 2x para tela retina, e sem isso os
+# nomes das cidades seriam desenhados no tamanho normal e apareceriam pela
+# metade depois que o CSS reduz a imagem.
+DPI = 192
+
+# Quanto escurecer o texto dos rotulos (1.0 = como vem do Esri, 0 = preto).
+ESCURECER_ROTULOS = 0.45
 
 # Cores dos pinos (mesma paleta de styles/biovir.scss)
 AZUL = (48, 78, 161)
@@ -79,8 +95,13 @@ def mercator(lat, lon):
 
 
 def caixa(pontos):
-    """Retangulo em Web Mercator que cobre os pontos, na proporcao da imagem."""
-    xs, ys = zip(*[mercator(p["lat"], p["lon"]) for p in pontos])
+    """Retangulo em Web Mercator que cobre os pontos, na proporcao da imagem.
+
+    Entram tambem os pontos de ENQUADRAR, que nao recebem pino mas garantem que
+    as cidades de referencia aparecam na imagem.
+    """
+    coords = [(p["lat"], p["lon"]) for p in pontos] + list(ENQUADRAR)
+    xs, ys = zip(*[mercator(lat, lon) for lat, lon in coords])
     x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
     # um ponto so (ou pontos alinhados) nao tem largura: usa um raio minimo
     larg = max(x1 - x0, 1500.0)
@@ -157,21 +178,37 @@ def gerar_imagem(locais):
     except ImportError:
         sys.exit("--gerar precisa do Pillow:  python3 -m pip install Pillow")
 
-    cx = caixa(locais)
-    url = EXPORT + "?" + urllib.parse.urlencode({
-        "bbox": ",".join(f"{v:.2f}" for v in cx),
-        "bboxSR": 3857, "imageSR": 3857,
-        "size": f"{LARGURA},{ALTURA}",
-        "format": "png32", "transparent": "false", "f": "image",
-    })
-    try:
-        dados = urllib.request.urlopen(
-            urllib.request.Request(url, headers=UA), timeout=120).read()
-    except Exception as erro:
-        sys.exit(f"falha ao baixar o mapa: {erro}")
-
     import io
-    img = Image.open(io.BytesIO(dados)).convert("RGB")
+
+    cx = caixa(locais)
+
+    def baixar(servico, transparente):
+        url = EXPORT.format(servico=servico) + "?" + urllib.parse.urlencode({
+            "bbox": ",".join(f"{v:.2f}" for v in cx),
+            "bboxSR": 3857, "imageSR": 3857,
+            "size": f"{LARGURA},{ALTURA}",
+            "format": "png32", "dpi": DPI,
+            "transparent": "true" if transparente else "false",
+            "f": "image",
+        })
+        try:
+            dados = urllib.request.urlopen(
+                urllib.request.Request(url, headers=UA), timeout=120).read()
+        except Exception as erro:
+            sys.exit(f"falha ao baixar o mapa ({servico}): {erro}")
+        return Image.open(io.BytesIO(dados)).convert("RGBA")
+
+    img = baixar(CAMADA_FUNDO, False)
+
+    # os rotulos do estilo cinza sao propositalmente muito claros; escurecemos
+    # so o texto (o canal alfa nao muda) para os nomes das cidades se lerem
+    rotulos = baixar(CAMADA_ROTULOS, True)
+    r, g, b, a = rotulos.split()
+    escurecer = [int(i * ESCURECER_ROTULOS) for i in range(256)]
+    rotulos = Image.merge("RGBA", (r.point(escurecer), g.point(escurecer),
+                                   b.point(escurecer), a))
+    img.alpha_composite(rotulos)
+    img = img.convert("RGB")
     desenho = ImageDraw.Draw(img)
 
     raio = 30

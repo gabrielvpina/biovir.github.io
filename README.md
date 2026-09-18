@@ -186,6 +186,22 @@ O enquadramento é automático: o script calcula o retângulo que cobre todos os
 pontos, com folga, e desenha os pinos numerados na ordem das linhas do TSV,
 batendo com a numeração da lista de endereços.
 
+### Ajustar a aparência do mapa
+
+As constantes ficam no topo de `scripts/build-mapa.py`:
+
+| constante | para quê |
+| --- | --- |
+| `ENQUADRAR` | pontos que devem caber na imagem mas **não** recebem pino — é o que garante que Ilhéus e Itabuna apareçam, mesmo os campi ficando entre as duas |
+| `FOLGA` | margem em volta dos pontos, como fração da distância entre eles |
+| `LARGURA` / `ALTURA` | tamanho da imagem; é o dobro do tamanho de exibição, para telas retina |
+| `CAMADA_FUNDO` / `CAMADA_ROTULOS` | estilo do mapa — hoje o *Light Gray Canvas* do Esri, em tons de cinza, sem as cores do mapa de ruas |
+| `ESCURECER_ROTULOS` | os rótulos do estilo cinza são claros demais; `0.45` escurece o texto sem mexer no resto |
+| `DPI` | `192` faz os nomes das cidades serem desenhados em dobro, para não encolherem quando o CSS reduz a imagem |
+
+Os pinos continuam azuis de propósito: são o único elemento colorido, e é o que
+os faz saltar sobre o fundo cinza.
+
 **Como achar as coordenadas:** abra [openstreetmap.org](https://www.openstreetmap.org),
 clique com o botão direito no ponto e escolha "Mostrar endereço". A URL passa a
 conter `mlat=` e `mlon=` — são exatamente os valores de `lat` e `lon`.
