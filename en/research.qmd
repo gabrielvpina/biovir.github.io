@@ -107,13 +107,11 @@ Health perspective.
 :::
 :::
 
-## Collaborations
+# Collaborating institutions
 
 <!-- AJUSTAR: listar instituicoes e grupos parceiros -->
 
-We maintain collaborations with national and international research groups. This
-section will be detailed soon.
+We maintain partnerships with research groups at institutions in Brazil and
+abroad. This section will be detailed soon.
 
-## Awards and Distinctions
 
-Coming soon.

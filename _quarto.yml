@@ -49,5 +49,9 @@ format:
     include-after-body: js/lang-switch.html
     toc: false
     anchor-sections: false
-    smooth-scroll: true
+    # desligado de proposito: o zenscroll que o Quarto injeta com smooth-scroll
+    # intercepta a navegacao por ancora e o link da home para #colaboracoes
+    # nao rolava ate a secao. O site nao tem sumario nem links internos de
+    # pagina, entao o scroll suave nao fazia falta.
+    smooth-scroll: false
     link-external-newwindow: true

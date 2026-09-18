@@ -292,7 +292,7 @@ def render_pagina(ev, lang):
     ja_no_texto = fotos_citadas(texto)
     galeria = [f for f in ev["fotos"] if f not in ja_no_texto]
     if galeria:
-        body += [f"## {t['galeria']}", "", '<div class="event-gallery">']
+        body += [f"# {t['galeria']}", "", '<div class="event-gallery">']
         for nome in galeria:
             alt = html.escape(legenda(nome) or titulo)
             src = html.escape(f"{img}fotos/{nome}")

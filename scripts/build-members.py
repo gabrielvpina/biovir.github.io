@@ -20,13 +20,19 @@ OUT = ROOT / "_includes"
 # ordem de exibicao dos grupos e rotulo padrao de cada um
 GROUPS = [
     ("professor", "Coordenação", "Principal Investigator"),
-    ("researcher", "Pesquisadores(as)", "Researchers"),
+    ("researcher", "Pesquisa", "Researchers"),
     ("postdoc", "Pós-doutorado", "Postdoctoral Researchers"),
     ("phd", "Doutorado", "PhD Students"),
     ("master", "Mestrado", "MSc Students"),
     ("undergraduate", "Iniciação Científica", "Undergraduate Students"),
     ("alumni", "Alumni", "Alumni"),
 ]
+
+# contagem que aparece a direita no bloco azul de cada grupo
+CONTA = {
+    "pt": ("1 pessoa", "{n} pessoas"),
+    "en": ("1 person", "{n} people"),
+}
 
 # rotulo individual padrao (aparece embaixo do nome de cada pessoa)
 ROLES = {
@@ -86,7 +92,11 @@ def render(members, lang, prefix):
             continue
         group.sort(key=lambda m: m["name"].casefold())
         label = html.escape(label_pt if lang == "pt" else label_en)
-        out.append(f'<h2 class="member-group-title">{label}</h2>')
+        n = len(group)
+        conta = (CONTA[lang][0] if n == 1 else CONTA[lang][1].format(n=n))
+        out.append(f'<h2 class="member-group-title">'
+                   f'<span class="member-group-rotulo">{label}</span>'
+                   f'<span class="member-group-conta">{conta}</span></h2>')
         out.append('<div class="member-grid">')
         out.extend(card(m, lang, prefix) for m in group)
         out.append("</div>")

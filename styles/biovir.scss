@@ -357,13 +357,20 @@ main > section > ol {
   overflow: hidden;
 }
 
-.pub-gaveta-cab {
+// bloco azul de titulo, usado nas gavetas de Publicacoes e nos grupos de
+// Membros. Mudar a cor ou o espacamento aqui vale para os dois.
+%bloco-azul {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.7rem 1rem;
+  border-radius: 8px;
   background-color: var(--biovir-deep);
   color: #fff;
+}
+
+.pub-gaveta-cab {
+  @extend %bloco-azul;
   cursor: pointer;
   list-style: none; // esconde o marcador padrao do navegador
   user-select: none;
@@ -703,10 +710,23 @@ main > section > ol {
 // ---------------------------------------------------------------- membros ---
 
 .member-group-title {
-  font-size: 1.15rem !important;
-  margin-top: 2.8rem;
-  padding-bottom: 0.45rem;
-  border-bottom: 1px solid var(--biovir-line);
+  @extend %bloco-azul;
+  font-size: 1.05rem !important;
+  font-weight: 600;
+  margin: 2.6rem 0 1.4rem;
+}
+
+.member-group-rotulo {
+  flex: 1;
+}
+
+.member-group-conta {
+  font-family: #{$font-family-monospace};
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
 }
 
 .member-grid {

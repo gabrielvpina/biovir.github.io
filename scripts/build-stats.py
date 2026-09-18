@@ -42,8 +42,9 @@ DESTINOS = {
     "integrantes": ("membros.html", "members.html"),
     "linhas": ("linhas-de-pesquisa.html", "research.html"),
     "publicacoes": ("publicacoes.html", "publications.html"),
-    # a ancora em pt leva acento porque o Quarto gera o id a partir do titulo
-    "colaboracoes": ("publicacoes.html#colaborações", "publications.html#collaborations"),
+    # ids fixados em ASCII por build-publicacoes.py: com acento o navegador
+    # codifica o fragmento e a ancora deixa de casar
+    "colaboracoes": ("publicacoes.html#colaboracoes", "publications.html#collaborations"),
 }
 
 

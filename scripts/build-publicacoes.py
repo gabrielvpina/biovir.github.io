@@ -97,6 +97,7 @@ TXT = {
         "conta_uma": "1 publicação",
         "conta_varias": "{n} publicações",
         "colab": "Colaborações",
+        "colab_id": "colaboracoes",
         "incl": "inclui",
         "vazio": "Nenhuma publicação no cache. Rode "
                  "<code>python3 scripts/build-publicacoes.py --atualizar</code>.",
@@ -109,6 +110,7 @@ TXT = {
         "conta_uma": "1 publication",
         "conta_varias": "{n} publications",
         "colab": "Collaborations",
+        "colab_id": "collaborations",
         "incl": "incl.",
         "vazio": "No publications cached. Run "
                  "<code>python3 scripts/build-publicacoes.py --atualizar</code>.",
@@ -380,7 +382,7 @@ def render(pubs, membros, lang):
     if preprints:
         out.append(gaveta(t["preprints"], preprints, False))
 
-    out.append(f"## {t['colab']}\n")
+    out.append(f"# {t['colab']} {{#{t['colab_id']}}}\n")
     out.append('::: {.lead}')
     out.append(t["resumo"].format(tot=len(pubs), ext=len(externos)))
     out.append(':::')

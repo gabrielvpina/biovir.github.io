@@ -15,7 +15,7 @@ Clique em um evento para ver a página completa, com texto e fotos.
 
 {{< include _includes/eventos-pt.html >}}
 
-## Seminários internos
+# Seminários internos
 
 O laboratório realiza encontros periódicos para discussão de artigos e
 apresentação de resultados. Informações sobre datas e temas serão divulgadas

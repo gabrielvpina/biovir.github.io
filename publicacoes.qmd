@@ -16,10 +16,7 @@ diante. Nomes em **negrito** são integrantes do BioVirLab.
 
 {{< include _includes/publicacoes-pt.html >}}
 
-## Perfis
+# Prêmios e Distinções
 
-<!-- AJUSTAR: inserir os links de ORCID e Lattes -->
+Em breve.
 
-- [Google Scholar](https://scholar.google.com.br/citations?hl=pt-BR&user=k39NF0cAAAAJ)
-- ORCID — *link a definir*
-- Lattes — *link a definir*

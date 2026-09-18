@@ -84,6 +84,10 @@ Edite **apenas** `_data/members.tsv` e rode `./build.sh`. Colunas:
 Os campos são separados por **tabulação**. As fotos são exibidas em formato
 circular (recorte automático), então imagens quadradas funcionam melhor.
 
+O título de cada grupo é um bloco azul com a contagem de pessoas à direita — o
+mesmo bloco das gavetas de Publicações, definido uma vez só no SCSS
+(`%bloco-azul`). Mudar a cor ou o espaçamento lá vale para as duas páginas.
+
 ## Atualizar as publicações
 
 A página de Publicações é montada a partir do perfil do coordenador no

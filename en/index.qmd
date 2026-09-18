@@ -29,7 +29,7 @@ studying the mechanisms of virus–host interaction.
 :::
 :::
 
-## The laboratory
+# The laboratory
 
 We work at the interface between computational biology and virology, using
 metagenomic and metatranscriptomic data to reconstruct viral genomes, infer
@@ -76,7 +76,7 @@ thinking and open science.
 
 {{< include ../_includes/stats-en.html >}}
 
-## Where we are
+# Where we are
 
 <!-- AJUSTAR: confirmar endereco, departamento e contato institucional -->
 

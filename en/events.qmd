@@ -13,7 +13,7 @@ Click an event to open its full page, with text and photos.
 
 {{< include ../_includes/eventos-en.html >}}
 
-## Internal seminars
+# Internal seminars
 
 The laboratory holds regular meetings for paper discussion and presentation of
 results. Dates and topics are announced on this page and on

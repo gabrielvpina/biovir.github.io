@@ -29,7 +29,7 @@ dos mecanismos de interação entre vírus e hospedeiros.
 :::
 :::
 
-## O laboratório
+# O laboratório
 
 Atuamos na interface entre biologia computacional e virologia. Utilizamos dados
 de metagenômica e metatranscriptômica para reconstruir genomas virais, inferir
@@ -76,7 +76,7 @@ Orientação de estudantes de iniciação científica, mestrado e doutorado, com
 
 {{< include _includes/stats-pt.html >}}
 
-## Onde estamos
+# Onde estamos
 
 <!-- AJUSTAR: confirmar endereço, departamento e contato institucional -->
 
