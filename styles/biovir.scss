@@ -83,12 +83,122 @@ body {
   letter-spacing: 0.06em;
   border: 1px solid var(--biovir-line);
   border-radius: 999px;
-  padding: 0.2rem 0.7rem;
+  padding: 0 0.8rem;
 }
 
 .navbar .nav-item.dropdown > .nav-link:hover {
   border-color: var(--biovir-soft);
   background: var(--biovir-mist);
+}
+
+// Controles a direita (Instagram, idioma, busca): mesma altura, mesma borda
+// e centralizados na linha. Sem isso o seletor de idioma ficava ~7px acima
+// dos icones e cada controle tinha um tamanho diferente.
+$navbar-control-h: 34px;
+
+.navbar-nav.ms-auto {
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.navbar .navbar-nav.ms-auto > .nav-item > .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: $navbar-control-h;
+  line-height: 1;
+  border: 1px solid var(--biovir-line);
+  border-radius: 999px;
+  color: var(--biovir-navy);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+// Instagram: botao redondo so com o icone
+.navbar .navbar-nav.ms-auto > .nav-item.compact > .nav-link {
+  width: $navbar-control-h;
+  padding: 0;
+
+  .menu-text {
+    display: none;
+  }
+}
+
+.navbar .navbar-nav.ms-auto .bi {
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.navbar .navbar-nav.ms-auto > .nav-item > .nav-link:hover,
+.navbar .navbar-nav.ms-auto > .nav-item > .nav-link:focus-visible,
+.navbar .nav-item.dropdown > .nav-link:hover {
+  border-color: var(--biovir-soft);
+  background: var(--biovir-mist);
+  color: var(--biovir-blue);
+}
+
+// Busca: o Quarto desenha um botao proprio (autocomplete); vira o mesmo
+// circulo do Instagram
+.navbar #quarto-search {
+  display: flex;
+  align-items: center;
+  margin-left: 0.45rem;
+}
+
+// o wrapper do autocomplete e' block e deixava 3px de linha de base abaixo
+// do botao, descentralizando a lupa
+.navbar #quarto-search .aa-Autocomplete {
+  display: flex;
+}
+
+.navbar #quarto-search .aa-DetachedSearchButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $navbar-control-h;
+  height: $navbar-control-h;
+  padding: 0;
+  border: 1px solid var(--biovir-line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--biovir-navy);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--biovir-soft);
+    background: var(--biovir-mist);
+    color: var(--biovir-blue);
+  }
+}
+
+.navbar #quarto-search .aa-DetachedSearchButtonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  color: inherit;
+  cursor: pointer;
+
+}
+
+// o Quarto fixa a lupa em 26px com este seletor; aqui ela fica do tamanho
+// do icone do Instagram e acompanha a cor do botao no hover
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+  width: 17px;
+  height: 17px;
+  color: inherit;
+}
+
+// no menu recolhido (celular) os controles ficam lado a lado
+@media (max-width: 991.98px) {
+  .navbar-nav.ms-auto {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+  }
 }
 
 .navbar .dropdown-menu {
