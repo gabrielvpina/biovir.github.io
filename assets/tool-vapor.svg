@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" role="img" aria-labelledby="title desc">
+  <title id="title">VAPOR</title>
+  <desc id="desc">Logo da pipeline VAPOR — Viral And Prokaryotic mOdular pipelineR: um bacteriófago pousado sobre uma bactéria, com trilhas de vapor que terminam em nós modulares.</desc>
+  <defs>
+    <linearGradient id="vapor" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#14B8A6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="capsid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E3A5F"/>
+      <stop offset="1" stop-color="#0B1F33"/>
+    </linearGradient>
+    <linearGradient id="cell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#0F766E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ícone -->
+  <g id="icon">
+    <!-- Bactéria (procarioto) -->
+    <rect x="28" y="150" width="144" height="38" rx="19" fill="url(#cell)"/>
+    <path d="M50 169 C62 161, 74 177, 86 169 S110 161, 122 169 S146 177, 154 169" fill="none" stroke="#CCFBF1" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+
+    <!-- Bacteriófago (viral) -->
+    <polygon points="100,56 122.5,69 122.5,95 100,108 77.5,95 77.5,69" fill="url(#capsid)"/>
+    <polygon points="100,66 113.9,74 113.9,90 100,98 86.1,90 86.1,74" fill="none" stroke="#2DD4BF" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="93" y="108" width="14" height="5" rx="1.5" fill="#0B1F33"/>
+    <rect x="96" y="113" width="8" height="24" rx="2" fill="#0B1F33"/>
+    <rect x="86" y="136" width="28" height="5" rx="2.5" fill="#0B1F33"/>
+    <path d="M90 140 L78 151 M110 140 L122 151 M96 141 L92 151 M104 141 L108 151" stroke="#0B1F33" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Vapor → módulos da pipeline -->
+    <g fill="none" stroke="url(#vapor)" stroke-width="5" stroke-linecap="round">
+      <path d="M100 50 C90 41, 110 32, 100 23"/>
+      <path d="M86 57 C72 50, 86 38, 72 29"/>
+      <path d="M114 57 C128 50, 114 38, 128 29"/>
+    </g>
+    <circle cx="100" cy="15" r="6" fill="#8B5CF6"/>
+    <circle cx="68" cy="22" r="5" fill="#8B5CF6"/>
+    <circle cx="132" cy="22" r="5" fill="#8B5CF6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="'Inter','Segoe UI','Helvetica Neue',Arial,sans-serif">
+    <text x="212" y="116" font-size="76" font-weight="800" letter-spacing="3" fill="#0B1F33">VAP<tspan fill="#14B8A6">O</tspan>R</text>
+    <text x="215" y="150" font-size="15.5" font-weight="500" letter-spacing="0.6" fill="#475569"><tspan font-weight="800" fill="#0F766E">V</tspan>iral <tspan font-weight="800" fill="#0F766E">A</tspan>nd <tspan font-weight="800" fill="#0F766E">P</tspan>rokaryotic m<tspan font-weight="800" fill="#0F766E">O</tspan>dular pipeline<tspan font-weight="800" fill="#0F766E">R</tspan></text>
+  </g>
+</svg>

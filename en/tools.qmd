@@ -1,0 +1,249 @@
+---
+title: "Tools"
+pagetitle: "Tools — BioVirLab"
+description-meta: "Open-source bioinformatics tools developed at BioVirLab: ViralQuest and VAPOR."
+---
+
+::: {.lead}
+Open-source software developed in the laboratory to find, classify and
+interpret viruses in sequencing data. Pick a tool and step through the
+analysis.
+:::
+
+<!-- English version of ferramentas.qmd. Keep the tool ids identical in both
+     languages so links such as tools.html#vapor keep working. -->
+
+```{=html}
+<div class="tools" data-tools data-label-steps="steps" data-label-progs="programs">
+
+  <div class="tool-picker" role="tablist" aria-label="Tools">
+    <button class="tool-pick" type="button" role="tab" id="tab-viralquest"
+            aria-controls="viralquest" data-tool="viralquest"
+            style="--tool-accent:#3f7bc4">
+      <img src="../assets/tool-viralquest.png" alt="ViralQuest">
+      <span class="tool-pick-kind">Tool · Python</span>
+      <span class="tool-pick-desc">Virus discovery in genetic data, with an interactive report</span>
+    </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-vapor"
+            aria-controls="vapor" data-tool="vapor"
+            style="--tool-accent:#14b8a6">
+      <img src="../assets/tool-vapor.svg" alt="VAPOR">
+      <span class="tool-pick-kind">Pipeline · Snakemake</span>
+      <span class="tool-pick-desc">Viral and prokaryotic metagenomics, from reads to reports</span>
+    </button>
+  </div>
+
+  <!-- ============================================================ ViralQuest -->
+  <section class="tool-panel" id="viralquest" role="tabpanel" aria-labelledby="tab-viralquest"
+           style="--tool-accent:#3f7bc4; --tool-accent-dark:#04337e">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Tool · Open source · Free</p>
+        <h2 class="tool-name">ViralQuest</h2>
+        <p class="tool-tagline">Finding viruses hidden in genetic data</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/gabrielvpina/viralquest">GitHub</a>
+        <a class="btn-biovir-ghost" href="https://doi.org/10.1186/s12859-026-06391-6">Paper · BMC Bioinformatics</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>Viruses are everywhere: in plants, animals, people and the environment.
+      Yet most of them are still unknown. Scientists can now read, all at
+      once, the genetic material of an entire sample, such as a leaf, an
+      insect or a soil sample. Among millions of sequences, one question
+      remains hard to answer: <strong>which of them belong to
+      viruses?</strong></p>
+      <p>ViralQuest was built to answer that question. It is free,
+      open-source software developed at BioVirLab, and its results have been
+      published in an international scientific journal.</p>
+    </div>
+
+    <h3 class="tool-section">How it works <span class="tool-count" data-count></span></h3>
+
+    <div class="flow" data-flow>
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Sample</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Search</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Comparison</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Classification</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Report</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Millions of sequences from a whole sample</h4>
+          <p>The starting point is the genetic material read from an entire
+          sample — a leaf, an insect, some soil — with sequences from every
+          organism in it mixed together.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Searching the data for viruses</h4>
+          <p>ViralQuest sifts through large volumes of genetic data and finds
+          virus sequences, including those of viruses not yet described.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Comparison against international databases</h4>
+          <p>The sequences found are compared against large international
+          reference databases.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Viral group and genes</h4>
+          <p>For each virus, the tool indicates which group it most likely
+          belongs to and which genes it carries.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Interactive report in the browser</h4>
+          <p>At the end of the analysis, ViralQuest produces a report that
+          opens in any web browser, making results easy to interpret and
+          share.</p>
+          <ul class="flow-chips flow-chips-plain">
+            <li>charts</li>
+            <li>viral genome maps</li>
+            <li>organized tables</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tool-section">What it is for</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Discover new viruses</h3><p>In different organisms and environments.</p></div>
+      <div class="info-card"><h3>Understand viral diversity</h3><p>See which viruses are present in a sample.</p></div>
+      <div class="info-card"><h3>Speed up research</h3><p>In health, agriculture and the environment, turning raw data into useful information.</p></div>
+    </div>
+  </section>
+
+  <!-- ================================================================= VAPOR -->
+  <section class="tool-panel" id="vapor" role="tabpanel" aria-labelledby="tab-vapor"
+           style="--tool-accent:#14b8a6; --tool-accent-dark:#0f766e">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Pipeline · Snakemake · Open source</p>
+        <h2 class="tool-name">VAPOR</h2>
+        <p class="tool-tagline">Viral And Prokaryotic mOdular pipelineR</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/LymF/vapor">GitHub</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>VAPOR is a Snakemake pipeline that takes metagenomic sequencing reads —
+      short (Illumina, paired or single-end) or long (Nanopore and PacBio
+      HiFi) — and automatically runs a series of analyses, configured by
+      <strong>a single parameter file</strong>.</p>
+    </div>
+
+    <h3 class="tool-section">Pipeline stages <span class="tool-count" data-count></span></h3>
+
+    <div class="flow" data-flow>
+      <div class="reads-toggle" data-reads-toggle role="group" aria-label="Read type">
+        <span class="reads-toggle-label">Highlight programs for</span>
+        <button type="button" data-reads="all" aria-pressed="true">All</button>
+        <button type="button" data-reads="short" aria-pressed="false">Short reads</button>
+        <button type="button" data-reads="long" aria-pressed="false">Long reads</button>
+      </div>
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Quality</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Assembly</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Viruses</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Prokaryotes</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Annotation</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">06</span><span class="flow-label">Abundance</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Read quality control</h4>
+          <p>Reads are cleaned and assessed before any further analysis.</p>
+          <ul class="flow-chips">
+            <li data-reads="short">fastp</li>
+            <li data-reads="long">NanoPlot</li>
+            <li data-reads="long">Porechop</li>
+            <li data-reads="long">Filtlong</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Assembly into contigs</h4>
+          <p>MEGAHIT for short reads; Flye with Medaka, or metaMDBG, for long
+          reads. Assemblies are evaluated with QUAST. An optional module
+          classifies reads directly, without assembly.</p>
+          <ul class="flow-chips">
+            <li data-reads="short">MEGAHIT</li>
+            <li data-reads="long">Flye</li>
+            <li data-reads="long">Medaka</li>
+            <li data-reads="long">metaMDBG</li>
+            <li>QUAST</li>
+            <li class="is-optional">Sylph</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Viral branch</h4>
+          <p>Detects viral contigs, assesses completeness, excises proviruses,
+          bins contigs into genomes and builds a vOTU catalogue, clustering
+          viruses from all samples by similarity.</p>
+          <ul class="flow-chips">
+            <li>VirSorter2</li>
+            <li>geNomad</li>
+            <li>CheckV</li>
+            <li>vRhyme</li>
+            <li>skani</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Prokaryotic branch</h4>
+          <p>Reconstructs genomes with several binners, picks the best bins,
+          checks quality and contamination, removes redundancy and classifies
+          them.</p>
+          <ul class="flow-chips">
+            <li>MetaBAT2</li>
+            <li>VAMB</li>
+            <li>SemiBin2</li>
+            <li>Binette</li>
+            <li>CheckM2</li>
+            <li>GUNC</li>
+            <li>GTDB-Tk</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Taxonomy, hosts and annotation</h4>
+          <p>Viral taxonomy against INPHARED, host prediction, screening for
+          antibiotic resistance genes and defence systems, and functional
+          annotation.</p>
+          <ul class="flow-chips">
+            <li>MMseqs2</li>
+            <li>PHIST</li>
+            <li>AMRFinderPlus</li>
+            <li>RGI</li>
+            <li>DefenseFinder</li>
+            <li>Pharokka</li>
+            <li>Phold</li>
+            <li>Bakta</li>
+            <li>EggNOG</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Abundance and diversity</h4>
+          <p>Per-sample abundance and alpha and beta diversity metrics.</p>
+          <ul class="flow-chips">
+            <li>CoverM</li>
+          </ul>
+        </div>
+      </div>
+      <p class="flow-legend"><span class="flow-legend-opt">optional</span> module that can be switched on in the parameter file</p>
+    </div>
+
+    <h3 class="tool-section">Outputs</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Genomes</h3><p>Organized viral and prokaryotic genomes, with circular maps.</p></div>
+      <div class="info-card"><h3>Tables</h3><p>Taxonomy, quality, hosts, resistance and defence genes.</p></div>
+      <div class="info-card"><h3>Matrices and diversity</h3><p>Per-sample presence and abundance; alpha and beta diversity.</p></div>
+      <div class="info-card"><h3>Reports</h3><p>A MultiQC report and an interactive HTML report bringing it all together.</p></div>
+    </div>
+  </section>
+
+</div>
+<script src="../js/ferramentas.js"></script>
+```

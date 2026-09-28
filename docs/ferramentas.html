@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Laboratório dedicado à descoberta e caracterização de vírus por meio de bioinformática, genômica e biologia molecular.">
+<meta name="description" content="Ferramentas de bioinformática abertas desenvolvidas no BioVirLab: ViralQuest e VAPOR.">
 
-<title>BioVirLab — Laboratório de Bioinformática de Vírus – BioVirLab</title>
+<title>Ferramentas — BioVirLab – BioVirLab</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/fonts.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item">
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Eventos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ferramentas.html"> 
+    <a class="nav-link active" href="./ferramentas.html" aria-current="page"> 
 <span class="menu-text">Ferramentas</span></a>
   </li>  
   <li class="nav-item">
@@ -149,83 +149,271 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ferramentas</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero">
-<div class="hero-text">
-<div class="eyebrow">
-<p>Bioinformática · Virologia · Ômicas</p>
-</div>
-<section id="investigando-a-diversidade-viral-por-meio-de-dados" class="level1 no-anchor">
-<h1 class="no-anchor">Investigando a diversidade viral por meio de dados</h1>
-<p>O <strong>BioVirLab</strong> reúne pesquisadores dedicados à descoberta, caracterização e análise evolutiva de vírus, combinando sequenciamento de alto rendimento, bioinformática e validação experimental. Nosso trabalho abrange desde a identificação de novos vírus em amostras ambientais e biológicas até o estudo dos mecanismos de interação entre vírus e hospedeiros.</p>
-<div class="hero-actions">
-<p><a href="./linhas-de-pesquisa.html" class="btn-biovir no-external">Linhas de Pesquisa</a> <a href="./membros.html" class="btn-biovir-ghost no-external">Conheça a equipe</a></p>
-</div>
-</section>
-</div>
-<div class="hero-figure">
-<p><img src="assets/main-logo.svg" class="img-fluid" alt="Logotipo do BioVirLab"></p>
-</div>
-</div>
-<section id="o-laboratório" class="level1">
-<h1>O laboratório</h1>
-<p>Atuamos na interface entre biologia computacional e virologia. Utilizamos dados de metagenômica e metatranscriptômica para reconstruir genomas virais, inferir relações filogenéticas e descrever a diversidade de vírus associados a invertebrados, plantas, vertebrados e ambientes naturais.</p>
-<p>Além da pesquisa básica, o laboratório desenvolve fluxos de trabalho e ferramentas computacionais abertas para a comunidade científica, e mantém atividades contínuas de formação de estudantes de graduação e pós-graduação.</p>
-<div class="card-grid">
-<section id="descoberta-viral" class="level3 info-card">
-<h3 data-anchor-id="descoberta-viral">Descoberta viral</h3>
-<p>Identificação e caracterização de novos vírus a partir de dados de sequenciamento em larga escala, com curadoria manual e validação experimental.</p>
-</section>
-<section id="genômica-e-evolução" class="level3 info-card">
-<h3 data-anchor-id="genômica-e-evolução">Genômica e evolução</h3>
-<p>Reconstrução de genomas, anotação funcional e análises filogenéticas para entender a origem e a diversificação de linhagens virais.</p>
-</section>
-<section id="ferramentas-abertas" class="level3 info-card">
-<h3 data-anchor-id="ferramentas-abertas">Ferramentas abertas</h3>
-<p>Desenvolvimento de pipelines e softwares reprodutíveis para análise de viromas, disponibilizados em repositórios públicos.</p>
-</section>
-<section id="formação-científica" class="level3 info-card">
-<h3 data-anchor-id="formação-científica">Formação científica</h3>
-<p>Orientação de estudantes de iniciação científica, mestrado e doutorado, com ênfase em pensamento crítico e ciência aberta.</p>
-</section>
-</div>
-<!-- Os números abaixo são gerados por scripts/build-stats.py a partir de
-     _data/members.tsv, linhas-de-pesquisa.qmd e _data/estatisticas.json. -->
-<!-- gerado por scripts/build-stats.py - nao editar a mao -->
-<div class="stat-row">
-<a class="stat-item no-external" href="membros.html"><span class="stat-value">24</span><span class="stat-label">Integrantes</span></a><a class="stat-item no-external" href="linhas-de-pesquisa.html"><span class="stat-value">5</span><span class="stat-label">Linhas de pesquisa</span></a><a class="stat-item no-external" href="publicacoes.html"><span class="stat-value">48</span><span class="stat-label">Publicações</span></a><a class="stat-item no-external" href="publicacoes.html#colaboracoes"><span class="stat-value">346</span><span class="stat-label">Colaborações</span></a>
-</div>
-</section>
-<section id="onde-estamos" class="level1">
-<h1>Onde estamos</h1>
-<!-- AJUSTAR: confirmar endereço, departamento e contato institucional -->
-<p>O BioVirLab está sediado na <strong>Universidade Estadual de Santa Cruz (UESC)</strong> e na <strong>Universidade Federal do Sul da Bahia (UFSB)</strong>, nas cidades de Ilhéus e Itabuna - Bahia, Brasil.</p>
-<!-- Mapa gerado por scripts/build-mapa.py a partir de _data/locais.tsv. -->
-<!-- gerado por scripts/build-mapa.py a partir de _data/locais.tsv - nao editar a mao -->
-<div class="mapa-wrap">
-<a class="mapa-img no-external" href="https://www.openstreetmap.org/#map=12/-14.7837/-39.2043" target="_blank" rel="noopener" title="Abrir no OpenStreetMap"><img src="assets/mapa-campi.jpg" alt="Mapa com a localização dos campi do BioVirLab" width="1135" height="380" loading="lazy"><span class="mapa-credito">Mapa: Esri, OpenStreetMap</span></a>
-<ul class="local-list">
-<li>
-<span class="local-num">1</span><span class="local-corpo"><span class="local-nome">Universidade Estadual de Santa Cruz (UESC)</span><span class="local-end">Campus Soane Nazaré de Andrade — Rodovia Jorge Amado, km 16, Salobrinho, Ilhéus – BA, CEP 45662-900</span><a class="local-rota" href="https://www.openstreetmap.org/directions?to=-14.796383,-39.173061" target="_blank" rel="noopener">Ver rotas</a></span>
-</li>
-<li>
-<span class="local-num">2</span><span class="local-corpo"><span class="local-nome">Universidade Federal do Sul da Bahia (UFSB)</span><span class="local-end">Campus Jorge Amado — Rodovia Ilhéus–Vitória da Conquista (BR-415), km 39, s/n, Ferradas, divisa entre Itabuna e Ilhéus – BA, CEP 45613-204</span><a class="local-rota" href="https://www.openstreetmap.org/directions?to=-14.770943,-39.235581" target="_blank" rel="noopener">Ver rotas</a></span>
-</li>
-</ul>
-</div>
-<p>Para colaborações, dúvidas ou oportunidades de pesquisa, entre em contato pelo <a href="https://www.instagram.com/biovir.lab/">Instagram do laboratório</a>.</p>
+    
+  
+    
+  </div>
+  
 
 
-</section>
+</header>
+
+
+<div class="lead">
+<p>Software livre desenvolvido no laboratório para encontrar, classificar e interpretar vírus em dados de sequenciamento. Escolha uma ferramenta e percorra as etapas da análise.</p>
+</div>
+<!-- Para adicionar uma ferramenta: copie um <button class="tool-pick"> e um
+     <section class="tool-panel"> abaixo, trocando o id (ex.: "nova-ferramenta").
+     O comportamento (abas, etapas, filtro de leituras e contagem de programas)
+     vem de js/ferramentas.js e funciona sem nenhuma outra alteração.
+     A versão em inglês fica em en/tools.qmd. -->
+<div class="tools" data-tools="" data-label-steps="etapas" data-label-progs="programas">
+
+  <div class="tool-picker" role="tablist" aria-label="Ferramentas">
+    <button class="tool-pick" type="button" role="tab" id="tab-viralquest" aria-controls="viralquest" data-tool="viralquest" style="--tool-accent:#3f7bc4">
+      <img src="assets/tool-viralquest.png" alt="ViralQuest">
+      <span class="tool-pick-kind">Ferramenta · Python</span>
+      <span class="tool-pick-desc">Descoberta de vírus em dados genéticos, com relatório interativo</span>
+    </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-vapor" aria-controls="vapor" data-tool="vapor" style="--tool-accent:#14b8a6">
+      <img src="assets/tool-vapor.svg" alt="VAPOR">
+      <span class="tool-pick-kind">Pipeline · Snakemake</span>
+      <span class="tool-pick-desc">Metagenômica viral e procariótica, das leituras aos relatórios</span>
+    </button>
+  </div>
+
+  <!-- ============================================================ ViralQuest -->
+  <section class="tool-panel" id="viralquest" role="tabpanel" aria-labelledby="tab-viralquest" style="--tool-accent:#3f7bc4; --tool-accent-dark:#04337e">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Ferramenta · Código aberto · Gratuita</p>
+        <h2 class="tool-name">ViralQuest</h2>
+        <p class="tool-tagline">Encontrando vírus escondidos nos dados genéticos</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/gabrielvpina/viralquest">GitHub</a>
+        <a class="btn-biovir-ghost" href="https://doi.org/10.1186/s12859-026-06391-6">Artigo · BMC Bioinformatics</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>Os vírus estão por toda parte: em plantas, animais, pessoas e no
+      ambiente. Mas a maioria deles ainda é desconhecida. Hoje os cientistas
+      conseguem ler de uma só vez o material genético de uma amostra inteira,
+      como uma folha, um inseto ou uma amostra de solo. Em meio a milhões de
+      sequências, uma pergunta continua difícil de responder: <strong>quais
+      delas pertencem a vírus?</strong></p>
+      <p>O ViralQuest foi criado para responder a essa pergunta. É uma
+      ferramenta de computador gratuita e de código aberto, desenvolvida no
+      BioVirLab, e seus resultados foram publicados em revista científica
+      internacional.</p>
+    </div>
+
+    <h3 class="tool-section">Como funciona <span class="tool-count" data-count=""></span></h3>
+
+    <div class="flow" data-flow="">
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Amostra</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Busca</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Comparação</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Classificação</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Relatório</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Milhões de sequências de uma amostra inteira</h4>
+          <p>O ponto de partida é o material genético lido de uma amostra
+          completa — uma folha, um inseto, um pouco de solo — com sequências de
+          todos os organismos presentes misturadas.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Vasculhar os dados atrás de vírus</h4>
+          <p>O ViralQuest percorre grandes volumes de dados genéticos e
+          encontra as sequências de vírus, inclusive de vírus ainda não
+          descritos.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Comparar com bancos de dados internacionais</h4>
+          <p>As sequências encontradas são comparadas com grandes bancos de
+          dados internacionais de referência.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Indicar o grupo viral e os genes</h4>
+          <p>Para cada vírus, a ferramenta indica a qual grupo ele provavelmente
+          pertence e quais genes ele carrega.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Relatório interativo no navegador</h4>
+          <p>No fim da análise, o ViralQuest gera um relatório que pode ser
+          aberto em qualquer navegador, o que facilita interpretar e
+          compartilhar os resultados.</p>
+          <ul class="flow-chips flow-chips-plain">
+            <li>gráficos</li>
+            <li>mapas do genoma viral</li>
+            <li>tabelas organizadas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tool-section">Para que serve</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Descobrir novos vírus</h3><p>Em diferentes organismos e ambientes.</p></div>
+      <div class="info-card"><h3>Medir a diversidade viral</h3><p>Entender quais vírus estão presentes em uma amostra.</p></div>
+      <div class="info-card"><h3>Agilizar a pesquisa</h3><p>Em saúde, agricultura e meio ambiente, transformando dados brutos em informação útil.</p></div>
+    </div>
+  </section>
+
+  <!-- ================================================================= VAPOR -->
+  <section class="tool-panel" id="vapor" role="tabpanel" aria-labelledby="tab-vapor" style="--tool-accent:#14b8a6; --tool-accent-dark:#0f766e">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Pipeline · Snakemake · Código aberto</p>
+        <h2 class="tool-name">VAPOR</h2>
+        <p class="tool-tagline">Viral And Prokaryotic mOdular pipelineR</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/LymF/vapor">GitHub</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>O VAPOR é uma pipeline em Snakemake que recebe leituras de
+      sequenciamento metagenômico — curtas (Illumina, pareadas ou não) ou
+      longas (Nanopore e PacBio HiFi) — e roda automaticamente uma sequência de
+      análises, configurada por <strong>um único arquivo de
+      parâmetros</strong>.</p>
+    </div>
+
+    <h3 class="tool-section">Etapas da pipeline <span class="tool-count" data-count=""></span></h3>
+
+    <div class="flow" data-flow="">
+      <div class="reads-toggle" data-reads-toggle="" role="group" aria-label="Tipo de leitura">
+        <span class="reads-toggle-label">Destacar programas para</span>
+        <button type="button" data-reads="all" aria-pressed="true">Todas</button>
+        <button type="button" data-reads="short" aria-pressed="false">Leituras curtas</button>
+        <button type="button" data-reads="long" aria-pressed="false">Leituras longas</button>
+      </div>
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Qualidade</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Montagem</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Vírus</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Procariotos</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Anotação</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">06</span><span class="flow-label">Abundância</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Controle de qualidade das leituras</h4>
+          <p>Limpeza e avaliação das leituras antes de qualquer análise.</p>
+          <ul class="flow-chips">
+            <li data-reads="short">fastp</li>
+            <li data-reads="long">NanoPlot</li>
+            <li data-reads="long">Porechop</li>
+            <li data-reads="long">Filtlong</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Montagem em contigs</h4>
+          <p>MEGAHIT para leituras curtas; Flye com Medaka ou metaMDBG para
+          longas. A montagem é avaliada pelo QUAST. Um módulo opcional
+          classifica as leituras diretamente, sem montagem.</p>
+          <ul class="flow-chips">
+            <li data-reads="short">MEGAHIT</li>
+            <li data-reads="long">Flye</li>
+            <li data-reads="long">Medaka</li>
+            <li data-reads="long">metaMDBG</li>
+            <li>QUAST</li>
+            <li class="is-optional">Sylph</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Parte viral</h4>
+          <p>Detecta contigs virais, avalia completude, recorta provírus, agrupa
+          contigs em genomas e monta um catálogo de vOTUs, agrupando os vírus
+          de todas as amostras por similaridade.</p>
+          <ul class="flow-chips">
+            <li>VirSorter2</li>
+            <li>geNomad</li>
+            <li>CheckV</li>
+            <li>vRhyme</li>
+            <li>skani</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Parte procariótica</h4>
+          <p>Reconstrói genomas com vários binners, escolhe os melhores, checa
+          qualidade e contaminação, remove redundância e classifica.</p>
+          <ul class="flow-chips">
+            <li>MetaBAT2</li>
+            <li>VAMB</li>
+            <li>SemiBin2</li>
+            <li>Binette</li>
+            <li>CheckM2</li>
+            <li>GUNC</li>
+            <li>GTDB-Tk</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Taxonomia, hospedeiros e anotação</h4>
+          <p>Taxonomia viral contra o INPHARED, predição de hospedeiros, busca de
+          genes de resistência a antibióticos e de sistemas de defesa, e
+          anotação funcional.</p>
+          <ul class="flow-chips">
+            <li>MMseqs2</li>
+            <li>PHIST</li>
+            <li>AMRFinderPlus</li>
+            <li>RGI</li>
+            <li>DefenseFinder</li>
+            <li>Pharokka</li>
+            <li>Phold</li>
+            <li>Bakta</li>
+            <li>EggNOG</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Abundância e diversidade</h4>
+          <p>Cálculo de abundância por amostra e métricas de diversidade alfa e
+          beta.</p>
+          <ul class="flow-chips">
+            <li>CoverM</li>
+          </ul>
+        </div>
+      </div>
+      <p class="flow-legend"><span class="flow-legend-opt">opcional</span> módulo que pode ser ligado no arquivo de parâmetros</p>
+    </div>
+
+    <h3 class="tool-section">O que sai</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Genomas</h3><p>Genomas virais e procarióticos organizados, com mapas circulares.</p></div>
+      <div class="info-card"><h3>Tabelas</h3><p>Taxonomia, qualidade, hospedeiros, genes de resistência e de defesa.</p></div>
+      <div class="info-card"><h3>Matrizes e diversidade</h3><p>Presença e abundância por amostra; diversidade alfa e beta.</p></div>
+      <div class="info-card"><h3>Relatórios</h3><p>Um relatório MultiQC e um relatório HTML interativo reunindo tudo.</p></div>
+    </div>
+  </section>
+
+</div>
+<script src="js/ferramentas.js"></script>
+
+
 
 </main> <!-- /main -->
 <script>

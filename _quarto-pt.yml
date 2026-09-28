@@ -6,6 +6,7 @@ project:
     - "/publicacoes.qmd"
     - "/eventos.qmd"
     - "/membros.qmd"
+    - "/ferramentas.qmd"
     # paginas de evento geradas por scripts/build-eventos.py
     - "/eventos/*/index.qmd"
 
@@ -23,6 +24,8 @@ website:
         text: "Publicações"
       - href: eventos.qmd
         text: "Eventos"
+      - href: ferramentas.qmd
+        text: "Ferramentas"
       - href: membros.qmd
         text: "Membros"
     right:

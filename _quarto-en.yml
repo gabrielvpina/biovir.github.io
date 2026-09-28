@@ -21,6 +21,8 @@ website:
         text: "Publications"
       - href: en/events.qmd
         text: "Events"
+      - href: en/tools.qmd
+        text: "Tools"
       - href: en/members.qmd
         text: "Members"
     right:

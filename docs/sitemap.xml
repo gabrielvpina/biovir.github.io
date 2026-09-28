@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.biovirlab.com.br/eventos/3_workshop_virologia/index.html</loc>
-    <lastmod>2026-09-27T04:13:31.748Z</lastmod>
+    <lastmod>2026-09-28T03:01:53.241Z</lastmod>
   </url>
   <url>
-    <loc>https://www.biovirlab.com.br/eventos.html</loc>
-    <lastmod>2026-09-18T19:24:33.582Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.biovirlab.com.br/linhas-de-pesquisa.html</loc>
-    <lastmod>2026-09-18T19:24:33.583Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.biovirlab.com.br/index.html</loc>
-    <lastmod>2026-09-18T19:12:46.533Z</lastmod>
+    <loc>https://www.biovirlab.com.br/membros.html</loc>
+    <lastmod>2026-09-16T17:50:01.502Z</lastmod>
   </url>
   <url>
     <loc>https://www.biovirlab.com.br/publicacoes.html</loc>
     <lastmod>2026-09-18T19:19:05.197Z</lastmod>
   </url>
   <url>
-    <loc>https://www.biovirlab.com.br/membros.html</loc>
-    <lastmod>2026-09-16T17:50:01.502Z</lastmod>
+    <loc>https://www.biovirlab.com.br/index.html</loc>
+    <lastmod>2026-09-18T19:12:46.533Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.biovirlab.com.br/linhas-de-pesquisa.html</loc>
+    <lastmod>2026-09-18T19:24:33.583Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.biovirlab.com.br/eventos.html</loc>
+    <lastmod>2026-09-18T19:24:33.582Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.biovirlab.com.br/ferramentas.html</loc>
+    <lastmod>2026-09-28T02:54:12.981Z</lastmod>
   </url>
 </urlset>

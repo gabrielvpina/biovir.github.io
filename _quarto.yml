@@ -16,6 +16,7 @@ project:
     - "eventos/**/*.png"
     - "eventos/**/*.webp"
     - "fonts/*.woff2"
+    - "js/*.js"
     - ".nojekyll"
     - "CNAME"
     # as paginas em ingles sao geradas pelo perfil "en" (ver build.sh)

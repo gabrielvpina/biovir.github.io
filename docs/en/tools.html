@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Laboratório dedicado à descoberta e caracterização de vírus por meio de bioinformática, genômica e biologia molecular.">
+<meta name="description" content="Open-source bioinformatics tools developed at BioVirLab: ViralQuest and VAPOR.">
 
-<title>BioVirLab — Laboratório de Bioinformática de Vírus – BioVirLab</title>
+<title>Tools — BioVirLab – BioVirLab</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,22 +27,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/logo-without-text-virus.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ce90f4ff6e20ef836d1ba10aee86fbe7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo-without-text-virus.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ce90f4ff6e20ef836d1ba10aee86fbe7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -57,65 +57,65 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Nenhum resultado",
-    "search-matching-documents-text": "documentos correspondentes",
-    "search-copy-link-title": "Copiar link para a busca",
-    "search-hide-matches-text": "Esconder correspondências adicionais",
-    "search-more-match-text": "mais correspondência neste documento",
-    "search-more-matches-text": "mais correspondências neste documento",
-    "search-clear-button-title": "Limpar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Procurar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
-<link rel="stylesheet" href="styles/fonts.css">
+<link rel="stylesheet" href="../styles/fonts.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo-horizontal-small.png" alt="BioVirLab" class="navbar-logo light-content">
-    <img src="./assets/logo-horizontal-small.png" alt="BioVirLab" class="navbar-logo dark-content">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo-horizontal-small.png" alt="BioVirLab" class="navbar-logo light-content">
+    <img src="../assets/logo-horizontal-small.png" alt="BioVirLab" class="navbar-logo dark-content">
     </a>
   </div>
-            <div id="quarto-search" class="" title="Procurar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Início</span></a>
+    <a class="nav-link" href="../en/index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./linhas-de-pesquisa.html"> 
-<span class="menu-text">Linhas de Pesquisa</span></a>
+    <a class="nav-link" href="../en/research.html"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publicacoes.html"> 
-<span class="menu-text">Publicações</span></a>
+    <a class="nav-link" href="../en/publications.html"> 
+<span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./eventos.html"> 
-<span class="menu-text">Eventos</span></a>
+    <a class="nav-link" href="../en/events.html"> 
+<span class="menu-text">Events</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ferramentas.html"> 
-<span class="menu-text">Ferramentas</span></a>
+    <a class="nav-link active" href="../en/tools.html" aria-current="page"> 
+<span class="menu-text">Tools</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./membros.html"> 
-<span class="menu-text">Membros</span></a>
+    <a class="nav-link" href="../en/members.html"> 
+<span class="menu-text">Members</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -125,18 +125,18 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-pt-br" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-en" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-translate" role="img" aria-label="Idioma / Language">
 </i> 
- <span class="menu-text">PT-BR</span>
+ <span class="menu-text">EN</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-pt-br">    
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-en">    
         <li>
-    <a class="dropdown-item" href="./index.html">
+    <a class="dropdown-item" href="../index.html">
  <span class="dropdown-text">Português (BR)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./en/index.html">
+    <a class="dropdown-item" href="../en/index.html">
  <span class="dropdown-text">English</span></a>
   </li>  
     </ul>
@@ -149,83 +149,265 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tools</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<div class="hero">
-<div class="hero-text">
-<div class="eyebrow">
-<p>Bioinformática · Virologia · Ômicas</p>
-</div>
-<section id="investigando-a-diversidade-viral-por-meio-de-dados" class="level1 no-anchor">
-<h1 class="no-anchor">Investigando a diversidade viral por meio de dados</h1>
-<p>O <strong>BioVirLab</strong> reúne pesquisadores dedicados à descoberta, caracterização e análise evolutiva de vírus, combinando sequenciamento de alto rendimento, bioinformática e validação experimental. Nosso trabalho abrange desde a identificação de novos vírus em amostras ambientais e biológicas até o estudo dos mecanismos de interação entre vírus e hospedeiros.</p>
-<div class="hero-actions">
-<p><a href="./linhas-de-pesquisa.html" class="btn-biovir no-external">Linhas de Pesquisa</a> <a href="./membros.html" class="btn-biovir-ghost no-external">Conheça a equipe</a></p>
-</div>
-</section>
-</div>
-<div class="hero-figure">
-<p><img src="assets/main-logo.svg" class="img-fluid" alt="Logotipo do BioVirLab"></p>
-</div>
-</div>
-<section id="o-laboratório" class="level1">
-<h1>O laboratório</h1>
-<p>Atuamos na interface entre biologia computacional e virologia. Utilizamos dados de metagenômica e metatranscriptômica para reconstruir genomas virais, inferir relações filogenéticas e descrever a diversidade de vírus associados a invertebrados, plantas, vertebrados e ambientes naturais.</p>
-<p>Além da pesquisa básica, o laboratório desenvolve fluxos de trabalho e ferramentas computacionais abertas para a comunidade científica, e mantém atividades contínuas de formação de estudantes de graduação e pós-graduação.</p>
-<div class="card-grid">
-<section id="descoberta-viral" class="level3 info-card">
-<h3 data-anchor-id="descoberta-viral">Descoberta viral</h3>
-<p>Identificação e caracterização de novos vírus a partir de dados de sequenciamento em larga escala, com curadoria manual e validação experimental.</p>
-</section>
-<section id="genômica-e-evolução" class="level3 info-card">
-<h3 data-anchor-id="genômica-e-evolução">Genômica e evolução</h3>
-<p>Reconstrução de genomas, anotação funcional e análises filogenéticas para entender a origem e a diversificação de linhagens virais.</p>
-</section>
-<section id="ferramentas-abertas" class="level3 info-card">
-<h3 data-anchor-id="ferramentas-abertas">Ferramentas abertas</h3>
-<p>Desenvolvimento de pipelines e softwares reprodutíveis para análise de viromas, disponibilizados em repositórios públicos.</p>
-</section>
-<section id="formação-científica" class="level3 info-card">
-<h3 data-anchor-id="formação-científica">Formação científica</h3>
-<p>Orientação de estudantes de iniciação científica, mestrado e doutorado, com ênfase em pensamento crítico e ciência aberta.</p>
-</section>
-</div>
-<!-- Os números abaixo são gerados por scripts/build-stats.py a partir de
-     _data/members.tsv, linhas-de-pesquisa.qmd e _data/estatisticas.json. -->
-<!-- gerado por scripts/build-stats.py - nao editar a mao -->
-<div class="stat-row">
-<a class="stat-item no-external" href="membros.html"><span class="stat-value">24</span><span class="stat-label">Integrantes</span></a><a class="stat-item no-external" href="linhas-de-pesquisa.html"><span class="stat-value">5</span><span class="stat-label">Linhas de pesquisa</span></a><a class="stat-item no-external" href="publicacoes.html"><span class="stat-value">48</span><span class="stat-label">Publicações</span></a><a class="stat-item no-external" href="publicacoes.html#colaboracoes"><span class="stat-value">346</span><span class="stat-label">Colaborações</span></a>
-</div>
-</section>
-<section id="onde-estamos" class="level1">
-<h1>Onde estamos</h1>
-<!-- AJUSTAR: confirmar endereço, departamento e contato institucional -->
-<p>O BioVirLab está sediado na <strong>Universidade Estadual de Santa Cruz (UESC)</strong> e na <strong>Universidade Federal do Sul da Bahia (UFSB)</strong>, nas cidades de Ilhéus e Itabuna - Bahia, Brasil.</p>
-<!-- Mapa gerado por scripts/build-mapa.py a partir de _data/locais.tsv. -->
-<!-- gerado por scripts/build-mapa.py a partir de _data/locais.tsv - nao editar a mao -->
-<div class="mapa-wrap">
-<a class="mapa-img no-external" href="https://www.openstreetmap.org/#map=12/-14.7837/-39.2043" target="_blank" rel="noopener" title="Abrir no OpenStreetMap"><img src="assets/mapa-campi.jpg" alt="Mapa com a localização dos campi do BioVirLab" width="1135" height="380" loading="lazy"><span class="mapa-credito">Mapa: Esri, OpenStreetMap</span></a>
-<ul class="local-list">
-<li>
-<span class="local-num">1</span><span class="local-corpo"><span class="local-nome">Universidade Estadual de Santa Cruz (UESC)</span><span class="local-end">Campus Soane Nazaré de Andrade — Rodovia Jorge Amado, km 16, Salobrinho, Ilhéus – BA, CEP 45662-900</span><a class="local-rota" href="https://www.openstreetmap.org/directions?to=-14.796383,-39.173061" target="_blank" rel="noopener">Ver rotas</a></span>
-</li>
-<li>
-<span class="local-num">2</span><span class="local-corpo"><span class="local-nome">Universidade Federal do Sul da Bahia (UFSB)</span><span class="local-end">Campus Jorge Amado — Rodovia Ilhéus–Vitória da Conquista (BR-415), km 39, s/n, Ferradas, divisa entre Itabuna e Ilhéus – BA, CEP 45613-204</span><a class="local-rota" href="https://www.openstreetmap.org/directions?to=-14.770943,-39.235581" target="_blank" rel="noopener">Ver rotas</a></span>
-</li>
-</ul>
-</div>
-<p>Para colaborações, dúvidas ou oportunidades de pesquisa, entre em contato pelo <a href="https://www.instagram.com/biovir.lab/">Instagram do laboratório</a>.</p>
+    
+  
+    
+  </div>
+  
 
 
-</section>
+</header>
+
+
+<div class="lead">
+<p>Open-source software developed in the laboratory to find, classify and interpret viruses in sequencing data. Pick a tool and step through the analysis.</p>
+</div>
+<!-- English version of ferramentas.qmd. Keep the tool ids identical in both
+     languages so links such as tools.html#vapor keep working. -->
+<div class="tools" data-tools="" data-label-steps="steps" data-label-progs="programs">
+
+  <div class="tool-picker" role="tablist" aria-label="Tools">
+    <button class="tool-pick" type="button" role="tab" id="tab-viralquest" aria-controls="viralquest" data-tool="viralquest" style="--tool-accent:#3f7bc4">
+      <img src="../assets/tool-viralquest.png" alt="ViralQuest">
+      <span class="tool-pick-kind">Tool · Python</span>
+      <span class="tool-pick-desc">Virus discovery in genetic data, with an interactive report</span>
+    </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-vapor" aria-controls="vapor" data-tool="vapor" style="--tool-accent:#14b8a6">
+      <img src="../assets/tool-vapor.svg" alt="VAPOR">
+      <span class="tool-pick-kind">Pipeline · Snakemake</span>
+      <span class="tool-pick-desc">Viral and prokaryotic metagenomics, from reads to reports</span>
+    </button>
+  </div>
+
+  <!-- ============================================================ ViralQuest -->
+  <section class="tool-panel" id="viralquest" role="tabpanel" aria-labelledby="tab-viralquest" style="--tool-accent:#3f7bc4; --tool-accent-dark:#04337e">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Tool · Open source · Free</p>
+        <h2 class="tool-name">ViralQuest</h2>
+        <p class="tool-tagline">Finding viruses hidden in genetic data</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/gabrielvpina/viralquest">GitHub</a>
+        <a class="btn-biovir-ghost" href="https://doi.org/10.1186/s12859-026-06391-6">Paper · BMC Bioinformatics</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>Viruses are everywhere: in plants, animals, people and the environment.
+      Yet most of them are still unknown. Scientists can now read, all at
+      once, the genetic material of an entire sample, such as a leaf, an
+      insect or a soil sample. Among millions of sequences, one question
+      remains hard to answer: <strong>which of them belong to
+      viruses?</strong></p>
+      <p>ViralQuest was built to answer that question. It is free,
+      open-source software developed at BioVirLab, and its results have been
+      published in an international scientific journal.</p>
+    </div>
+
+    <h3 class="tool-section">How it works <span class="tool-count" data-count=""></span></h3>
+
+    <div class="flow" data-flow="">
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Sample</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Search</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Comparison</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Classification</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Report</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Millions of sequences from a whole sample</h4>
+          <p>The starting point is the genetic material read from an entire
+          sample — a leaf, an insect, some soil — with sequences from every
+          organism in it mixed together.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Searching the data for viruses</h4>
+          <p>ViralQuest sifts through large volumes of genetic data and finds
+          virus sequences, including those of viruses not yet described.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Comparison against international databases</h4>
+          <p>The sequences found are compared against large international
+          reference databases.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Viral group and genes</h4>
+          <p>For each virus, the tool indicates which group it most likely
+          belongs to and which genes it carries.</p>
+        </div>
+        <div class="flow-detail">
+          <h4>Interactive report in the browser</h4>
+          <p>At the end of the analysis, ViralQuest produces a report that
+          opens in any web browser, making results easy to interpret and
+          share.</p>
+          <ul class="flow-chips flow-chips-plain">
+            <li>charts</li>
+            <li>viral genome maps</li>
+            <li>organized tables</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tool-section">What it is for</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Discover new viruses</h3><p>In different organisms and environments.</p></div>
+      <div class="info-card"><h3>Understand viral diversity</h3><p>See which viruses are present in a sample.</p></div>
+      <div class="info-card"><h3>Speed up research</h3><p>In health, agriculture and the environment, turning raw data into useful information.</p></div>
+    </div>
+  </section>
+
+  <!-- ================================================================= VAPOR -->
+  <section class="tool-panel" id="vapor" role="tabpanel" aria-labelledby="tab-vapor" style="--tool-accent:#14b8a6; --tool-accent-dark:#0f766e">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Pipeline · Snakemake · Open source</p>
+        <h2 class="tool-name">VAPOR</h2>
+        <p class="tool-tagline">Viral And Prokaryotic mOdular pipelineR</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/LymF/vapor">GitHub</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>VAPOR is a Snakemake pipeline that takes metagenomic sequencing reads —
+      short (Illumina, paired or single-end) or long (Nanopore and PacBio
+      HiFi) — and automatically runs a series of analyses, configured by
+      <strong>a single parameter file</strong>.</p>
+    </div>
+
+    <h3 class="tool-section">Pipeline stages <span class="tool-count" data-count=""></span></h3>
+
+    <div class="flow" data-flow="">
+      <div class="reads-toggle" data-reads-toggle="" role="group" aria-label="Read type">
+        <span class="reads-toggle-label">Highlight programs for</span>
+        <button type="button" data-reads="all" aria-pressed="true">All</button>
+        <button type="button" data-reads="short" aria-pressed="false">Short reads</button>
+        <button type="button" data-reads="long" aria-pressed="false">Long reads</button>
+      </div>
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Quality</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Assembly</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Viruses</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Prokaryotes</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Annotation</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">06</span><span class="flow-label">Abundance</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Read quality control</h4>
+          <p>Reads are cleaned and assessed before any further analysis.</p>
+          <ul class="flow-chips">
+            <li data-reads="short">fastp</li>
+            <li data-reads="long">NanoPlot</li>
+            <li data-reads="long">Porechop</li>
+            <li data-reads="long">Filtlong</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Assembly into contigs</h4>
+          <p>MEGAHIT for short reads; Flye with Medaka, or metaMDBG, for long
+          reads. Assemblies are evaluated with QUAST. An optional module
+          classifies reads directly, without assembly.</p>
+          <ul class="flow-chips">
+            <li data-reads="short">MEGAHIT</li>
+            <li data-reads="long">Flye</li>
+            <li data-reads="long">Medaka</li>
+            <li data-reads="long">metaMDBG</li>
+            <li>QUAST</li>
+            <li class="is-optional">Sylph</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Viral branch</h4>
+          <p>Detects viral contigs, assesses completeness, excises proviruses,
+          bins contigs into genomes and builds a vOTU catalogue, clustering
+          viruses from all samples by similarity.</p>
+          <ul class="flow-chips">
+            <li>VirSorter2</li>
+            <li>geNomad</li>
+            <li>CheckV</li>
+            <li>vRhyme</li>
+            <li>skani</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Prokaryotic branch</h4>
+          <p>Reconstructs genomes with several binners, picks the best bins,
+          checks quality and contamination, removes redundancy and classifies
+          them.</p>
+          <ul class="flow-chips">
+            <li>MetaBAT2</li>
+            <li>VAMB</li>
+            <li>SemiBin2</li>
+            <li>Binette</li>
+            <li>CheckM2</li>
+            <li>GUNC</li>
+            <li>GTDB-Tk</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Taxonomy, hosts and annotation</h4>
+          <p>Viral taxonomy against INPHARED, host prediction, screening for
+          antibiotic resistance genes and defence systems, and functional
+          annotation.</p>
+          <ul class="flow-chips">
+            <li>MMseqs2</li>
+            <li>PHIST</li>
+            <li>AMRFinderPlus</li>
+            <li>RGI</li>
+            <li>DefenseFinder</li>
+            <li>Pharokka</li>
+            <li>Phold</li>
+            <li>Bakta</li>
+            <li>EggNOG</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Abundance and diversity</h4>
+          <p>Per-sample abundance and alpha and beta diversity metrics.</p>
+          <ul class="flow-chips">
+            <li>CoverM</li>
+          </ul>
+        </div>
+      </div>
+      <p class="flow-legend"><span class="flow-legend-opt">optional</span> module that can be switched on in the parameter file</p>
+    </div>
+
+    <h3 class="tool-section">Outputs</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Genomes</h3><p>Organized viral and prokaryotic genomes, with circular maps.</p></div>
+      <div class="info-card"><h3>Tables</h3><p>Taxonomy, quality, hosts, resistance and defence genes.</p></div>
+      <div class="info-card"><h3>Matrices and diversity</h3><p>Per-sample presence and abundance; alpha and beta diversity.</p></div>
+      <div class="info-card"><h3>Reports</h3><p>A MultiQC report and an interactive HTML report bringing it all together.</p></div>
+    </div>
+  </section>
+
+</div>
+<script src="../js/ferramentas.js"></script>
+
+
 
 </main> <!-- /main -->
 <script>
@@ -330,12 +512,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copiada");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copiada");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -714,13 +896,13 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><strong>BioVirLab</strong> — Laboratório de Bioinformática de Vírus</p>
+<p><strong>BioVirLab</strong> — Virus Bioinformatics Laboratory</p>
 </div>   
     <div class="nav-footer-center">
 <p><a href="https://www.instagram.com/biovir.lab/">Instagram</a></p>
 </div>
     <div class="nav-footer-right">
-<p>Feito com <a href="https://quarto.org">Quarto</a></p>
+<p>Built with <a href="https://quarto.org">Quarto</a></p>
 </div>
   </div>
 </footer>

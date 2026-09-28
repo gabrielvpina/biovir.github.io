@@ -303,6 +303,16 @@ Sem a pasta `fotos/` (ou com ela vazia), a página simplesmente não tem galeria
 - Para remover um evento, apague a pasta e rode `./build.sh` — o script também
   limpa as páginas geradas do evento que sumiu.
 
+## Ferramentas
+
+A página **Ferramentas** (`ferramentas.qmd` / `en/tools.qmd`) é escrita
+diretamente em HTML dentro do `.qmd`. Cada ferramenta tem um botão
+`tool-pick` (a aba) e uma `section.tool-panel` com o mesmo `id`; as etapas do
+fluxo são pares `flow-step` / `flow-detail`, na mesma ordem. O comportamento
+(abas, etapas, filtro de leituras curtas/longas e contagem de programas) está
+em `js/ferramentas.js` e os logos em `assets/tool-*.{png,svg}`. Links como
+`ferramentas.html#vapor` abrem direto na ferramenta.
+
 ## Adicionar uma página nova
 
 1. crie `nova-pagina.qmd` e `en/new-page.qmd`;
