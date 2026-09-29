@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Open-source bioinformatics tools developed at BioVirLab: ViralQuest and VAPOR.">
+<meta name="description" content="Open-source bioinformatics tools developed at BioVirLab: ViralQuest, VAPOR and viralfetch.">
 
 <title>Tools — BioVirLab – BioVirLab</title>
 <style>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e656a970714f0c69b7494920b8d3c403.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-56e99a67669d87147ae08af5c73cd7bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -193,6 +193,11 @@ ul.task-list li input[type="checkbox"] {
       <span class="tool-pick-kind">Pipeline · Snakemake</span>
       <span class="tool-pick-desc">Viral and prokaryotic metagenomics, from reads to reports</span>
     </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-viralfetch" aria-controls="viralfetch" data-tool="viralfetch" style="--tool-accent:#7c3aed">
+      <img src="../assets/viralfetch-logo.svg" alt="viralfetch">
+      <span class="tool-pick-kind">Tool · Python · CLI</span>
+      <span class="tool-pick-desc">Virus taxonomy, metadata, sequences and trees from the terminal</span>
+    </button>
   </div>
 
   <!-- ============================================================ ViralQuest -->
@@ -267,6 +272,14 @@ ul.task-list li input[type="checkbox"] {
         </div>
       </div>
     </div>
+
+    <h3 class="tool-section">Pipeline overview</h3>
+    <figure class="tool-figure figure">
+      <a href="../assets/viralquest-scheme.png" target="_blank" rel="noopener">
+        <img src="../assets/viralquest-scheme.png" alt="ViralQuest pipeline in seven stages: input, screening, confirmation, taxonomy, quality and reads, scoring and outputs." loading="lazy" class="figure-img">
+      </a>
+      <figcaption>ViralQuest's seven stages, from input contigs to the report. Dashed boxes are optional steps. Click to enlarge.</figcaption>
+    </figure>
 
     <h3 class="tool-section">What it is for</h3>
     <div class="card-grid tool-cards">
@@ -401,6 +414,174 @@ ul.task-list li input[type="checkbox"] {
       <div class="info-card"><h3>Tables</h3><p>Taxonomy, quality, hosts, resistance and defence genes.</p></div>
       <div class="info-card"><h3>Matrices and diversity</h3><p>Per-sample presence and abundance; alpha and beta diversity.</p></div>
       <div class="info-card"><h3>Reports</h3><p>A MultiQC report and an interactive HTML report bringing it all together.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ viralfetch -->
+  <section class="tool-panel" id="viralfetch" role="tabpanel" aria-labelledby="tab-viralfetch" style="--tool-accent:#7c3aed; --tool-accent-dark:#1e1b4b; --tool-accent-soft:#c4b5fd; --tool-term-bg:#1e1b4b">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Tool · Command line · Open source</p>
+        <h2 class="tool-name">viralfetch</h2>
+        <p class="tool-tagline">Virus taxonomy, metadata and sequences, from the terminal</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/gabrielvpina/viralfetch">GitHub</a>
+        <a class="btn-biovir-ghost" href="https://pypi.org/project/viralfetch/">PyPI</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>viralfetch is a command-line tool for querying and downloading viral
+      taxonomy, metadata, sequences, and the per-family phylogenetic trees and
+      alignments. A virus name is enough: the tool finds its lineage, its
+      GenBank/RefSeq accessions and the related data, <strong>combining four
+      sources</strong> in a single query.</p>
+      <p>Every output is also available as <code>--json</code>, ready for
+      scripts and <code>jq</code>; downloaded data is cached, and names the
+      local index does not know are looked up in NCBI taxonomy.</p>
+    </div>
+
+    <div class="tool-install">
+      <span class="tool-install-label">Installation</span>
+      <code>pip install viralfetch</code>
+    </div>
+
+    <h3 class="tool-section">Commands <span class="tool-count" data-count="" data-label-steps="commands"></span></h3>
+
+    <div class="flow" data-flow="">
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">tax</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">members</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">seq</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">text</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">tree</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">06</span><span class="flow-label">msa</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch tax</code> Taxonomic lineage</h4>
+          <p>Shows the full ICTV lineage (realm to species). It can also query NCBI taxonomy directly, or compare both side by side, highlighting where they diverge.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--ncbi</li>
+            <li>--compare-ncbi</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch tax Coronaviridae
+╭─ Coronaviridae  (family) ──╮
+│ realm     Riboviria        │
+│ kingdom   Orthornavirae    │
+│ phylum    Pisuviricota     │
+│ class     Pisoniviricetes  │
+│ order     Nidovirales      │
+│ suborder  Cornidovirineae  │
+│ family    Coronaviridae  ◀ │
+╰────────────────────────────╯</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch members</code> Taxa below a group</h4>
+          <p>Lists a group's taxa at a chosen rank, just the counts, or the full descendant tree.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--rank</li>
+            <li>--count</li>
+            <li>--tree</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch members Coronaviridae --rank genus
+genera in family Coronaviridae
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ genus            ┃ species ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ Alphacoronavirus │      26 │
+│ Alphaletovirus   │       1 │
+│ Alphapironavirus │       1 │
+│ Betacoronavirus  │      14 │
+│ Deltacoronavirus │       7 │
+│ Gammacoronavirus │       5 │
+└──────────────────┴─────────┘
+           6 genera</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch seq</code> NCBI sequences</h4>
+          <p>Resolves accessions locally from the VMR and fetches metadata, FASTA or GenBank records from NCBI. For a whole group, it first shows a local estimate of the download size.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--meta</li>
+            <li>--fasta</li>
+            <li>--gb</li>
+            <li>--taxon</li>
+            <li>--protein</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch seq "Betacoronavirus pandemicum" --fasta -o out.fa
+Wrote 4 fasta record(s) for Betacoronavirus pandemicum to out.fa
+
+$ viralfetch seq --taxon Coronaviridae --meta
+╭─ Coronaviridae (family) — download estimate ─╮
+│ species     54                               │
+│ isolates    59                               │
+│ accessions  59                               │
+╰──────────────────────────────────────────────╯</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch text</code> ICTV Report chapter</h4>
+          <p>Fetches the family's ICTV Report chapter as Markdown, with tables and italicised scientific names. Figures can be drawn right in the terminal.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--section</li>
+            <li>--raw</li>
+            <li>--images</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch text Coronaviridae --section summary
+                  Family: Coronaviridae
+
+Source: https://ictv.global/report/chapter/coronaviridae/coronaviridae
+Content is licensed CC BY 4.0
+──────────────────────────────────────────────────────
+Summary
+
+Members of the family Coronaviridae, a monophyletic group
+of viruses in the order Nidovirales, are enveloped,
+positive-sense RNA viruses …</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch tree</code> Phylogenetic tree</h4>
+          <p>Draws the family's phylogenetic tree, offline, highlighting the queried species or genus.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--tree N</li>
+            <li>--newick</li>
+            <li>--chapter</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch tree "Betacoronavirus pandemicum"
+Coronaviridae · Figure 5A · RdRp (AA) · 55 tips · 2 matches
+     ┌─ Alphacoronavirus BT020
+   ┌─┤
+   │ └─ Scotophilus bat coronavirus 512
+  ─┤          …
+   │     ┌ severe acute respiratory syndrome coronavirus  ← match
+   └─────┤
+         └ severe acute respiratory syndrome coronavirus 2  ← match</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch msa</code> Multiple sequence alignment</h4>
+          <p>Shows the alignment behind the tree, coloured by residue, with the queried sequence marked. Exports the alignment as FASTA.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--range</li>
+            <li>--consensus</li>
+            <li>--fasta</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch msa "Betacoronavirus pandemicum" --consensus
+Coronaviridae · tree1 · AA · cols 1–60 of 316 · 55 seqs
+consensus              KHFFFAQDGDAAITDYDYYRYNRPTMLDICQALFVYEVVDKYFD
+▶ severe acute respir  KHFFFAQDGNAAISDYDYYRYNLPTMCDIRQLLFVVEVVDKYFD
+Alphapironavirus bona  EHFFYLQPRDCAVTDFDYYRFNRPTVLDPLQFRFVYNVVKHYFK
+…                      0^                 20^                 40^</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tool-section">Data sources</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><span class="source-tag source-local">local</span><h3>ICTV VMR</h3><p>Taxonomic hierarchy, exemplar isolates and GenBank/RefSeq accessions. The local index, embedded in the package.</p></div>
+      <div class="info-card"><span class="source-tag source-remote">remote</span><h3>NCBI E-utilities</h3><p>Sequence metadata, nucleotide and protein sequences and NCBI taxonomy, fetched on demand.</p></div>
+      <div class="info-card"><span class="source-tag source-remote">remote</span><h3>ICTV Report</h3><p>The descriptive chapter text for each family, with figures.</p></div>
+      <div class="info-card"><span class="source-tag source-local">local</span><h3>ICTV Report trees</h3><p>Per-family Newick trees and amino-acid and nucleotide alignments, bundled with the package.</p></div>
     </div>
   </section>
 

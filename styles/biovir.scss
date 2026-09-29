@@ -916,7 +916,7 @@ main > section > ol {
 
 .tool-picker {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   margin-bottom: 2.2rem;
 }
@@ -1361,12 +1361,141 @@ main h3.tool-section {
   display: none;
 }
 
+// ------------------------------------ ferramentas: esquema, terminal ---
+
+.tool-figure {
+  margin: 1rem 0 0;
+
+  a {
+    display: block;
+    border: 1px solid var(--biovir-line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  a:hover,
+  a:focus-visible {
+    border-color: var(--tool-accent);
+    box-shadow: 0 10px 24px -18px rgba(23, 35, 63, 0.5);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--biovir-muted);
+  }
+}
+
+// comando de instalacao, em linha
+.tool-install {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  background: var(--tool-term-bg, #1f2430);
+
+  code {
+    color: #e6edf3;
+    background: none;
+    padding: 0;
+    font-size: 0.85rem;
+  }
+
+  code::before {
+    content: "$ ";
+    color: var(--tool-accent-soft, var(--tool-accent));
+  }
+}
+
+.tool-install-label {
+  font-family: #{$font-family-monospace};
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9aa4b2;
+}
+
+.flow-detail h4 .flow-cmd {
+  font-size: 0.85rem;
+  color: var(--tool-accent-dark);
+  background: #fff;
+  border: 1px solid var(--biovir-line);
+  border-radius: 4px;
+  padding: 0.05rem 0.4rem;
+  margin-right: 0.35rem;
+}
+
+// flags de linha de comando: chip tingido com a cor da ferramenta
+.flow-chips-flags li {
+  font-size: 0.72rem;
+  color: var(--tool-accent-dark);
+  border-color: transparent;
+  background: color-mix(in srgb, var(--tool-accent) 13%, #fff);
+}
+
+.flow-term {
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  background: var(--tool-term-bg, #1f2430);
+  color: #d5dde8;
+  // fontes do sistema: a JetBrains Mono do site nao tem os caracteres de
+  // desenho de caixa (╭─│), e a fonte substituta desalinhava as bordas
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  overflow-x: auto;
+
+  code {
+    color: inherit;
+    background: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    white-space: pre;
+  }
+}
+
+.source-tag {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-family: #{$font-family-monospace};
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  padding: 0.1rem 0.45rem;
+}
+
+.source-local {
+  color: var(--tool-accent);
+  background: color-mix(in srgb, var(--tool-accent) 12%, #fff);
+}
+
+.source-remote {
+  color: var(--biovir-deep);
+  background: var(--biovir-mist);
+}
+
 .tool-cards {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   margin-top: 1rem;
 
   .info-card {
     border-top-color: var(--tool-accent);
+    overflow-wrap: break-word; // palavras longas nao vazam do cartao estreito
   }
 }
 

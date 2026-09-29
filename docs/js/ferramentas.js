@@ -93,10 +93,13 @@
       var conta = panel && panel.querySelector("[data-count]");
       if (conta) {
         var nomes = {};
-        var chips = flow.querySelectorAll(".flow-chips:not(.flow-chips-plain) li");
+        // so' programas contam; .flow-chips-plain (texto) e .flow-chips-flags
+        // (opcoes de linha de comando) ficam de fora
+        var chips = flow.querySelectorAll(".flow-chips:not(.flow-chips-plain):not(.flow-chips-flags) li");
         for (var c = 0; c < chips.length; c++) nomes[chips[c].textContent.trim()] = 1;
         var nProgs = Object.keys(nomes).length;
-        conta.textContent = steps.length + " " + rotEtapas +
+        // o painel pode trocar o rotulo das etapas (ex.: "comandos")
+        conta.textContent = steps.length + " " + (conta.getAttribute("data-label-steps") || rotEtapas) +
           (nProgs ? " · " + nProgs + " " + rotProgs : "");
       }
 

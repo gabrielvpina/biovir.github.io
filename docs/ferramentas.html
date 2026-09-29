@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Ferramentas de bioinformática abertas desenvolvidas no BioVirLab: ViralQuest e VAPOR.">
+<meta name="description" content="Ferramentas de bioinformática abertas desenvolvidas no BioVirLab: ViralQuest, VAPOR e viralfetch.">
 
 <title>Ferramentas — BioVirLab – BioVirLab</title>
 <style>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-51891e7a76f0c32681ea0fd75d712538.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e656a970714f0c69b7494920b8d3c403.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-56e99a67669d87147ae08af5c73cd7bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -196,6 +196,11 @@ ul.task-list li input[type="checkbox"] {
       <span class="tool-pick-kind">Pipeline · Snakemake</span>
       <span class="tool-pick-desc">Metagenômica viral e procariótica, das leituras aos relatórios</span>
     </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-viralfetch" aria-controls="viralfetch" data-tool="viralfetch" style="--tool-accent:#7c3aed">
+      <img src="assets/viralfetch-logo.svg" alt="viralfetch">
+      <span class="tool-pick-kind">Ferramenta · Python · CLI</span>
+      <span class="tool-pick-desc">Taxonomia, metadados, sequências e árvores de vírus direto do terminal</span>
+    </button>
   </div>
 
   <!-- ============================================================ ViralQuest -->
@@ -272,6 +277,14 @@ ul.task-list li input[type="checkbox"] {
         </div>
       </div>
     </div>
+
+    <h3 class="tool-section">Esquema da pipeline</h3>
+    <figure class="tool-figure figure">
+      <a href="assets/viralquest-scheme.png" target="_blank" rel="noopener">
+        <img src="assets/viralquest-scheme.png" alt="Esquema da pipeline do ViralQuest em sete etapas: entrada, triagem, confirmação, taxonomia, qualidade e leituras, pontuação e resultados." loading="lazy" class="figure-img">
+      </a>
+      <figcaption>As sete etapas do ViralQuest, da entrada dos contigs ao relatório. Caixas tracejadas são etapas opcionais. Clique para ampliar.</figcaption>
+    </figure>
 
     <h3 class="tool-section">Para que serve</h3>
     <div class="card-grid tool-cards">
@@ -407,6 +420,175 @@ ul.task-list li input[type="checkbox"] {
       <div class="info-card"><h3>Tabelas</h3><p>Taxonomia, qualidade, hospedeiros, genes de resistência e de defesa.</p></div>
       <div class="info-card"><h3>Matrizes e diversidade</h3><p>Presença e abundância por amostra; diversidade alfa e beta.</p></div>
       <div class="info-card"><h3>Relatórios</h3><p>Um relatório MultiQC e um relatório HTML interativo reunindo tudo.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ viralfetch -->
+  <section class="tool-panel" id="viralfetch" role="tabpanel" aria-labelledby="tab-viralfetch" style="--tool-accent:#7c3aed; --tool-accent-dark:#1e1b4b; --tool-accent-soft:#c4b5fd; --tool-term-bg:#1e1b4b">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Ferramenta · Linha de comando · Código aberto</p>
+        <h2 class="tool-name">viralfetch</h2>
+        <p class="tool-tagline">Taxonomia, metadados e sequências de vírus, direto do terminal</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/gabrielvpina/viralfetch">GitHub</a>
+        <a class="btn-biovir-ghost" href="https://pypi.org/project/viralfetch/">PyPI</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>O viralfetch é uma ferramenta de linha de comando para consultar e
+      baixar taxonomia viral, metadados, sequências e as árvores filogenéticas
+      e alinhamentos de cada família viral. Um nome de vírus basta: a
+      ferramenta encontra a linhagem, os acessos no GenBank/RefSeq e os dados
+      relacionados, <strong>juntando quatro fontes</strong> em uma só
+      consulta.</p>
+      <p>Toda saída pode ser pedida em <code>--json</code>, pronta para
+      scripts e para o <code>jq</code>; dados baixados ficam em cache, e nomes
+      que o índice local não conhece são procurados na taxonomia do NCBI.</p>
+    </div>
+
+    <div class="tool-install">
+      <span class="tool-install-label">Instalação</span>
+      <code>pip install viralfetch</code>
+    </div>
+
+    <h3 class="tool-section">Comandos <span class="tool-count" data-count="" data-label-steps="comandos"></span></h3>
+
+    <div class="flow" data-flow="">
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">tax</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">members</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">seq</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">text</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">tree</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">06</span><span class="flow-label">msa</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch tax</code> Linhagem taxonômica</h4>
+          <p>Mostra a linhagem completa do ICTV (do reino à espécie). Pode consultar direto a taxonomia do NCBI ou comparar as duas lado a lado, destacando onde divergem.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--ncbi</li>
+            <li>--compare-ncbi</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch tax Coronaviridae
+╭─ Coronaviridae  (family) ──╮
+│ realm     Riboviria        │
+│ kingdom   Orthornavirae    │
+│ phylum    Pisuviricota     │
+│ class     Pisoniviricetes  │
+│ order     Nidovirales      │
+│ suborder  Cornidovirineae  │
+│ family    Coronaviridae  ◀ │
+╰────────────────────────────╯</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch members</code> Táxons abaixo de um grupo</h4>
+          <p>Lista os táxons de um grupo em um nível escolhido, só a contagem, ou a árvore completa de descendentes.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--rank</li>
+            <li>--count</li>
+            <li>--tree</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch members Coronaviridae --rank genus
+genera in family Coronaviridae
+┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ genus            ┃ species ┃
+┡━━━━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ Alphacoronavirus │      26 │
+│ Alphaletovirus   │       1 │
+│ Alphapironavirus │       1 │
+│ Betacoronavirus  │      14 │
+│ Deltacoronavirus │       7 │
+│ Gammacoronavirus │       5 │
+└──────────────────┴─────────┘
+           6 genera</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch seq</code> Sequências do NCBI</h4>
+          <p>Resolve os acessos localmente no VMR e baixa metadados, FASTA ou GenBank do NCBI. Para um grupo inteiro, mostra antes uma estimativa local do tamanho do download.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--meta</li>
+            <li>--fasta</li>
+            <li>--gb</li>
+            <li>--taxon</li>
+            <li>--protein</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch seq "Betacoronavirus pandemicum" --fasta -o out.fa
+Wrote 4 fasta record(s) for Betacoronavirus pandemicum to out.fa
+
+$ viralfetch seq --taxon Coronaviridae --meta
+╭─ Coronaviridae (family) — download estimate ─╮
+│ species     54                               │
+│ isolates    59                               │
+│ accessions  59                               │
+╰──────────────────────────────────────────────╯</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch text</code> Capítulo do ICTV Report</h4>
+          <p>Traz o capítulo da família no ICTV Report em Markdown, com tabelas e nomes científicos em itálico. As figuras podem ser desenhadas no próprio terminal.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--section</li>
+            <li>--raw</li>
+            <li>--images</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch text Coronaviridae --section summary
+                  Family: Coronaviridae
+
+Source: https://ictv.global/report/chapter/coronaviridae/coronaviridae
+Content is licensed CC BY 4.0
+──────────────────────────────────────────────────────
+Summary
+
+Members of the family Coronaviridae, a monophyletic group
+of viruses in the order Nidovirales, are enveloped,
+positive-sense RNA viruses …</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch tree</code> Árvore filogenética</h4>
+          <p>Desenha a árvore filogenética da família, sem precisar de internet, destacando a espécie ou o gênero consultado.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--tree N</li>
+            <li>--newick</li>
+            <li>--chapter</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch tree "Betacoronavirus pandemicum"
+Coronaviridae · Figure 5A · RdRp (AA) · 55 tips · 2 matches
+     ┌─ Alphacoronavirus BT020
+   ┌─┤
+   │ └─ Scotophilus bat coronavirus 512
+  ─┤          …
+   │     ┌ severe acute respiratory syndrome coronavirus  ← match
+   └─────┤
+         └ severe acute respiratory syndrome coronavirus 2  ← match</code></pre>
+        </div>
+        <div class="flow-detail">
+          <h4><code class="flow-cmd">viralfetch msa</code> Alinhamento múltiplo</h4>
+          <p>Mostra o alinhamento por trás da árvore, colorido por resíduo, com a sequência consultada marcada. Exporta o alinhamento em FASTA.</p>
+          <ul class="flow-chips flow-chips-flags">
+            <li>--range</li>
+            <li>--consensus</li>
+            <li>--fasta</li>
+          </ul>
+          <pre class="flow-term"><code>$ viralfetch msa "Betacoronavirus pandemicum" --consensus
+Coronaviridae · tree1 · AA · cols 1–60 of 316 · 55 seqs
+consensus              KHFFFAQDGDAAITDYDYYRYNRPTMLDICQALFVYEVVDKYFD
+▶ severe acute respir  KHFFFAQDGNAAISDYDYYRYNLPTMCDIRQLLFVVEVVDKYFD
+Alphapironavirus bona  EHFFYLQPRDCAVTDFDYYRFNRPTVLDPLQFRFVYNVVKHYFK
+…                      0^                 20^                 40^</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tool-section">Fontes de dados</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><span class="source-tag source-local">local</span><h3>VMR do ICTV</h3><p>Hierarquia taxonômica, isolados de referência e acessos GenBank/RefSeq. É o índice local, embutido no pacote.</p></div>
+      <div class="info-card"><span class="source-tag source-remote">remoto</span><h3>NCBI E-utilities</h3><p>Metadados, sequências de nucleotídeos e proteínas e taxonomia do NCBI, buscados sob demanda.</p></div>
+      <div class="info-card"><span class="source-tag source-remote">remoto</span><h3>ICTV Report</h3><p>O texto descritivo do capítulo de cada família, com figuras.</p></div>
+      <div class="info-card"><span class="source-tag source-local">local</span><h3>Árvores do ICTV Report</h3><p>Árvores em Newick e alinhamentos de aminoácidos e nucleotídeos por família, incluídos no pacote.</p></div>
     </div>
   </section>
 
