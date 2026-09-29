@@ -28,6 +28,9 @@ python3 scripts/build-publicacoes.py
 echo "==> gerando mapa dos campi"
 python3 scripts/build-mapa.py
 
+echo "==> gerando logos das instituicoes colaboradoras"
+python3 scripts/build-colaboradores.py
+
 echo "==> gerando numeros da pagina inicial"
 python3 scripts/build-stats.py
 

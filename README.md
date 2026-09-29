@@ -303,6 +303,28 @@ Sem a pasta `fotos/` (ou com ela vazia), a página simplesmente não tem galeria
 - Para remover um evento, apague a pasta e rode `./build.sh` — o script também
   limpa as páginas geradas do evento que sumiu.
 
+## Instituições colaboradoras
+
+As logos da seção **Instituições colaboradoras** (página Linhas de Pesquisa)
+vêm direto da pasta `assets/colaboradores/`: basta colocar a imagem lá e rodar
+`./build.sh`. Não há lista para editar — o script
+`scripts/build-colaboradores.py` lê a pasta a cada build.
+
+- formatos: `.png`, `.jpg`, `.jpeg`, `.svg`, `.webp`, `.gif`;
+- o nome do arquivo vira o texto da logo (dica ao passar o mouse e texto para
+  leitores de tela): `universidade-federal-da-bahia.png` →
+  "Universidade federal da bahia". Use nomes descritivos;
+- a ordem é alfabética; para escolher a ordem, comece o nome com um número:
+  `01-ufba.png`, `02-fiocruz.svg` (o número não aparece no site);
+- arquivos começados por `_` são ignorados — útil para tirar uma logo do ar
+  sem apagá-la;
+- as logos aparecem pequenas (até 68 px de altura), então prefira SVG ou PNG
+  com fundo transparente, **recortado rente à logo** (margem em branco na
+  imagem deixa a logo minúscula) e até ~400 KB; o build avisa sobre arquivos
+  maiores.
+
+Com a pasta vazia, a seção mostra um texto provisório.
+
 ## Ferramentas
 
 A página **Ferramentas** (`ferramentas.qmd` / `en/tools.qmd`) é escrita

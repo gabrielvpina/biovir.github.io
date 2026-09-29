@@ -110,8 +110,9 @@ perspectiva de Saúde Única.
 
 # Instituições colaboradoras
 
-<!-- AJUSTAR: listar instituições e grupos parceiros -->
+<!-- A vitrine abaixo é gerada por scripts/build-colaboradores.py a partir das
+     imagens em assets/colaboradores/. Para incluir uma logo, coloque a imagem
+     na pasta e rode ./build.sh — veja as instruções no README.md. -->
 
-Mantemos parcerias com grupos de pesquisa de instituições nacionais e
-internacionais. Esta seção será detalhada em breve.
+{{< include _includes/colaboradores-pt.html >}}
 
