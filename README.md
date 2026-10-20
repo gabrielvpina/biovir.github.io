@@ -84,6 +84,18 @@ Edite **apenas** `_data/members.tsv` e rode `./build.sh`. Colunas:
 Os campos são separados por **tabulação**. As fotos são exibidas em formato
 circular (recorte automático), então imagens quadradas funcionam melhor.
 
+As fotos ficam em **WebP**, com o menor lado em 400 px (o site as mostra com
+120 px, então isso cobre telas retina com folga). Para uma foto nova, converta
+antes de commitar e aponte o `photo` do TSV para o `.webp`:
+
+```bash
+magick foto-original.png -auto-orient -resize '400x400^>' -strip -quality 82 members/phd/nome.webp
+```
+
+Os originais em PNG/JPEG da conversão ficam em `members_backup/`, que está no
+`.gitignore` (não vai para o repositório). Só `.webp` dentro de `members/` é
+publicado — veja `resources` em `_quarto.yml`.
+
 O título de cada grupo é um bloco azul com a contagem de pessoas à direita — o
 mesmo bloco das gavetas de Publicações, definido uma vez só no SCSS
 (`%bloco-azul`). Mudar a cor ou o espaçamento lá vale para as duas páginas.

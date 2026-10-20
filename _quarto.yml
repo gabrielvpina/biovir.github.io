@@ -10,9 +10,7 @@ project:
     - "assets/*.svg"
     # logos das instituicoes colaboradoras (scripts/build-colaboradores.py)
     - "assets/colaboradores/*"
-    - "members/**/*.png"
-    - "members/**/*.jpeg"
-    - "members/**/*.jpg"
+    - "members/**/*.webp"
     - "eventos/**/*.jpg"
     - "eventos/**/*.jpeg"
     - "eventos/**/*.png"

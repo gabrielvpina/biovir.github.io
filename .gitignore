@@ -6,3 +6,6 @@ _build-en/
 /.quarto/
 **/*.quarto_ipynb
 __pycache__/
+
+# originais das fotos de membros (antes da conversao para WebP)
+members_backup/
