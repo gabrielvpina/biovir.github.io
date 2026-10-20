@@ -9,3 +9,6 @@ __pycache__/
 
 # originais das fotos de membros (antes da conversao para WebP)
 members_backup/
+
+# originais de imagens em assets/ (antes da conversao para WebP)
+assets_backup/

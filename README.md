@@ -381,7 +381,7 @@ diretamente em HTML dentro do `.qmd`. Cada ferramenta tem um botão
 `tool-pick` (a aba) e uma `section.tool-panel` com o mesmo `id`; as etapas do
 fluxo são pares `flow-step` / `flow-detail`, na mesma ordem. O comportamento
 (abas, etapas, filtro de leituras curtas/longas e contagem de programas) está
-em `js/ferramentas.js` e os logos em `assets/tool-*.{png,svg}`. Links como
+em `js/ferramentas.js` e os logos em `assets/tool-*.{webp,svg}`. Links como
 `ferramentas.html#vapor` abrem direto na ferramenta.
 
 ## Adicionar uma página nova

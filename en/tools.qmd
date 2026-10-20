@@ -1,7 +1,7 @@
 ---
 title: "Tools"
 pagetitle: "Tools — BioVirLab"
-description-meta: "Open-source bioinformatics tools developed at BioVirLab: ViralQuest, VAPOR and viralfetch."
+description-meta: "Open-source bioinformatics tools developed at BioVirLab: ViralQuest, VAPOR, viralfetch and PLANCUS."
 ---
 
 ::: {.lead}
@@ -20,7 +20,7 @@ analysis.
     <button class="tool-pick" type="button" role="tab" id="tab-viralquest"
             aria-controls="viralquest" data-tool="viralquest"
             style="--tool-accent:#3f7bc4">
-      <img src="../assets/tool-viralquest.png" alt="ViralQuest">
+      <img src="../assets/tool-viralquest.webp" alt="ViralQuest">
       <span class="tool-pick-kind">Tool · Python</span>
       <span class="tool-pick-desc">Virus discovery in genetic data, with an interactive report</span>
     </button>
@@ -37,6 +37,13 @@ analysis.
       <img src="../assets/viralfetch-logo.svg" alt="viralfetch">
       <span class="tool-pick-kind">Tool · Python · CLI</span>
       <span class="tool-pick-desc">Virus taxonomy, metadata, sequences and trees from the terminal</span>
+    </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-plancus"
+            aria-controls="plancus" data-tool="plancus"
+            style="--tool-accent:#c35c29">
+      <img src="../assets/tool-plancus.webp" alt="PLANCUS">
+      <span class="tool-pick-kind">Pipeline · Python · conda</span>
+      <span class="tool-pick-desc">Search, validation and curation of endogenous viral elements (EVEs) in genomes</span>
     </button>
   </div>
 
@@ -116,8 +123,8 @@ analysis.
 
     <h3 class="tool-section">Pipeline overview</h3>
     <figure class="tool-figure">
-      <a href="../assets/viralquest-scheme.png" target="_blank" rel="noopener">
-        <img src="../assets/viralquest-scheme.png" alt="ViralQuest pipeline in seven stages: input, screening, confirmation, taxonomy, quality and reads, scoring and outputs." loading="lazy">
+      <a href="../assets/viralquest-scheme.webp" target="_blank" rel="noopener">
+        <img src="../assets/viralquest-scheme.webp" alt="ViralQuest pipeline in seven stages: input, screening, confirmation, taxonomy, quality and reads, scoring and outputs." loading="lazy">
       </a>
       <figcaption>ViralQuest's seven stages, from input contigs to the report. Dashed boxes are optional steps. Click to enlarge.</figcaption>
     </figure>
@@ -425,6 +432,127 @@ Alphapironavirus bona  EHFFYLQPRDCAVTDFDYYRFNRPTVLDPLQFRFVYNVVKHYFK
       <div class="info-card"><span class="source-tag source-remote">remote</span><h3>NCBI E-utilities</h3><p>Sequence metadata, nucleotide and protein sequences and NCBI taxonomy, fetched on demand.</p></div>
       <div class="info-card"><span class="source-tag source-remote">remote</span><h3>ICTV Report</h3><p>The descriptive chapter text for each family, with figures.</p></div>
       <div class="info-card"><span class="source-tag source-local">local</span><h3>ICTV Report trees</h3><p>Per-family Newick trees and amino-acid and nucleotide alignments, bundled with the package.</p></div>
+    </div>
+  </section>
+
+  <!-- =============================================================== PLANCUS -->
+  <section class="tool-panel" id="plancus" role="tabpanel" aria-labelledby="tab-plancus"
+           style="--tool-accent:#c35c29; --tool-accent-dark:#7a3412; --tool-accent-soft:#f3b48a">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Pipeline · Open source · MIT</p>
+        <h2 class="tool-name">PLANCUS</h2>
+        <p class="tool-tagline">Endogenous viral elements, from genome to curated catalogue</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/Bioinscripts/plancus">GitHub</a>
+      </div>
+    </header>
+
+    <div class="tool-intro">
+      <p>Over evolutionary time, pieces of viruses became integrated into the
+      genomes of plants and animals. These <strong>endogenous viral elements
+      (EVEs)</strong> work as molecular fossils: they record ancient infections
+      and help explain how viruses and their hosts evolved together.</p>
+      <p>PLANCUS turns a genome into a curated EVE catalogue. The input can be
+      a FASTA file (with an optional GFF3), an NCBI
+      <code>GCA_</code>/<code>GCF_</code> accession, downloaded automatically,
+      or a table with several species, to compare EVEs across them.</p>
+    </div>
+
+    <div class="tool-install">
+      <span class="tool-install-label">Installation</span>
+      <code>conda env create -f environment.yml</code>
+    </div>
+
+    <h3 class="tool-section">Pipeline steps <span class="tool-count" data-count></span></h3>
+
+    <div class="flow" data-flow>
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">ORFs</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Rescue</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Validation</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Domains</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Context</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">06</span><span class="flow-label">Repeats</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">07</span><span class="flow-label">Comparison</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">08</span><span class="flow-label">Curation</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>ORF screening</h4>
+          <p>Predicts the genome's ORFs, removes redundant ones and compares them with viral proteins.</p>
+          <ul class="flow-chips">
+            <li>orfipy</li>
+            <li>MMseqs2</li>
+            <li>DIAMOND</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>HMM rescue</h4>
+          <p>ORFs with no viral hit are searched again with calibrated viral HMMs, which catch more distant relationships.</p>
+          <ul class="flow-chips">
+            <li>pyhmmer</li>
+            <li>RVDB</li>
+            <li>eggNOG</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Validation</h4>
+          <p>Each candidate is compared with Swiss-Prot, weighing viral against cellular evidence; the viral family comes from the NCBI taxonomy.</p>
+          <ul class="flow-chips">
+            <li>Swiss-Prot</li>
+            <li>NCBI Taxonomy</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Protein domains</h4>
+          <p>Optional annotation of each candidate's conserved domains.</p>
+          <ul class="flow-chips">
+            <li class="is-optional">CD-Search</li>
+            <li class="is-optional">Pfam-A</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Genomic context</h4>
+          <p>Anchors candidates in the genome, groups them into loci with their flanking regions and runs a final scan for fragments with no ORF.</p>
+          <ul class="flow-chips">
+            <li>tblastn</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Repeats and transposons</h4>
+          <p>Optional: low-complexity regions, masked repeats and transposon domains near each EVE.</p>
+          <ul class="flow-chips">
+            <li class="is-optional">DUST</li>
+            <li class="is-optional">SEG</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Cross-species comparison</h4>
+          <p>Two-stage clustering, a heatmap of shared sequences and flank synteny.</p>
+          <ul class="flow-chips">
+            <li>tblastx</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Curation</h4>
+          <p>A local web page to inspect, approve or remove each candidate — with read coverage when RNA-seq or BAM files are given.</p>
+          <ul class="flow-chips">
+            <li>curation page</li>
+          </ul>
+        </div>
+      </div>
+      <p class="flow-legend"><span class="flow-legend-opt">optional</span> step that can be switched on for a run</p>
+    </div>
+
+    <h3 class="tool-section">Outputs</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>Curated catalogue</h3><p>Validated, reviewed EVEs, with the curation decisions recorded.</p></div>
+      <div class="info-card"><h3>Figures and dashboard</h3><p>Plots and a static dashboard to explore the results.</p></div>
+      <div class="info-card"><h3>Cross-species comparison</h3><p>Shared EVE clusters, heatmap and synteny.</p></div>
+      <div class="info-card"><h3>Reproducibility</h3><p>Run log and the database version used in each analysis.</p></div>
     </div>
   </section>
 

@@ -1081,7 +1081,8 @@ $premio-galho: 2.2rem;    // altura do galho = centro da medalha
 
 .tool-picker {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // com 4 ferramentas, 280px forca uma grade 2 x 2 na largura do conteudo
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
   margin-bottom: 2.2rem;
 }
