@@ -18,5 +18,99 @@ diante. Nomes em **negrito** são integrantes do BioVirLab.
 
 # Prêmios e Distinções
 
-Em breve.
+<!-- Árvore por ano: cada ano é um bloco :::: {.premios-ano ano="AAAA"}
+     e cada prêmio dentro dele é um bloco ::: {.premio}, nesta ordem:
+       1. título em **negrito**
+       2. detalhe (categoria, área, trabalho) — opcional
+       3. membros do lab autores do trabalho, em lista "- Nome", na ordem
+          de autoria (sem o orientador)
+       4. evento ou instituição (última linha)
+     O visual vem do CSS (.premios em styles/biovir.scss). Anos do mais
+     recente para o mais antigo. -->
 
+::::: {.premios}
+
+:::: {.premios-ano ano="2025"}
+
+::: {.premio}
+**Melhor Pôster**
+
+Categoria Profissional · Virologia de Plantas e Invertebrados · “Integrative small RNA sequencing and proteomics approach identified Badna and Geminivirus associated to *Theobroma cacao* individuals”
+
+- Paula Luize Camargos Fonseca
+- Jonatha dos Santos Silva
+- Carlos Henrique de Carvalho Neto
+- João Pedro Nunes Santos
+
+36º Congresso Brasileiro de Virologia e 20º Encontro de Virologia do Mercosul (SBV)
+:::
+
+::: {.premio}
+**Melhor Pôster**
+
+Categoria Graduação · Virologia de Plantas e Invertebrados · “Viral identification in *Tetragonisca angustula* using public RNA-seq libraries”
+
+- Henrique Andrade Rabelo Bomfim
+- Lucas Yago Melo Ferreira
+- Gabriel Victor Pina Rodrigues
+- João Pedro Nunes Santos
+
+36º Congresso Brasileiro de Virologia e 20º Encontro de Virologia do Mercosul (SBV)
+:::
+
+::: {.premio}
+**Melhor Pôster**
+
+Categoria Pós-Graduação · Virologia de Plantas e Invertebrados · “ViralQuest: a user-friendly interactive pipeline for viral-sequences analysis and curation”
+
+- Gabriel Victor Pina Rodrigues
+- Lucas Yago Melo Ferreira
+
+36º Congresso Brasileiro de Virologia e 20º Encontro de Virologia do Mercosul (SBV)
+:::
+
+::::
+
+:::: {.premios-ano ano="2024"}
+
+::: {.premio}
+**Melhor Pôster**
+
+Categoria Pós-Graduação · Virologia de Plantas e Invertebrados · “The virome of cocoa fermentation-associated microorganisms”
+
+- João Pedro Nunes Santos
+- Sabrina Ferreira de Santana
+- Gabriel Victor Pina Rodrigues
+- Lucas Yago Melo Ferreira
+- Paula Luize Camargos Fonseca
+- Ícaro Santos Lopes
+- Aijalon Brito da Silva Junior
+
+35º Congresso Brasileiro de Virologia (SBV)
+:::
+
+::: {.premio}
+**Best Poster**
+
+- Sabrina Ferreira de Santana
+
+12th International Mycological Congress (IMC12)
+:::
+
+::::
+
+:::: {.premios-ano ano="2023"}
+
+::: {.premio}
+**1º Lugar**
+
+Seminário de Qualificação de Doutorado
+
+- Sabrina Ferreira de Santana
+
+PPG em Genética e Biologia Molecular, Universidade Estadual de Santa Cruz (UESC)
+:::
+
+::::
+
+:::::

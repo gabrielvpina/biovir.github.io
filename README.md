@@ -162,6 +162,43 @@ arquivo do próprio repositório:
 `./build.sh` roda os dois nessa ordem. Nenhum dos números precisa ser editado à
 mão — eles acompanham os dados. Cada um é um link para a página correspondente.
 
+## Prêmios e distinções
+
+Ficam no fim de `publicacoes.qmd` (e `en/publications.qmd`), escritos em
+Markdown puro — sem HTML — e exibidos como uma árvore por ano. Cada ano é um
+bloco `.premios-ano` e cada prêmio dentro dele é um bloco `.premio`; para
+adicionar um, copie um bloco existente:
+
+```markdown
+:::: {.premios-ano ano="2025"}
+
+::: {.premio}
+**Melhor Pôster**
+
+Categoria Graduação · Virologia de Plantas e Invertebrados · “Título do trabalho”
+
+- Henrique Andrade Rabelo Bomfim
+- Lucas Yago Melo Ferreira
+- Gabriel Victor Pina Rodrigues
+
+36º Congresso Brasileiro de Virologia (SBV)
+:::
+
+::::
+```
+
+| parte | o que é |
+| --- | --- |
+| `ano="..."` (no bloco do ano) | selo azul na raiz da árvore |
+| 1º parágrafo, em **negrito** | título do prêmio |
+| parágrafos do meio | detalhe opcional (categoria, área, título do trabalho) |
+| lista `- Nome` | membros do lab autores do trabalho, na ordem de autoria, sem o orientador |
+| último parágrafo | evento ou instituição |
+
+A medalha, o tronco e os galhos da árvore, o selo do ano e as etiquetas dos
+nomes vêm do CSS (`.premios` em `styles/biovir.scss`). Mantenha os anos do
+mais recente para o mais antigo.
+
 ## Mudar os pontos do mapa
 
 O mapa da seção "Onde estamos" é uma **imagem estática** guardada no
