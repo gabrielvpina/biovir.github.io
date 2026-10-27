@@ -30,6 +30,25 @@ diante. Nomes em **negrito** são integrantes do BioVirLab.
 
 ::::: {.premios}
 
+
+:::: {.premios-ano ano="2026"}
+
+::: {.premio}
+**Melhor Apresentação Oral**
+
+Categoria Pós-Graduação · Bioinformática e Modelos Computacionais · “Integrative Multi-omics approach identified emerging viral threat in *Theobroma cacao* plants”
+
+- Paula Luize Camargos Fonseca
+- Jonatha dos Santos Silva
+- Lara Beatriz C. Moreira de Vasconcelos
+- João Pedro Nunes Santos
+- Carlos Henrique de Carvalho Neto
+
+37º Congresso Brasileiro de Virologia e 21º Encontro de Virologia do Mercosul (SBV)
+:::
+::::
+
+
 :::: {.premios-ano ano="2025"}
 
 ::: {.premio}

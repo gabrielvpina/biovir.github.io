@@ -26,6 +26,23 @@ Names in **bold** are BioVirLab members.
 
 ::::: {.premios}
 
+:::: {.premios-ano ano="2026"}
+
+::: {.premio}
+**Best Oral Presentation**
+
+Graduate Category · Bioinformatics and Computational Models · “Integrative Multi-omics approach identified emerging viral threat in *Theobroma cacao* plants”
+
+- Paula Luize Camargos Fonseca
+- Jonatha dos Santos Silva
+- Lara Beatriz C. Moreira de Vasconcelos
+- João Pedro Nunes Santos
+- Carlos Henrique de Carvalho Neto
+
+37th Brazilian Congress of Virology and 21st Mercosur Virology Meeting (SBV)
+:::
+::::
+
 :::: {.premios-ano ano="2025"}
 
 ::: {.premio}
