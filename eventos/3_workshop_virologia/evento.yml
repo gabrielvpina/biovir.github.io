@@ -20,7 +20,7 @@ resumo_pt: III Workshop de Virologia na UESC organizado pelos laboratórios de B
 resumo_en: Third Virology Workshop at UESC, organised by the Virus Bioinformatics (BioVirLab) and Applied Pathology and Genetics (LAPAGEN) laboratories, with support from the Brazilian Society of Virology (SBV).
 
 # opcional: imagem de capa dentro desta pasta (deixe vazio se nao houver)
-capa: capa.png
+capa: capa.webp
 
 # opcional: site oficial do evento
 link:

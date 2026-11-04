@@ -13,7 +13,7 @@ description-meta: "Third Virology Workshop at UESC, organised by the Virus Bioin
 25–26 Mar 2026 · Ilhéus, Brazil
 :::
 
-![](../../../eventos/3_workshop_virologia/capa.png){.event-cover fig-alt="III Virology Workshop"}
+![](../../../eventos/3_workshop_virologia/capa.webp){.event-cover fig-alt="III Virology Workshop"}
 
 ::: {.lead}
 Third Virology Workshop at UESC, organised by the Virus Bioinformatics (BioVirLab) and Applied Pathology and Genetics (LAPAGEN) laboratories, with support from the Brazilian Society of Virology (SBV).
@@ -31,7 +31,9 @@ president of the SBV. That breadth helped bring current, high-quality knowledge
 to an academic community made up of research lecturers, professionals and
 students in training.
 
-![Programme of the III Virology Workshop at UESC](../../../eventos/3_workshop_virologia/fotos/palestras.png)
+![Programme of the III Virology Workshop at UESC](../../../eventos/3_workshop_virologia/fotos/palestras.webp)
+
+![Short courses at the III Virology Workshop at UESC](../../../eventos/3_workshop_virologia/fotos/minicursos.webp)
 
 Topics such as the advances and challenges of dengue vaccine development, along
 with different methodological approaches to the study of viruses — cryo-electron

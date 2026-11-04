@@ -10,7 +10,9 @@ president of the SBV. That breadth helped bring current, high-quality knowledge
 to an academic community made up of research lecturers, professionals and
 students in training.
 
-![Programme of the III Virology Workshop at UESC](fotos/palestras.png)
+![Programme of the III Virology Workshop at UESC](fotos/palestras.webp)
+
+![Short courses at the III Virology Workshop at UESC](fotos/minicursos.webp)
 
 Topics such as the advances and challenges of dengue vaccine development, along
 with different methodological approaches to the study of viruses — cryo-electron

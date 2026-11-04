@@ -1,0 +1,26 @@
+# Dados do evento. Uma linha por campo, no formato  chave: valor
+# Pastas cujo nome comeca com "_" sao ignoradas pelo build (como esta).
+
+titulo_pt: I Workshop de Virologia
+titulo_en: I Virology Workshop
+
+# data de inicio, sempre AAAA-MM-DD. Define a ordem da lista e se o evento
+# aparece em "Proximos" (data futura) ou "Realizados" (data passada).
+data: 2024-11-12
+
+# como a data aparece escrita na pagina (livre)
+data_texto_pt: 12 nov 2024
+data_texto_en: 12 Nov 2024
+
+local_pt: Ilhéus, BA
+local_en: Ilhéus, Brazil
+
+# uma frase curta, aparece na lista de eventos
+resumo_pt: I Workshop de Virologia na UESC organizado pelos laboratórios de Bioinformática de Vírus (BioVirLab) e de Patologia Aplicada e Genética (LAPAGEN).
+resumo_en: First Virology Workshop at UESC, organised by the Virus Bioinformatics (BioVirLab) and Applied Pathology and Genetics (LAPAGEN) laboratories.
+
+# opcional: imagem de capa dentro desta pasta (deixe vazio se nao houver)
+capa: capa.webp
+
+# opcional: site oficial do evento
+link:

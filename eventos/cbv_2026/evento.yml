@@ -1,0 +1,26 @@
+# Dados do evento. Uma linha por campo, no formato  chave: valor
+# Pastas cujo nome comeca com "_" sao ignoradas pelo build (como esta).
+
+titulo_pt: Congresso Brasileiro de Virologia 2026
+titulo_en: Brazilian Congress of Virology 2026
+
+# data de inicio, sempre AAAA-MM-DD. Define a ordem da lista e se o evento
+# aparece em "Proximos" (data futura) ou "Realizados" (data passada).
+data: 2026-10-20
+
+# como a data aparece escrita na pagina (livre)
+data_texto_pt: 20–24 out 2026
+data_texto_en: 20–24 Oct 2026
+
+local_pt: Maceió, AL
+local_en: Maceió, Brazil
+
+# uma frase curta, aparece na lista de eventos
+resumo_pt: Participação do BioVirLab no 37º Congresso Brasileiro de Virologia (CBV) e no 21º Encontro de Virologia do Mercosul (EVM).
+resumo_en: BioVirLab at the 37th Brazilian Congress of Virology (CBV) and the 21st Mercosur Virology Meeting (EVM).
+
+# opcional: imagem de capa dentro desta pasta (deixe vazio se nao houver)
+capa: capa.webp
+
+# opcional: site oficial do evento
+link: https://cbv2026.com.br/index.html

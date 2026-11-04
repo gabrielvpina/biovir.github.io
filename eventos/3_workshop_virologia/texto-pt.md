@@ -1,8 +1,10 @@
 O Workshop de Virologia é uma iniciativa extensionista que ocorre na Universidade Estadual de Santa Cruz (UESC) anualmente como resultado da parceria entre os laboratórios de Bioinformática de Vírus (BioVirLab) e de Patologia Aplicada e Genética (LAPAGEN) com apoio da Sociedade Brasileira de Virologia (SBV). 
 
-Em sua 3ª edição, com o tema “Virologia e Bioinformática” o Workshop promoveu a participação de cientistas importantes de diversas vertentes da virologia, desde a ambiental à humana, incluindo nomes como Betânia Drumond, atual presidente do SBV. Esta diversidade contribuiu para a disseminação de conhecimento atualizado e de qualidade para a comunidade acadêmica, constituída de professores pesquisadores, profissionais e estudantes em formação. 
+Em sua 3ª edição, com o tema “Virologia e Bioinformática” o Workshop promoveu a participação de cientistas importantes de diversas vertentes da virologia, desde a ambiental à humana, incluindo nomes como Betânia Drumond, atual presidente da SBV. Esta diversidade contribuiu para a disseminação de conhecimento atualizado e de qualidade para a comunidade acadêmica, constituída de professores pesquisadores, profissionais e estudantes em formação. 
 
-![Programação do III Workshop de Virologia da UESC](fotos/palestras.png)
+![Programação do III Workshop de Virologia da UESC](fotos/palestras.webp)
+
+![Minicursos do III Workshop de Virologia da UESC](fotos/minicursos.webp)
 
 Temas como os avanços e desafios do desenvolvimento da vacina da Dengue, além da aplicação de diferentes abordagens metodológicas no estudo dos vírus, tais como a crio-microscopia eletrônica e, fortemente citada em detrimento do tema deste ano, a bioinformática, proporcionam ao evento uma identidade própria de interdisciplinariedade. O cronograma apresentou uma mescla variada de temáticas que abrangeram desde a ciência de base às abordagens mais técnicas. 
 
