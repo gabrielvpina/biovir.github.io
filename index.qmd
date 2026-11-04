@@ -83,7 +83,7 @@ Orientação de estudantes de iniciação científica, mestrado e doutorado, com
 O BioVirLab está sediado na **Universidade Estadual de Santa Cruz (UESC)** e na **Universidade Federal do Sul da Bahia (UFSB)**, nas cidades de 
 Ilhéus e Itabuna - Bahia, Brasil.
 
-<!-- Mapa gerado por scripts/build-mapa.py a partir de _data/locais.tsv. -->
+<!-- Mapa desenhado por scripts/build-mapa.py a partir de _data/locais.tsv e _data/mapa-osm.json. -->
 
 {{< include _includes/mapa-pt.html >}}
 

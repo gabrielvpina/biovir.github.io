@@ -748,72 +748,167 @@ $premio-galho: 2.2rem;    // altura do galho = centro da medalha
 
 
 // ------------------------------------------------------- mapa dos campi ---
-// O mapa e' uma imagem estatica gerada por scripts/build-mapa.py. Nao ha
-// biblioteca de mapa nem requisicao a servico externo em tempo de visita.
+// O mapa e' um SVG desenhado por scripts/build-mapa.py a partir de dados do
+// OpenStreetMap guardados no repositorio. Nao ha biblioteca de mapa nem
+// requisicao a servico externo em tempo de visita.
 
 .mapa-wrap {
   margin: 1.8rem 0 2.2rem;
 }
 
-.mapa-img {
-  position: relative;
-  display: block;
+.mapa-quadro {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--biovir-line);
   line-height: 0;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid var(--biovir-line);
-    background-color: var(--biovir-mist);
-  }
+.mapa-svg {
+  display: block;
+  width: 100%;
+  height: auto;
 
-  &:hover img,
-  &:focus-visible img {
-    border-color: var(--biovir-soft);
+  text {
+    font-family: #{$headings-font-family};
   }
 }
 
+.mapa-cidade {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  fill: var(--biovir-navy);
+  stroke: #fff;
+  stroke-width: 7px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.mapa-rio-nome {
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.mapa-mar-nome {
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  fill: #fff;
+  fill-opacity: 0.9;
+}
+
+.mapa-cartao-sigla {
+  font-size: 16px;
+  font-weight: 700;
+  fill: var(--biovir-deep);
+}
+
+.mapa-cartao-nome {
+  font-size: 10.5px;
+  fill: var(--biovir-muted);
+}
+
+.mapa-mini-pais {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  fill: var(--biovir-navy);
+}
+
+.mapa-mini-estado {
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--biovir-navy);
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.mapa-escala text {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--biovir-navy);
+}
+
 .mapa-credito {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.82);
-  color: var(--biovir-muted);
   font-family: #{$font-family-monospace};
-  font-size: 0.65rem;
-  line-height: 1.6;
+  font-size: 10px;
+  fill: var(--biovir-muted);
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 3px;
+  paint-order: stroke;
+}
+
+.mapa-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.3rem 1rem;
+  margin: 0.55rem 0 0;
+  color: var(--biovir-muted);
+  font-size: 0.85rem;
+}
+
+.mapa-rolar {
+  display: none;
+  margin-right: auto;
+}
+
+// no celular o desenho inteiro ficaria pequeno demais para ler: o mapa
+// mantem uma largura minima e rola para o lado
+@media (max-width: 640px) {
+  .mapa-quadro {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mapa-svg {
+    width: 760px;
+    max-width: none;
+  }
+
+  .mapa-rolar {
+    display: inline;
+  }
 }
 
 .local-list {
   list-style: none;
   padding: 0;
-  margin: 1.2rem 0 0;
+  margin: 1.4rem 0 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.2rem;
-
-  li {
-    display: grid;
-    grid-template-columns: 1.75rem minmax(0, 1fr);
-    gap: 0.7rem;
-    align-items: start;
-  }
 }
 
-.local-num {
+.local-card {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.local-icone {
   display: grid;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   background-color: var(--biovir-deep);
-  color: #fff;
-  font-family: #{$headings-font-family};
-  font-size: 0.85rem;
-  font-weight: 600;
+
+  svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: #fff;
+  }
 }
 
 .local-nome {
@@ -830,9 +925,11 @@ $premio-galho: 2.2rem;    // altura do galho = centro da medalha
   line-height: 1.5;
 }
 
-.local-rota {
-  display: inline-block;
-  margin-top: 0.35rem;
+.local-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  margin-top: 0.4rem;
   font-family: #{$font-family-monospace};
   font-size: 0.75rem;
   letter-spacing: 0.04em;

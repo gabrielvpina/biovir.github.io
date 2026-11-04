@@ -58,7 +58,8 @@ eventos/<slug>/           um evento por pasta (texto, capa e fotos)
 scripts/build-members.py  gera _includes/members-*.html a partir do TSV
 scripts/build-eventos.py  gera as páginas de eventos a partir de eventos/
 scripts/build-publicacoes.py  gera _includes/publicacoes-*.html
-scripts/build-mapa.py     gera o mapa dos campi (Leaflet + OpenStreetMap)
+scripts/build-mapa.py     desenha o mapa dos campi (SVG) a partir de _data/
+scripts/baixar-mapa-osm.py  baixa a geografia do mapa do OpenStreetMap (raro)
 scripts/build-stats.py    gera a faixa de números da página inicial
 styles/biovir.scss        tema visual (cores, tipografia, componentes)
 styles/fonts.css          @font-face das fontes locais em fonts/
@@ -213,36 +214,29 @@ mais recente para o mais antigo.
 
 ## Mudar os pontos do mapa
 
-O mapa da seção "Onde estamos" é uma **imagem estática** guardada no
-repositório (`assets/mapa-campi.jpg`). Quem visita o site não carrega
-biblioteca de mapa nem busca imagens em serviço externo: não há chave de API,
-CDN nem política de uso de terceiros no caminho. Em troca o mapa não tem zoom —
-clicar nele abre a área no OpenStreetMap.
+O mapa da seção "Onde estamos" é um **SVG desenhado pelo próprio site**
+(`scripts/build-mapa.py`): mar, rios, matas com árvores, áreas urbanas,
+rodovias, os nomes das cidades e dos rios, e um pino com ícone de
+universidade para cada campus, ligado a um cartão com a foto. Quem visita o
+site não carrega biblioteca de mapa nem busca nada em serviço externo.
 
-Os pontos saem de `_data/locais.tsv`, um por linha:
+A geografia vem do OpenStreetMap (`_data/mapa-osm.json`) e, para a
+miniatura do Brasil com a Bahia destacada, do Natural Earth
+(`_data/mapa-brasil.json`). Os dois já estão guardados no repositório — o build
+não acessa a internet.
+
+Os campi saem de `_data/locais.tsv`, um por linha:
 
 | coluna | descrição |
 | --- | --- |
-| `nome` | nome da instituição |
+| `nome` | nome da instituição; a sigla entre parênteses vai para o cartão do mapa |
 | `endereco_pt` | endereço completo em português |
 | `endereco_en` | endereço em inglês (vazio = usa o português) |
 | `lat` / `lon` | coordenadas em graus decimais, com **ponto** |
+| `foto` | foto do campus, a partir da raiz (ex.: `assets/campi/uesc.webp`) |
 
-Campos separados por **tabulação**, como em `members.tsv`. Depois de mudar um
-ponto, **redesenhe a imagem** e commite-a junto:
-
-```bash
-python3 scripts/build-mapa.py --gerar
-./build.sh
-```
-
-O `--gerar` é a única etapa que acessa a internet, e precisa do Pillow
-(`python3 -m pip install Pillow`). Sem ele, o `./build.sh` apenas reaproveita a
-imagem já existente — por isso o build continua funcionando offline.
-
-O enquadramento é automático: o script calcula o retângulo que cobre todos os
-pontos, com folga, e desenha os pinos numerados na ordem das linhas do TSV,
-batendo com a numeração da lista de endereços.
+Campos separados por **tabulação**, como em `members.tsv`. Depois de mudar,
+basta rodar `./build.sh`.
 
 ### Ajustar a aparência do mapa
 
@@ -250,15 +244,29 @@ As constantes ficam no topo de `scripts/build-mapa.py`:
 
 | constante | para quê |
 | --- | --- |
-| `ENQUADRAR` | pontos que devem caber na imagem mas **não** recebem pino — é o que garante que Ilhéus e Itabuna apareçam, mesmo os campi ficando entre as duas |
-| `FOLGA` | margem em volta dos pontos, como fração da distância entre eles |
-| `LARGURA` / `ALTURA` | tamanho da imagem; é o dobro do tamanho de exibição, para telas retina |
-| `CAMADA_FUNDO` / `CAMADA_ROTULOS` | estilo do mapa — hoje o *Light Gray Canvas* do Esri, em tons de cinza, sem as cores do mapa de ruas |
-| `ESCURECER_ROTULOS` | os rótulos do estilo cinza são claros demais; `0.45` escurece o texto sem mexer no resto |
-| `DPI` | `192` faz os nomes das cidades serem desenhados em dobro, para não encolherem quando o CSS reduz a imagem |
+| `COR` | paleta: mar, mata, rios, cidades, pinos |
+| `CIDADES` | nomes de cidade escritos no mapa e onde |
+| `ROTULOS_RIOS` | quais rios recebem nome; a posição (0–1) indica em que parte do rio o nome deve ficar — o script procura o trecho mais reto por perto |
+| `CARTOES` | onde fica o cartão com foto de cada campus, em relação ao pino (pela sigla) |
+| `MINI_L` / `MINI_A` | tamanho da miniatura do Brasil no canto superior direito (o estado destacado vem de `ESTADO` em `scripts/baixar-mapa-osm.py`) |
+| `PASSO_ARVORE` | distância entre as árvores desenhadas na mata (menor = mais árvores) |
+| `TOL_AREA` / `AREA_MIN_PX` | quanto simplificar as formas; menos detalhe = página mais leve |
 
-Os pinos continuam azuis de propósito: são o único elemento colorido, e é o que
-os faz saltar sobre o fundo cinza.
+### Mudar o recorte ou atualizar a geografia
+
+Só é preciso se o mapa tiver que mostrar outra região (por exemplo, um campus
+fora de Ilhéus–Itabuna). Ajuste `RECORTE` em `scripts/baixar-mapa-osm.py` e
+rode, uma vez, com internet:
+
+```bash
+python3 -m pip install shapely
+python3 scripts/baixar-mapa-osm.py
+./build.sh
+```
+
+Commite os `_data/mapa-osm.json` e `_data/mapa-brasil.json` gerados. Os dados
+regionais são © colaboradores do OpenStreetMap (licença ODbL) — o crédito já
+aparece no canto do mapa; o Natural Earth é domínio público.
 
 **Como achar as coordenadas:** abra [openstreetmap.org](https://www.openstreetmap.org),
 clique com o botão direito no ponto e escolha "Mostrar endereço". A URL passa a

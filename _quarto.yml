@@ -11,6 +11,8 @@ project:
     - "assets/*.svg"
     # logos das instituicoes colaboradoras (scripts/build-colaboradores.py)
     - "assets/colaboradores/*"
+    # fotos dos campi no mapa da pagina inicial (scripts/build-mapa.py)
+    - "assets/campi/*"
     - "members/**/*.webp"
     - "eventos/**/*.jpg"
     - "eventos/**/*.jpeg"

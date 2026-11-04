@@ -84,7 +84,7 @@ BioVirLab is based at the **State University of Santa Cruz (UESC)** and at the
 **Federal University of Southern Bahia (UFSB)**, in the cities of Ilhéus and
 Itabuna — Bahia, Brazil.
 
-<!-- Mapa gerado por scripts/build-mapa.py a partir de _data/locais.tsv. -->
+<!-- Mapa desenhado por scripts/build-mapa.py a partir de _data/locais.tsv e _data/mapa-osm.json. -->
 
 {{< include ../_includes/mapa-en.html >}}
 
