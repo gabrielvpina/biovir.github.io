@@ -3,7 +3,8 @@
 
 Cada subpasta de eventos/ e um evento e deve conter:
 
-    eventos/<slug>/evento.yml    dados do evento (chave: valor)
+    eventos/<slug>/evento.yml    dados do evento (chave: valor); o campo
+                                 categoria escolhe a secao da lista
     eventos/<slug>/texto-pt.md   texto da pagina em portugues
     eventos/<slug>/texto-en.md   texto em ingles (opcional; cai para o pt)
     eventos/<slug>/capa.jpg      imagem de capa (opcional)
@@ -36,22 +37,32 @@ IMG_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"}
 
 CAMPOS_OBRIGATORIOS = ["titulo_pt", "data"]
 
+# campo "categoria" do evento.yml -> secao da pagina, na ordem em que aparecem
+CATEGORIAS = ["organizado", "participacao"]
+CATEGORIA_PADRAO = "participacao"
+
 TXT = {
     "pt": {
-        "voltar": "← Todos os eventos",
+        "voltar": "← Eventos e notícias",
         "galeria": "Galeria",
         "site": "Site do evento",
-        "proximos": "Próximos",
-        "realizados": "Realizados",
+        "em_breve": "Em breve",
         "vazio": "Nenhum evento cadastrado ainda.",
+        "organizado": ("Organizados pelo BioVirLab",
+                       "Workshops, cursos e encontros promovidos pelo laboratório."),
+        "participacao": ("Participações e notícias",
+                         "Congressos, prêmios e outras notícias do grupo."),
     },
     "en": {
-        "voltar": "← All events",
+        "voltar": "← Events & news",
         "galeria": "Gallery",
         "site": "Event website",
-        "proximos": "Upcoming",
-        "realizados": "Past",
+        "em_breve": "Upcoming",
         "vazio": "No events registered yet.",
+        "organizado": ("Organised by BioVirLab",
+                       "Workshops, courses and meetings hosted by the laboratory."),
+        "participacao": ("Participation & news",
+                         "Conferences, awards and other news from the group."),
     },
 }
 
@@ -168,8 +179,14 @@ def ler_eventos():
                 if f.is_file() and f.suffix.lower() in IMG_EXT
             )
 
+        categoria = dados.get("categoria", "").strip() or CATEGORIA_PADRAO
+        if categoria not in CATEGORIAS:
+            sys.exit(f"{yml}: 'categoria' deve ser {' ou '.join(CATEGORIAS)} "
+                     f"(achei {categoria!r})")
+
         eventos.append({
             "slug": pasta.name,
+            "categoria": categoria,
             "pasta": pasta,
             "dados": dados,
             "data": data,
@@ -184,7 +201,7 @@ def ler_eventos():
 
 # --------------------------------------------------------------- lista ---
 
-def item_lista(ev, lang, prefixo_href):
+def item_lista(ev, lang, prefixo_href, hoje):
     d = ev["dados"]
     titulo = html.escape(campo(d, "titulo", lang))
     data_txt = html.escape(campo(d, "data_texto", lang)) or ev["data"].strftime("%d/%m/%Y")
@@ -195,6 +212,8 @@ def item_lista(ev, lang, prefixo_href):
     href = f"{prefixo_href}{ev['slug']}/index.html"
 
     descricao = " — ".join(p for p in (local, resumo) if p)
+    selo = (f'<span class="event-badge">{TXT[lang]["em_breve"]}</span>'
+            if ev["data"] >= hoje else "")
     capa = ""
     if ev["capa"]:
         src = html.escape(f"{prefixo_img(lang)}{ev['slug']}/{ev['capa']}")
@@ -203,7 +222,7 @@ def item_lista(ev, lang, prefixo_href):
 
     return (
         f'<a class="event-item event-link no-external" href="{html.escape(href)}">'
-        f'<span class="event-date">{data_txt}</span>'
+        f'<span class="event-date">{data_txt}{selo}</span>'
         f'<span class="event-body">'
         f'<span class="event-title">{titulo}</span>'
         f'<span class="event-desc">{descricao}</span>'
@@ -217,23 +236,26 @@ def prefixo_img(lang):
 
 
 def render_lista(eventos, lang):
+    """Uma secao por categoria; dentro dela, do mais recente ao mais antigo.
+    Eventos com data futura ganham o selo "Em breve"."""
     hoje = datetime.date.today()
     prefixo = "eventos/" if lang == "pt" else "events/"
-    proximos = [e for e in eventos if e["data"] >= hoje]
-    realizados = [e for e in eventos if e["data"] < hoje]
     t = TXT[lang]
 
-    out = []
     if not eventos:
         return f"<p>{t['vazio']}</p>\n"
-    for rotulo, grupo in ((t["proximos"], proximos), (t["realizados"], realizados)):
+    out = []
+    for cat in CATEGORIAS:
+        grupo = [e for e in eventos if e["categoria"] == cat]
         if not grupo:
             continue
-        out.append(f'<h2 class="event-group-title">{rotulo}</h2>')
+        rotulo, intro = t[cat]
+        out.append(f'<h2 class="event-group-title" id="{cat}">{rotulo}</h2>')
+        out.append(f'<p class="event-group-intro">{intro}</p>')
         # a lista sai em UMA linha: <a> e' inline, entao em linhas separadas o
         # Pandoc embrulharia os itens num <p> e quebraria o layout
         out.append('<div class="event-list">'
-                   + "".join(item_lista(e, lang, prefixo) for e in grupo)
+                   + "".join(item_lista(e, lang, prefixo, hoje) for e in grupo)
                    + "</div>")
         out.append("")
     return "\n".join(out).rstrip() + "\n"

@@ -20,7 +20,7 @@ website:
       - href: en/publications.qmd
         text: "Publications"
       - href: en/events.qmd
-        text: "Events"
+        text: "Events & News"
       - href: en/tools.qmd
         text: "Tools"
       - href: en/members.qmd

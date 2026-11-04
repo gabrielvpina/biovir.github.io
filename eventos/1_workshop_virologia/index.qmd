@@ -7,7 +7,7 @@ description-meta: "I Workshop de Virologia na UESC organizado pelos laboratório
 <!-- gerado por scripts/build-eventos.py - nao editar a mao;
      edite eventos/1_workshop_virologia/ e rode ./build.sh -->
 
-<p class="event-back"><a class="no-external" href="../../eventos.html">← Todos os eventos</a></p>
+<p class="event-back"><a class="no-external" href="../../eventos.html">← Eventos e notícias</a></p>
 
 ::: {.event-meta}
 12 nov 2024 · Ilhéus, BA

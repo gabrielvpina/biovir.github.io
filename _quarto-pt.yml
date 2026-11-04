@@ -23,7 +23,7 @@ website:
       - href: publicacoes.qmd
         text: "Publicações"
       - href: eventos.qmd
-        text: "Eventos"
+        text: "Eventos e Notícias"
       - href: ferramentas.qmd
         text: "Ferramentas"
       - href: membros.qmd

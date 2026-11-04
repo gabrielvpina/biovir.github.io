@@ -4,8 +4,12 @@
 titulo_pt: III Workshop de Virologia
 titulo_en: III Virology Workshop
 
-# data de inicio, sempre AAAA-MM-DD. Define a ordem da lista e se o evento
-# aparece em "Proximos" (data futura) ou "Realizados" (data passada).
+# secao da pagina: organizado (evento do laboratorio, ex.: workshop)
+# ou participacao (congresso, premio, noticia)
+categoria: organizado
+
+# data de inicio, sempre AAAA-MM-DD. Define a ordem da lista; data futura
+# ganha o selo "Em breve".
 data: 2026-03-25
 
 # como a data aparece escrita na pagina (livre)

@@ -7,7 +7,7 @@ description-meta: "Third Virology Workshop at UESC, organised by the Virus Bioin
 <!-- gerado por scripts/build-eventos.py - nao editar a mao;
      edite eventos/3_workshop_virologia/ e rode ./build.sh -->
 
-<p class="event-back"><a class="no-external" href="../../events.html">← All events</a></p>
+<p class="event-back"><a class="no-external" href="../../events.html">← Events & news</a></p>
 
 ::: {.event-meta}
 25–26 Mar 2026 · Ilhéus, Brazil

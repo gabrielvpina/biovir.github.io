@@ -38,13 +38,13 @@ quarto preview
 index.qmd                 Início            ->  docs/index.html
 linhas-de-pesquisa.qmd    Linhas de Pesquisa
 publicacoes.qmd           Publicações
-eventos.qmd               Eventos
+eventos.qmd               Eventos e notícias
 membros.qmd               Membros
 
 en/index.qmd              Home              ->  docs/en/index.html
 en/research.qmd           Research
 en/publications.qmd       Publications
-en/events.qmd             Events
+en/events.qmd             Events & news
 en/members.qmd            Members
 
 _quarto.yml               configuração comum aos dois idiomas
@@ -287,8 +287,8 @@ gratuita (MapTiler, Stadia, Mapbox) e usar a chave deles.
 
 ## Adicionar um evento
 
-Cada evento é uma **pasta** dentro de `eventos/`. Na página de Eventos ele
-aparece como um item da lista e, ao ser clicado, abre a página completa do
+Cada evento é uma **pasta** dentro de `eventos/`. Na página de Eventos e
+notícias ele aparece como um item da lista e, ao ser clicado, abre a página completa do
 evento — com texto, capa e galeria de fotos.
 
 ### Passo a passo
@@ -325,6 +325,7 @@ eventos/2026-05-20-congresso-de-virologia/
 | --- | --- | --- |
 | `titulo_pt` | **sim** | nome do evento em português |
 | `titulo_en` | não | nome em inglês (vazio = usa o português) |
+| `categoria` | não | `organizado` (evento do laboratório, ex.: workshop) ou `participacao` (congresso, prêmio, notícia; é o padrão) |
 | `data` | **sim** | data de início, sempre `AAAA-MM-DD` |
 | `data_texto_pt` | não | como a data aparece escrita (ex.: `20–22 mai 2026`) |
 | `data_texto_en` | não | idem, em inglês |
@@ -333,10 +334,11 @@ eventos/2026-05-20-congresso-de-virologia/
 | `capa` | não | nome do arquivo de capa dentro da pasta |
 | `link` | não | site oficial do evento |
 
-O campo `data` faz duas coisas: ordena a lista (do mais recente para o mais
-antigo) e decide se o evento entra em **Próximos** (data no futuro) ou em
-**Realizados** (data no passado). A troca acontece sozinha quando a data passa —
-não é preciso mexer em nada.
+A página tem duas seções, escolhidas pelo campo `categoria`: **Organizados
+pelo BioVirLab** (`organizado`) e **Participações e notícias**
+(`participacao`). Dentro de cada uma, o campo `data` ordena a lista (do mais
+recente para o mais antigo); eventos com data no futuro aparecem com o selo
+**Em breve**, que some sozinho quando a data passa.
 
 ### Fotos
 

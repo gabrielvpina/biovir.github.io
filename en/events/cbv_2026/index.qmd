@@ -7,7 +7,7 @@ description-meta: "BioVirLab at the 37th Brazilian Congress of Virology (CBV) an
 <!-- gerado por scripts/build-eventos.py - nao editar a mao;
      edite eventos/cbv_2026/ e rode ./build.sh -->
 
-<p class="event-back"><a class="no-external" href="../../events.html">← All events</a></p>
+<p class="event-back"><a class="no-external" href="../../events.html">← Events & news</a></p>
 
 ::: {.event-meta}
 20–24 Oct 2026 · Maceió, Brazil

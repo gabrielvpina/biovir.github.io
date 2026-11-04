@@ -1,12 +1,13 @@
 ---
-title: "Eventos"
-pagetitle: "Eventos — BioVirLab"
-description-meta: "Congressos, cursos, seminários e demais atividades do BioVirLab."
+title: "Eventos e notícias"
+pagetitle: "Eventos e notícias — BioVirLab"
+description-meta: "Workshops organizados pelo BioVirLab, participação em congressos, prêmios e notícias do laboratório."
 ---
 
 ::: {.lead}
-Congressos, cursos, workshops e seminários com participação do laboratório.
-Clique em um evento para ver a página completa, com texto e fotos.
+Os eventos que o laboratório organiza e as notícias da sua participação em
+congressos e outras atividades. Clique em um item para ver a página completa,
+com texto e fotos.
 :::
 
 <!-- A lista abaixo é gerada por scripts/build-eventos.py a partir das pastas

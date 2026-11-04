@@ -985,6 +985,24 @@ $premio-galho: 2.2rem;    // altura do galho = centro da medalha
   border-bottom: 1px solid var(--biovir-line);
 }
 
+.event-group-intro {
+  margin: 0.6rem 0 -0.5rem;
+  color: var(--biovir-muted);
+  font-size: 0.94rem;
+}
+
+// selo "Em breve" dos eventos com data futura
+.event-badge {
+  display: table;
+  margin-top: 0.45rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--biovir-blue);
+  color: #fff;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
 // item da lista que leva a pagina do evento
 .event-link {
   grid-template-columns: 9rem minmax(0, 1fr) auto;

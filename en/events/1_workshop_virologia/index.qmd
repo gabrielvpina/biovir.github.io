@@ -7,7 +7,7 @@ description-meta: "First Virology Workshop at UESC, organised by the Virus Bioin
 <!-- gerado por scripts/build-eventos.py - nao editar a mao;
      edite eventos/1_workshop_virologia/ e rode ./build.sh -->
 
-<p class="event-back"><a class="no-external" href="../../events.html">← All events</a></p>
+<p class="event-back"><a class="no-external" href="../../events.html">← Events & news</a></p>
 
 ::: {.event-meta}
 12 Nov 2024 · Ilhéus, Brazil

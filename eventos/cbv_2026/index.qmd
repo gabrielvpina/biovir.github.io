@@ -7,7 +7,7 @@ description-meta: "Participação do BioVirLab no 37º Congresso Brasileiro de V
 <!-- gerado por scripts/build-eventos.py - nao editar a mao;
      edite eventos/cbv_2026/ e rode ./build.sh -->
 
-<p class="event-back"><a class="no-external" href="../../eventos.html">← Todos os eventos</a></p>
+<p class="event-back"><a class="no-external" href="../../eventos.html">← Eventos e notícias</a></p>
 
 ::: {.event-meta}
 20–24 out 2026 · Maceió, AL

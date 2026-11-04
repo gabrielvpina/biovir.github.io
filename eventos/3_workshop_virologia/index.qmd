@@ -7,7 +7,7 @@ description-meta: "III Workshop de Virologia na UESC organizado pelos laboratór
 <!-- gerado por scripts/build-eventos.py - nao editar a mao;
      edite eventos/3_workshop_virologia/ e rode ./build.sh -->
 
-<p class="event-back"><a class="no-external" href="../../eventos.html">← Todos os eventos</a></p>
+<p class="event-back"><a class="no-external" href="../../eventos.html">← Eventos e notícias</a></p>
 
 ::: {.event-meta}
 25–26 mar 2026 · Ilhéus, BA
