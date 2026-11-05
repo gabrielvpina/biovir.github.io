@@ -1,7 +1,7 @@
 ---
 title: "Tools"
 pagetitle: "Tools — BioVirLab"
-description-meta: "Open-source bioinformatics tools developed at BioVirLab: ViralQuest, VAPOR, viralfetch and PLANCUS."
+description-meta: "Open-source bioinformatics tools developed at BioVirLab: ViralQuest, VAPOR, viralfetch, PLANCUS and miRScope."
 ---
 
 ::: {.lead}
@@ -44,6 +44,13 @@ analysis.
       <img src="../assets/tool-plancus.webp" alt="PLANCUS">
       <span class="tool-pick-kind">Pipeline · Python · conda</span>
       <span class="tool-pick-desc">Search, validation and curation of endogenous viral elements (EVEs) in genomes</span>
+    </button>
+    <button class="tool-pick" type="button" role="tab" id="tab-mirscope"
+            aria-controls="mirscope" data-tool="mirscope"
+            style="--tool-accent:#7f9654">
+      <img src="../assets/tool-mirscope.svg" alt="miRScope">
+      <span class="tool-pick-kind">Tool · Python</span>
+      <span class="tool-pick-desc">Evolutionary conservation of microRNAs across species, based on the seed region</span>
     </button>
   </div>
 
@@ -601,6 +608,112 @@ Alphapironavirus bona  EHFFYLQPRDCAVTDFDYYRFNRPTVLDPLQFRFVYNVVKHYFK
       <div class="info-card"><h3>Figures and dashboard</h3><p>Plots and a static dashboard to explore the results.</p></div>
       <div class="info-card"><h3>Cross-species comparison</h3><p>Shared EVE clusters, heatmap and synteny.</p></div>
       <div class="info-card"><h3>Reproducibility</h3><p>Run log and the database version used in each analysis.</p></div>
+    </div>
+  </section>
+
+  <!-- ============================================================== miRScope -->
+  <section class="tool-panel" id="mirscope" role="tabpanel" aria-labelledby="tab-mirscope"
+           style="--tool-accent:#7f9654; --tool-accent-dark:#3b4a2a; --tool-accent-soft:#b9cf86">
+
+    <header class="tool-head">
+      <div>
+        <p class="eyebrow">Tool · Open source · Python</p>
+        <h2 class="tool-name">miRScope</h2>
+        <p class="tool-tagline">Evolutionary conservation of microRNAs, based on the seed region</p>
+      </div>
+      <div class="tool-actions">
+        <a class="btn-biovir" href="https://github.com/TatyanaChagas/miRScope">GitHub</a>
+      </div>
+    </header>
+
+    <!-- desenvolvedor: dados de _data/members.tsv (foto, nome, cargo e link) -->
+    <div class="tool-dev">
+      <p class="tool-dev-label">Developed by</p>
+      <a class="tool-dev-link" href="http://lattes.cnpq.br/7139289248134948" target="_blank" rel="noopener" title="Tatyana Chagas Moura&#x27;s Lattes CV">
+        <img class="tool-dev-photo" src="../members/alumni/taty.webp" alt="Tatyana Chagas Moura" loading="lazy">
+        <span class="tool-dev-text">
+          <span class="tool-dev-name">Tatyana Chagas Moura</span>
+          <span class="tool-dev-role">Master</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="tool-intro">
+      <p><strong>MicroRNAs (miRNAs)</strong> are small RNA molecules that
+      regulate gene expression. The part that matters most for this is the
+      <strong>seed region</strong> (nucleotides 2 to 8), which recognises the
+      target genes. Comparing seeds across species therefore reveals which
+      miRNA families are conserved through evolution and which are unique to a
+      single species.</p>
+      <p>miRScope automates this comparative analysis. It starts from the seed
+      region and offers two routes: a <strong>Macro Mode</strong>, for broad
+      family conservation, and a <strong>Strict Mode</strong>, with an
+      alignment engine to identify true orthologues while also rescuing
+      species-specific miRNAs. The miRBase miRNAs (May 2026) are included, and
+      it runs on Linux and macOS (or Windows via WSL).</p>
+    </div>
+
+    <div class="tool-install">
+      <span class="tool-install-label">Installation</span>
+      <code>pip install -r requirements.txt</code>
+    </div>
+
+    <h3 class="tool-section">Analysis steps <span class="tool-count" data-count></span></h3>
+
+    <div class="flow" data-flow>
+      <ol class="flow-steps">
+        <li><button type="button" class="flow-step"><span class="flow-num">01</span><span class="flow-label">Input</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">02</span><span class="flow-label">Seed region</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">03</span><span class="flow-label">Macro Mode</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">04</span><span class="flow-label">Strict Mode</span></button></li>
+        <li><button type="button" class="flow-step"><span class="flow-num">05</span><span class="flow-label">Intersections</span></button></li>
+      </ol>
+      <div class="flow-details">
+        <div class="flow-detail">
+          <h4>Input files</h4>
+          <p>One FASTA file per species, holding all of its miRNAs, in the <code>fasta_especies/</code> folder, which already contains the whole of miRBase. You can add your own species (named like <code>mirna_Homo_sapiens.fasta</code>) and keep only those in your study, which makes the analysis faster and the plot cleaner.</p>
+          <ul class="flow-chips">
+            <li>miRBase</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Seed region</h4>
+          <p>Each miRNA is analysed from its seed (nucleotides 2 to 8), the part that recognises the target genes, and miRNAs are grouped into families by seed.</p>
+          <ul class="flow-chips">
+            <li>Biopython</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Mode 1: broad conservation (Macro)</h4>
+          <p>Groups miRNAs by seed conservation alone, skipping the full alignment. Ideal for quick answers about how widely large families have spread.</p>
+          <ul class="flow-chips">
+            <li>pandas</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Mode 2: strict orthology by cohesion</h4>
+          <p>Aligns the seed families with MAFFT and applies an 85% base-to-base identity cutoff to isolate true mature orthologues, while also rescuing species-specific miRNAs. The cutoff can be adjusted (for example, to 95%).</p>
+          <ul class="flow-chips">
+            <li>MAFFT</li>
+          </ul>
+        </div>
+        <div class="flow-detail">
+          <h4>Intersections across species</h4>
+          <p>Shows which families and orthologues each group of species shares (for example, <em>Homo sapiens</em> + <em>Mus musculus</em>) in an UpSet plot and in tables.</p>
+          <ul class="flow-chips">
+            <li>matplotlib</li>
+            <li>openpyxl</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="tool-section">Outputs</h3>
+    <div class="card-grid tool-cards">
+      <div class="info-card"><h3>UpSet plot</h3><p>A publication-ready plot of the evolutionary intersections between species.</p></div>
+      <div class="info-card"><h3>Alignments</h3><p>A FASTA file with every alignment produced by MAFFT in Strict Mode.</p></div>
+      <div class="info-card"><h3>Detailed clusters</h3><p>A table showing which evolutionary cluster each miRNA of each species belongs to.</p></div>
+      <div class="info-card"><h3>Groups and intersections</h3><p>A table of the species groups and the list of shared orthologous miRNAs.</p></div>
     </div>
   </section>
 
