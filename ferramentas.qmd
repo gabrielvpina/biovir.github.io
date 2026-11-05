@@ -66,6 +66,18 @@ percorra as etapas da análise.
       </div>
     </header>
 
+    <!-- desenvolvedor: dados de _data/members.tsv (foto, nome, cargo e link) -->
+    <div class="tool-dev">
+      <p class="tool-dev-label">Desenvolvido por</p>
+      <a class="tool-dev-link" href="https://gabrielvpina.github.io/" target="_blank" rel="noopener" title="Página de Gabriel Victor Pina Rodrigues">
+        <img class="tool-dev-photo" src="members/phd/gabriel.webp" alt="Gabriel Victor Pina Rodrigues" loading="lazy">
+        <span class="tool-dev-text">
+          <span class="tool-dev-name">Gabriel Victor Pina Rodrigues</span>
+          <span class="tool-dev-role">Doutorando</span>
+        </span>
+      </a>
+    </div>
+
     <div class="tool-intro">
       <p>Os vírus estão por toda parte: em plantas, animais, pessoas e no
       ambiente. Mas a maioria deles ainda é desconhecida. Hoje os cientistas
@@ -156,6 +168,18 @@ percorra as etapas da análise.
         <a class="btn-biovir" href="https://github.com/LymF/vapor">GitHub</a>
       </div>
     </header>
+
+    <!-- desenvolvedor: dados de _data/members.tsv (foto, nome, cargo e link) -->
+    <div class="tool-dev">
+      <p class="tool-dev-label">Desenvolvido por</p>
+      <a class="tool-dev-link" href="http://lattes.cnpq.br/2130887353854207" target="_blank" rel="noopener" title="Currículo Lattes de Lucas Yago Melo Ferreira">
+        <img class="tool-dev-photo" src="members/phd/lucasY.webp" alt="Lucas Yago Melo Ferreira" loading="lazy">
+        <span class="tool-dev-text">
+          <span class="tool-dev-name">Lucas Yago Melo Ferreira</span>
+          <span class="tool-dev-role">Doutorando</span>
+        </span>
+      </a>
+    </div>
 
     <div class="tool-intro">
       <p>O VAPOR é uma pipeline em Snakemake que recebe leituras de
@@ -287,6 +311,18 @@ percorra as etapas da análise.
         <a class="btn-biovir-ghost" href="https://pypi.org/project/viralfetch/">PyPI</a>
       </div>
     </header>
+
+    <!-- desenvolvedor: dados de _data/members.tsv (foto, nome, cargo e link) -->
+    <div class="tool-dev">
+      <p class="tool-dev-label">Desenvolvido por</p>
+      <a class="tool-dev-link" href="https://gabrielvpina.github.io/" target="_blank" rel="noopener" title="Página de Gabriel Victor Pina Rodrigues">
+        <img class="tool-dev-photo" src="members/phd/gabriel.webp" alt="Gabriel Victor Pina Rodrigues" loading="lazy">
+        <span class="tool-dev-text">
+          <span class="tool-dev-name">Gabriel Victor Pina Rodrigues</span>
+          <span class="tool-dev-role">Doutorando</span>
+        </span>
+      </a>
+    </div>
 
     <div class="tool-intro">
       <p>O viralfetch é uma ferramenta de linha de comando para consultar e
@@ -456,6 +492,18 @@ Alphapironavirus bona  EHFFYLQPRDCAVTDFDYYRFNRPTVLDPLQFRFVYNVVKHYFK
         <a class="btn-biovir" href="https://github.com/Bioinscripts/plancus">GitHub</a>
       </div>
     </header>
+
+    <!-- desenvolvedor: dados de _data/members.tsv (foto, nome, cargo e link) -->
+    <div class="tool-dev">
+      <p class="tool-dev-label">Desenvolvido por</p>
+      <a class="tool-dev-link" href="http://lattes.cnpq.br/3568211250942648" target="_blank" rel="noopener" title="Currículo Lattes de João Pedro Nunes Santos">
+        <img class="tool-dev-photo" src="members/phd/joao.webp" alt="João Pedro Nunes Santos" loading="lazy">
+        <span class="tool-dev-text">
+          <span class="tool-dev-name">João Pedro Nunes Santos</span>
+          <span class="tool-dev-role">Doutorando</span>
+        </span>
+      </a>
+    </div>
 
     <div class="tool-intro">
       <p>Ao longo da evolução, pedaços de vírus ficaram integrados ao genoma de
