@@ -1,0 +1,120 @@
+<svg
+   viewBox="0 0 400 400"
+   version="1.1"
+   id="svg22"
+   xmlns="http://www.w3.org/2000/svg">
+  <title
+     id="title1">BioVir Lab — Logomarca</title>
+  <defs
+     id="defs3">
+    <radialGradient
+       id="nodeGlow"
+       cx="347"
+       cy="115"
+       r="11"
+       fx="347"
+       fy="115"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#eafdff"
+         stop-opacity="1"
+         id="stop1" />
+      <stop
+         offset="40%"
+         stop-color="#6fe3ea"
+         stop-opacity="0.85"
+         id="stop2" />
+      <stop
+         offset="100%"
+         stop-color="#6fe3ea"
+         stop-opacity="0"
+         id="stop3" />
+    </radialGradient>
+  </defs>
+  <g
+     stroke="#15264f"
+     stroke-width="1.5"
+     stroke-linejoin="round"
+     id="g20">
+    <polygon
+       points="275,200 200,200 237.5,135 "
+       fill="#3ba7ce"
+       id="polygon3" />
+    <polygon
+       points="237.5,265 200,200 275,200 "
+       fill="#2e6fb8"
+       id="polygon4" />
+    <polygon
+       points="162.5,265 200,200 237.5,265 "
+       fill="#26478f"
+       id="polygon5" />
+    <polygon
+       points="125,200 200,200 162.5,265 "
+       fill="#2e6fb8"
+       id="polygon6" />
+    <polygon
+       points="162.5,135 200,200 125,200 "
+       fill="#3ba7ce"
+       id="polygon7" />
+    <polygon
+       points="237.5,135 200,200 162.5,135 "
+       fill="#5fd3db"
+       id="polygon8" />
+    <polygon
+       points="237.5,135 162.5,135 200,30 "
+       fill="#9ff0ec"
+       id="polygon9" />
+    <polygon
+       points="347,115 200,30 237.5,135 "
+       fill="#9ff0ec"
+       id="polygon10" />
+    <polygon
+       points="275,200 237.5,135 347,115 "
+       fill="#5fd3db"
+       id="polygon11" />
+    <polygon
+       points="347,285 347,115 275,200 "
+       fill="#2e6fb8"
+       id="polygon12" />
+    <polygon
+       points="237.5,265 275,200 347,285 "
+       fill="#26478f"
+       id="polygon13" />
+    <polygon
+       points="200,370 347,285 237.5,265 "
+       fill="#1a2e63"
+       id="polygon14" />
+    <polygon
+       points="162.5,265 237.5,265 200,370 "
+       fill="#1a2e63"
+       id="polygon15" />
+    <polygon
+       points="53,285 200,370 162.5,265 "
+       fill="#1a2e63"
+       id="polygon16" />
+    <polygon
+       points="125,200 162.5,265 53,285 "
+       fill="#26478f"
+       id="polygon17" />
+    <polygon
+       points="53,115 53,285 125,200 "
+       fill="#2e6fb8"
+       id="polygon18" />
+    <polygon
+       points="162.5,135 125,200 53,115 "
+       fill="#5fd3db"
+       id="polygon19" />
+    <polygon
+       points="200,30 53,115 162.5,135 "
+       fill="#9ff0ec"
+       id="polygon20" />
+  </g>
+  <circle
+     cx="347"
+     cy="115"
+     r="11"
+     fill="url(#nodeGlow)"
+     id="circle20"
+     style="fill:url(#nodeGlow)" />
+</svg>

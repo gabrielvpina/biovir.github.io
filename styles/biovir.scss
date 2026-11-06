@@ -58,8 +58,11 @@ body {
   padding-block: 0.35rem;
 }
 
+// logo em SVG so com viewBox: precisa de altura fixa, senao o navegador
+// usa o tamanho padrao de 300x150
 .navbar .navbar-brand img {
-  max-height: 38px;
+  height: 40px;
+  max-height: none;
   width: auto;
 }
 
@@ -285,7 +288,7 @@ main > section > ol {
 }
 
 .hero-figure img {
-  width: min(100%, 400px);
+  width: min(100%, 320px);
   height: auto;
 }
 
@@ -1943,7 +1946,7 @@ main h3.tool-section {
   }
 
   .hero-figure img {
-    width: min(80%, 260px);
+    width: min(60%, 200px);
   }
 
   .event-item,
